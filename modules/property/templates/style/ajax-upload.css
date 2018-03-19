@@ -1,0 +1,34 @@
+.qq-upload-button {
+    display:block; /* or inline-block */
+    background: url('/modules/general/templates/images/btn-choosefile.jpg') 0 0 no-repeat;
+    width: 78px;
+    /*height: 6px;*/
+    border: none;
+    cursor: pointer;
+    height:20px;
+}
+.qq-upload-button-hover {}
+.qq-upload-button-focus {outline:1px dotted black;}
+
+.qq-upload-list{
+}
+
+.qq-upload-list li{
+}
+
+.qq-upload-list li.qq-upload-success{
+	list-style:none;
+}
+
+.qq-upload-spinner {
+    display:inline-block; width:15px; height:15px; vertical-align:text-bottom;
+    color: #980000;font-weight: bold
+}
+
+
+
+/*for step3*/
+.photoupload-list li img{/*width:106px;  height:106px; */}
+
+.qq-upload-uploaded,.qq-upload-cancel,.qq-upload-failed-text{margin-right:5px;color:#0000FF;font-style:italic;}
+.qq-upload-fail ..qq-upload-uploaded{visibility:hidden}

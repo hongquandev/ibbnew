@@ -1,0 +1,18 @@
+/* BEGIN
+CSS FOREIGNOBJECT IPAD*/
+.detail-info-box .make-an-offer-popup-b .btn-makeanoffer span{padding-top: 3px; padding-bottom: 6px;}
+.menu .nav li.active span, .menu .nav li:hover span {
+    padding: 3px 0px 2px 8px;
+}
+
+.menu .nav li.active span span, .menu .nav li:hover span span {
+    padding: 3px 8px 2px 0px;
+}
+.f-l {
+    background-position: 0 0;
+    padding-left: 26px;
+}
+.f-r {
+    background-position: 100.1% -250px;
+    padding-right: 27px !important;
+}

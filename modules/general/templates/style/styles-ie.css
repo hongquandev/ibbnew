@@ -1,0 +1,26 @@
+
+.popup-countdown-child .content {}
+.popup-countdown-child .content .btn-bid-vendor-popup {
+    /*width: 143px;*/
+}
+.popup-countdown-child .content .bid-inc-content {
+    padding-top: 4px;padding-bottom: 3px;
+}
+.popup-countdown-child .content .manage-bid-content .bid-content input.input-txt-bidder {
+    width:170px;
+    height: 27px;
+    margin-left: 138px;
+}
+.popup-countdown-child .content .action-panel-bidder {
+    padding: 25px 0;
+}
+.popup-countdown-child .content .del-plus-btn-ie {
+
+}
+.popup-countdown-child .content .btn-p-pad-ie {
+    margin-right: 4px;
+}
+
+.popup-countdown-child .content .btn-pad-content-li {
+    /*padding: 0 5px 0 2px ;*/
+}

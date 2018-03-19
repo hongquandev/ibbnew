@@ -1,0 +1,21 @@
+.howitwork-intro {margin: 20px 0; border-top: solid 1px #e0e1dc; border-bottom: solid 1px #e0e1dc;color: #2E3440;font-weight: bold;font-size: 15px;line-height: 24px;}
+.howitwork-steps {float: left;width: 300px;}
+.howitwork-steps-container {float: right;width: 620px;}
+.howitwork-step-content {border: solid 1px #e0e1dc;}
+.howitwork-step-content-content {padding: 10px;}
+.howitwork-steps-content-header {background-color: #2e3640;color: #ffffff;font-weight: bold;text-transform: uppercase;padding: 4px 10px;}
+.howitwork-step {width: 289px;height: 70px;cursor: pointer;margin-bottom: 10px;}
+.howitwork-step-link {display: inline-block;width: 289px;height: 70px;}
+.howitwork-step-link.step1 {background: url(../images/how_it_work_1.jpg) bottom left no-repeat;}
+.howitwork-step-link.step2 {background: url(../images/how_it_work_2.jpg) bottom left no-repeat;}
+.howitwork-step-link.step3 {background: url(../images/how_it_work_3.jpg) bottom left no-repeat;}
+.howitwork-step-link.step4 {background: url(../images/how_it_work_4.jpg) 0 0 no-repeat;}
+.howitwork-step-link.step5 {background: url(../images/how_it_work_5.jpg) 0 0 no-repeat;}
+.howitwork-step-link.step6 {background: url(../images/how_it_work_6.jpg) 0 0 no-repeat;}
+.howitwork-step-link.step1.onhover,.howitwork-step-link.step1.active {background: url(../images/how_it_work_1_active.jpg) bottom left no-repeat;}
+.howitwork-step-link.step2.onhover,.howitwork-step-link.step2.active {background: url(../images/how_it_work_2_active.jpg) bottom left no-repeat;}
+.howitwork-step-link.step3.onhover,.howitwork-step-link.step3.active {background: url(../images/how_it_work_3_active.jpg) bottom left no-repeat;}
+.howitwork-step-link.step4.onhover,.howitwork-step-link.step4.active {background: url(../images/how_it_work_4_active.jpg) 0 0 no-repeat;}
+.howitwork-step-link.step5.onhover,.howitwork-step-link.step5.active {background: url(../images/how_it_work_5_active.jpg) 0 0 no-repeat;}
+.howitwork-step-link.step6.onhover,.howitwork-step-link.step6.active {background: url(../images/how_it_work_6_active.jpg) 0 0 no-repeat;}
+.howitwork-wrapper {margin-bottom: 20px;}

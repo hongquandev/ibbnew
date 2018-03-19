@@ -1,0 +1,84 @@
+/* ul.adminTab {
+    background: url('../images/horiz_tabs_ul_bg.gif') repeat-x scroll 0 100% #F8F8F8;
+    margin: 0 0 18px;
+    padding: 27px 0 0 5px;
+	width:720px;
+}
+ul, ol {
+    list-style: none outside none;
+}
+ul.adminTab li {
+    float: left;
+    margin: 0 4px;
+}
+ul.adminTab li a.active {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+}
+ul.adminTab li a:hover {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+}
+ul.adminTab li a {
+    background: none repeat scroll 0 0 #E2E2E2;
+    border: 1px solid #CCCCCC;
+    color: #333333 !important;
+    display: block;
+    padding: 3px 10px;
+    text-decoration: none !important;
+}
+.menutab_one {
+	position:absolute;
+	margin-top:-25px;
+}
+*/
+
+.ui-tabs { 
+
+ } 
+.ui-tabs .ui-tabs-nav { 
+	background: url('../images/horiz_tabs_ul_bg.gif') repeat-x scroll 0 100% #F8F8F8;
+    margin: 0 0 18px;
+    padding: 26px 0 0 10px;
+	width:720px;
+}
+
+.ui-tabs .ui-tabs-nav li { 	
+	margin-top:-26px;
+	margin-left: 0px;
+
+}
+
+.ui-tabs .ui-tabs-nav li a {
+	float: left; 
+	background: none repeat scroll 0 0 #E2E2E2;
+    border: 1px solid #CCCCCC;
+    color: #333333; 
+    padding: 5px 11px;
+	margin-left:10px;
+    text-decoration: none;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected { margin-bottom: 0; padding-bottom: 1px; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a {
+ 	cursor: pointer;
+	background: none repeat scroll 0 0 #FFFFFF;
+	border-bottom: 1px solid #FFFFFF;
+}
+.ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { 
+	cursor: pointer; 
+} 
+.ui-tabs .ui-tabs-panel {
+	display: block;
+	border-width: 0; 
+	/*padding: 1em 1.4em; */
+	padding-left:9px;
+	padding-right:9px;
+	background: none; 	
+}
+.ui-tabs .ui-tabs-hide {
+ 	display: none;
+}
+/*--Lan Fix Css IE7--*/
+/*--action.php--*/
+.container-home-admin-ie7 .ui-tabs .ui-tabs-panel{padding-left:3px !important;}
+/*--End Lan Fix Css IE7--*/

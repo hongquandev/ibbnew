@@ -1,0 +1,421 @@
+.areg-panel .step-1-unhover{
+    width: 124px;
+    height: 35px;
+    background-position: 0px 0px;
+    top: 0px;
+    left: 0px;
+    z-index: 8;
+}
+
+.areg-panel .step-2-unhover {
+    background-position: -136px 0;
+    height: 35px;
+    left: 102px;
+    top: 0;
+    width: 161px;
+    z-index: 7;
+}
+.areg-panel .step-3-unhover {
+    background-position: -284px 0;
+    height: 35px;
+    left: 216px;
+    top: 0;
+    width: 175px;
+    z-index: 6;
+}
+.areg-panel .step-4-unhover {
+    background-position: -427px 0;
+    height: 35px;
+    left: 326px;
+    top: 0;
+    width: 193px;
+    z-index: 5;
+}
+.areg-panel .step-5-unhover {
+    background-position: -567px 0;
+    height: 35px;
+    left: 432px;
+    top: 0;
+    width: 223px;
+    z-index: 4;
+}
+.areg-panel .step-6-unhover {
+    background-position: -717px 0;
+    height: 35px;
+    left: 548px;
+    top: 0;
+    width: 237px;
+    z-index: 3;
+}
+.areg-panel .step-7-unhover {
+    background-position: -867px 0;
+    height: 35px;
+    left: 664px;
+    top: 0;
+    width: 232px;
+    z-index: 2;
+}
+
+.areg-panel .step-8-unhover{
+    width: 138px;
+    height: 35px;
+    background-position: -989px 0px;
+    top: 0px;
+    left: 779px;
+    z-index: 1;
+}
+
+.areg-panel .step-1:hover,.areg-panel .step-2:hover,.areg-panel .step-3:hover,.areg-panel .step-4:hover,
+.areg-panel .step-5:hover,.areg-panel .step-6:hover,.areg-panel .step-7:hover,.areg-panel .step-8:hover{
+	cursor:pointer;
+}
+
+.input-box ul.cmb-time{
+	list-style-type:none;
+}
+.input-box ul.cmb-time li{
+	width:50px;
+	float:left;
+}
+.input-box ul.cmb-time li.cmb-time-hour,.input-box ul.cmb-time li.cmb-time-minute,.input-box ul.cmb-time li.cmb-time-second{
+	width:35px;
+}
+.input-box ul.cmb-time li.cmb-time-space{
+	width:10px;
+	padding:0px 2px 0px 2px;
+}
+
+
+.pag-short{
+	
+}
+.pag-short .l,
+.pag-short .r{
+	float: left;
+    /*background-position: -2px -150px;*/
+    background-color: #F5F3F3;
+    padding: 3px 5px 3px 5px;
+    background-image:none;
+}
+
+.pag-short .r{
+	float:right;
+}
+.pag-short .r a{padding: 0 10px 10px 0;}
+ 
+.pag-short span a{
+	font-size:14px;
+	/*color:#964B4B;*/
+    /*color: #efa204;*/
+    color: #017DB9;
+    padding: 10px 9px;
+}
+.pag-short span a:hover{
+	text-decoration:underline;
+}
+
+.star-yellow,.star-white,.star-half{
+	width:16px;
+	height:16px;
+	background:url("../images/rating.png") no-repeat scroll transparent;
+	float:left;
+}
+
+.star-yellow{
+	background-position:0px 0px;
+}
+
+.star-white{
+	background-position:-72px 0px;
+}
+
+.star-half{
+	background-position:-54px 0px;
+}
+
+/* DUC CODING ADD NEW STYLE WITH PRINT */
+.star-yellow2,.star-white2,.star-half2{
+	width:16px;
+	height:16px;
+	/*background:url("../images/rating.png") no-repeat scroll transparent; */
+	float:left;
+}
+
+.star-yellow2{
+	background-position:0px 0px;
+}
+
+.star-white2{
+	background-position:-72px 0px;
+}
+
+.star-half2{
+	background-position:-54px 0px;
+}
+
+/* END DUC CODING */
+
+/*  */
+
+#tooltip{
+	position:absolute;
+	border:1px solid #333;
+	background:#f7f5d1;
+	padding:2px 5px;
+	color:#333;
+	display:none;
+	}	
+
+/*  */
+
+.text-box-uniform{
+	position:absolute;
+	z-index:100;
+	width:50px;
+	height:13px;
+	opacity:0.0;
+    filter:alpha(opacity=0);
+}
+
+.text-box-uniform-focus{
+	opacity:1;
+    filter:alpha(opacity=100);
+}
+.text-box-uniform-blur{
+	opacity:0.0;
+    filter:alpha(opacity=0);
+}
+
+
+/************Begin CSS Tooltip **************/
+/*
+ *  Part of Tipped - The Javascript Tooltip Framework
+ *  http://projects.nickstakenburg.com/tipped
+ *
+ *  Documentation:
+ *  http://projects.nickstakenburg.com/tipped/documentation/#css
+ *
+ *  IMPORTANT!:
+ *  When modifying or adding your own skins it's recommended to do
+ *  this in a seperate file, overwriting or building on top of the
+ *  styling defined here to make updating easier.
+ */
+
+/* Font styling for all skins */
+.t_Content_black,
+.t_Content_cloud,
+.t_Content_dark,
+.t_Content_lavender,
+.t_Content_light,
+.t_Content_liquid,
+.t_Content_lime,
+.t_Content_blue,
+.t_Content_salmon,
+.t_Content_yellow,
+.t_Content_facebook {
+  color: #333;
+  font-size: 10px;
+  line-height: 16px;
+  padding: 6px 7px;
+}
+
+/* Skins with a different font color */
+.t_Content_black,
+.t_Content_dark,
+.t_Content_lavender,
+.t_Content_liquid,
+.t_Content_facebook {
+  color: #fff;
+}
+.t_Content_cloud { color: #4d4d4d; }
+.t_Content_light { color: #454545; }
+.t_Content_blue { color: #f2f6f9; }
+.t_Content_salmon { color: #4f4949; }
+
+.t_Content_facebook {
+  padding: 5px 8px;
+}
+
+/* Styling links for convenience so they are visible */
+.t_Content_black a,
+.t_Content_cloud a,
+.t_Content_dark a,
+.t_Content_lavender a,
+.t_Content_light a,
+.t_Content_liquid a,
+.t_Content_lime a,
+.t_Content_blue a,
+.t_Content_salmon a,
+.t_Content_yellow a {
+  color: #008aca;
+  text-decoration: none;
+  background: none;
+  border: 0;
+}
+.t_Content_black a:hover,
+.t_Content_cloud a:hover,
+.t_Content_dark a:hover,
+.t_Content_lavender a:hover,
+.t_Content_light a:hover,
+.t_Content_liquid a:hover,
+.t_Content_lime a:hover,
+.t_Content_blue a:hover,
+.t_Content_salmon a:hover,
+.t_Content_yellow a:hover {
+  color: #008aca;
+  text-decoration: underline;
+  background: none;
+  border: 0;
+}
+
+/* Links with a different color */
+.t_Content_black a,
+.t_Content_black a:hover { color: #57a1d6; }
+.t_Content_dark a,
+.t_Content_dark a:hover { color: #5daae2; }
+
+.t_Content_cloud a,
+.t_Content_cloud a:hover { color: #438ec4; }
+
+.t_Content_lavender a,
+.t_Content_lavender a:hover { color: #ceddf2; }
+
+.t_Content_lime a,
+.t_Content_lime a:hover { color: #057ca8; }
+
+.t_Content_liquid a,
+.t_Content_liquid a:hover { color: #6591cd; }
+
+.t_Content_royalblue a,
+.t_Content_royalblue a:hover { color: #91d2dd; }
+
+.t_Content_salmon a,
+.t_Content_salmon a:hover { color: #5e77a2; }
+
+
+/*
+ * Layout (DON'T MODIFY!)
+ */
+.t_Tooltip {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  overflow: hidden;
+  background-color: transparent;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+}
+.t_Tooltip.t_hidden { opacity: 0; }
+.t_Tooltip.t_visible { opacity: 1; }
+
+.t_Skin {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.t_Skin * { zoom: 1; } /* IE7 */
+
+.t_Bubble {
+  position: relative;
+}
+
+.t_Background,
+.t_Stem { position: absolute; }
+
+.t_Close {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+}
+
+.t_CloseButtonShift {
+  position: relative;
+  overflow: hidden;
+  float: left;
+}
+.t_CloseState {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  left: 0;
+}
+
+.t_Content {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*
+ * Shadow
+ */
+.t_Shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.t_Shadow .t_ShadowInnerWrapper{
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.t_ShadowBubble {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  float: left;
+}
+.t_ShadowBackground,
+.t_ShadowStem { position: absolute; }
+.t_ShadowBackground *, .t_ShadowStem * { float: left; }
+
+
+.t_CloseButtonShadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+
+
+.t_UpdateQueue {
+  position: absolute;
+  top: -15000px;
+  left: -15000px;
+  width: 5000px;
+  height: 5000px;
+  visibility: hidden;
+}
+.t_UpdateQueue .t_Tooltip,
+.t_UpdateQueue .t_Content {
+  position: relative;
+  overflow: visible;
+  float: left;
+  top: auto;
+  left: auto;
+  width: 100%;
+}
+.t_Tooltip .t_ContentContainer {
+  float: left;
+  clear: both;
+  position: relative;
+}
+.t_UpdateQueue .t_ContentContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/************End CSS Tooltip **************/
+
+.property-detail-b .btn-orange{
+    width: 125px;
+}

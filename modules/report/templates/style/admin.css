@@ -1,0 +1,10 @@
+.report_grid{
+	border:1px solid #AAAAAA;
+}
+.report_grid tr{
+	
+}
+.report_grid tr td{
+	border:1px solid #AAAAAA;
+	text-align:center;
+}

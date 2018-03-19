@@ -1,0 +1,252 @@
+.ureg-panel .step-1-unhover, .ureg-panel2 .step-1-unhover{
+    height: 35px;
+   /* background-position: 0px 0px;
+    width: 130px;
+    left: 0px;*/
+    top: 0px;
+    z-index: 5;
+    width:167px;
+    height: 35px;
+    background-position: 0px 0px;
+}
+
+.ureg-panel .step-2-unhover, .ureg-panel2 .step-2-unhover {
+    z-index: 4;
+    /*left: 40px;*/
+	width: 40px;
+	height: 48px;
+	background-position: -40px -63px;
+}
+
+.ureg-panel .step-3-unhover, .ureg-panel2 .step-3-unhover{
+    top: 0px;
+    z-index: 4;
+    /*left: 80px;*/
+	width: 40px;
+	height: 48px;
+	background-position: -80px -63px;	
+}
+
+
+.ureg-panel .step-4-unhover, .ureg-panel2 .step-4-unhover {
+    top: 0px;
+    z-index: 4;
+    /*left: 120px;*/
+	width: 40px;
+	height: 48px;
+	background-position: -120px -63px;	
+}
+
+
+.ureg-panel .step-5-unhover, .ureg-panel2 .step-5-unhover {
+
+    height: 35px;
+    top: 0px;
+    z-index: 1;
+    width: 167px;
+    background-position: -563px 0px;
+    /*left: 452px;*/
+}
+
+.ureg-panel .step-1:hover,.ureg-panel .step-2:hover,.ureg-panel .step-3:hover,.ureg-panel .step-4:hover,.ureg-panel .step-5:hover {
+	cursor:pointer;
+}
+
+/*=== AGENT IS PARTNER ==*/
+/*.ureg-panel2 .step-1-unhover{
+    width: 130px;
+    height: 35px;
+    background-position: 0px 0px;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+}
+
+.ureg-panel2 .step-2-unhover {
+    width: 145px;
+    height: 35px;
+    background-position: -140px 0px;
+    top: 0px;
+    left: 109px;
+    z-index: 4;
+}
+
+.ureg-panel2 .step-3-unhover{
+    width: 145px;
+    height: 35px;
+    background-position: -294px 0px;
+    top: 0px;
+    left: 232px;
+    z-index: 3;
+}
+
+.ureg-panel2 .step-4-unhover {
+    width: 145px;
+    height: 35px;
+    background-position: -448px 0px;
+    top: 0px;
+    left: 355px;
+    z-index: 2;
+}
+
+
+.ureg-panel2 .step-5-unhover {
+    width: 138px;
+    height: 35px;
+    background-position: -603px 0px;
+    top: 0px;
+    left: 478px;
+    z-index: 1;
+}*/
+
+.ureg-panel2 .step-1:hover,.ureg-panel2 .step-2:hover,.ureg-panel2 .step-3:hover,.ureg-panel2 .step-4:hover,.ureg-panel2 .step-5:hover {
+	cursor:pointer;
+}
+
+.icon{
+	cursor:pointer;
+}
+
+.note-button{
+	cursor:pointer;
+	font-weight:bold;
+}
+
+.note-grid{
+	width:100%;
+	overflow:auto;
+	background:#FCF8F8;
+	max-height:200px;
+}
+
+.note-grid .item{
+	margin:4px;
+	border-bottom:1px solid #FFFFFF;
+}
+
+.note-grid .item p{
+	padding:2px 0px 2px 0px;
+}
+
+.note-grid .item p.title{
+	height:auto;
+	color:#8F4747;
+	font-weight:bold;
+	background-color:#FCF8F8;
+	padding:5px 0px 5px 0px;
+}
+
+.note-grid .item p.title label{
+	margin-left:10px;
+}
+
+.note-grid .item p.conent{
+}
+
+
+
+
+.myaccount2 .bar-title {
+    background: url('/general/templates/images/bar-bg.png') 0 0 no-repeat;
+    width: 440px;
+    height: 21px;
+    padding: 3px 10px;
+    margin-bottom: 9px;
+}
+
+/* Add New  22- 3- 2011 Agent-Property*/
+.pag-short{
+	
+}
+.pag-short .l{
+	float:left;
+	background-position: -2px -153px;
+	padding-left: 10px;
+	
+}
+.pag-short .r{
+	float:right;
+	background-position: 27px -188px;
+	padding-right: 10px;
+}
+ 
+.pag-short span a{
+	font-size:14px;
+	color:#964B4B;
+}
+.pag-short span a:hover{
+	text-decoration:underline;
+}
+
+/*.star-yellow,.star-white,.star-half{
+	width:16px;
+	height:16px;
+	background:url("../images/rating.png") no-repeat scroll transparent;
+	float:left;
+}
+
+.star-yellow{
+	background-position:0px 0px;
+}
+
+.star-white{
+	background-position:-72px 0px;
+}
+
+.star-half{
+	background-position:-54px 0px;
+}
+*/
+
+.agent-grid-box .watermark{
+    margin: 0px !important;
+    top: 0px !important;
+    
+}
+
+.agent-list-box .watermark{
+    top: 0px !important;
+    right: 0px !important;
+    padding: 0px !important;
+}
+.agent-grid-box .auctions-list {
+    /*width: 644px !important;*/
+}
+.agent-grid-box .auctions-list .message-box {
+    margin-left: 4px; width: 608px;
+}
+/************Begin CSS history Property **************/
+.detail-info-history {
+    margin-left: 0px;
+    padding-left: 10px;
+    padding-top: 10px;
+    width: 185px; height: 194px;
+}
+.detail-info-history .text {
+    font-size: 14px;
+    margin-top: 6px ;
+}
+.detail-info-history .title-history
+{
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+}
+.f-left{
+    float: left;
+}
+.f-right {
+    float: right;
+}
+
+.db-comming-soon {
+    margin: 0px 1px;
+    min-height: 154px;
+    min-width: 185px;
+    display: block;
+    border: 1px solid #D9D9D9;
+}
+
+#frmMessage > div > div > div.form-box > div > table > tbody > tr > td > span > i{
+    display: none;
+}

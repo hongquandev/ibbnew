@@ -1,0 +1,122 @@
+[22-Jan-2011 01:25:28] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home/inspectb/public_html/dev/modules/newsletter/post.php on line 13
+[22-Jan-2011 01:25:33] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home/inspectb/public_html/dev/modules/newsletter/post.php on line 13
+[22-Jan-2011 01:26:01] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home/inspectb/public_html/dev/modules/newsletter/post.php on line 13
+[24-Jan-2011 18:22:14] PHP Parse error:  syntax error, unexpected ';' in /home/inspectb/public_html/dev/modules/newsletter/list.php on line 25
+[24-Jan-2011 18:22:25] PHP Parse error:  syntax error, unexpected ';' in /home/inspectb/public_html/dev/modules/newsletter/list.php on line 25
+[24-Jan-2011 18:22:28] PHP Parse error:  syntax error, unexpected ';' in /home/inspectb/public_html/dev/modules/newsletter/list.php on line 25
+[24-Jan-2011 18:22:40] PHP Parse error:  syntax error, unexpected ';' in /home/inspectb/public_html/dev/modules/newsletter/list.php on line 25
+[24-Jan-2011 18:23:51] PHP Fatal error:  Call to undefined function checkPosi() in /home/inspectb/public_html/dev/modules/newsletter/list.php on line 25
+[18-Jul-2011 19:40:40] PHP Warning:  include(../includes/class.phpmailer.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/inspectb/public_html/dev/modules/newsletter/admin.php on line 2
+[18-Jul-2011 19:40:40] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening '../includes/class.phpmailer.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/inspectb/public_html/dev/modules/newsletter/admin.php on line 2
+[18-Jul-2011 19:40:40] PHP Fatal error:  Call to a member function assign() on a non-object in /home/inspectb/public_html/dev/modules/newsletter/admin.php on line 4
+[18-Jul-2011 19:43:55] PHP Fatal error:  Call to a member function getRows() on a non-object in /home/inspectb/public_html/dev/modules/general/inc/regions.php on line 10
+[18-Jul-2011 19:47:26] PHP Fatal error:  Call to a member function assign() on a non-object in /home/inspectb/public_html/dev/modules/newsletter/action.php on line 34
+[18-Jul-2011 19:58:51] PHP Fatal error:  Call to a member function assign() on a non-object in /home/inspectb/public_html/dev/modules/newsletter/action.php on line 34
+[18-Jul-2011 20:08:01] PHP Fatal error:  Call to undefined function getParam() in /home/inspectb/public_html/dev/modules/newsletter/action.admin.php on line 7
+[18-Jul-2011 20:10:23] PHP Warning:  include(lang/property.en.lang.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/inspectb/public_html/dev/modules/newsletter/action.admin.php on line 6
+[18-Jul-2011 20:10:23] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'lang/property.en.lang.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/inspectb/public_html/dev/modules/newsletter/action.admin.php on line 6
+[18-Jul-2011 20:10:23] PHP Fatal error:  Call to a member function assign() on a non-object in /home/inspectb/public_html/dev/modules/newsletter/action.admin.php on line 28
+[18-Jul-2011 20:12:43] PHP Fatal error:  Call to a member function assign() on a non-object in /home/inspectb/public_html/dev/modules/newsletter/action.admin.php on line 25
+[18-Jul-2011 20:14:03] PHP Fatal error:  Call to a member function fetch() on a non-object in /home/inspectb/public_html/dev/modules/newsletter/action.admin.php on line 26
+[18-Jul-2011 20:16:31] PHP Fatal error:  Call to a member function fetch() on a non-object in /home/inspectb/public_html/dev/modules/newsletter/action.admin.php on line 27
+[18-Jul-2011 20:18:31] PHP Fatal error:  Call to a member function getRows() on a non-object in /home/inspectb/public_html/dev/modules/general/inc/regions.php on line 10
+[18-Jul-2011 20:24:40] PHP Fatal error:  Call to a member function getRows() on a non-object in /home/inspectb/public_html/dev/modules/newsletter/action.admin.php on line 22
+[18-Jul-2011 20:32:47] PHP Fatal error:  Call to a member function assign() on a non-object in /home/inspectb/public_html/dev/modules/newsletter/action.admin.php on line 24
+[18-Jul-2011 20:38:24] PHP Fatal error:  Call to a member function getRows() on a non-object in /home/inspectb/public_html/dev/modules/general/inc/regions.php on line 10
+[18-Jul-2011 20:39:28] PHP Fatal error:  Call to a member function assign() on a non-object in /home/inspectb/public_html/dev/modules/newsletter/action.admin.php on line 28
+[18-Jul-2011 20:44:39] PHP Fatal error:  Call to a member function assign() on a non-object in /home/inspectb/public_html/dev/modules/newsletter/action.admin.php on line 28
+[18-Jul-2011 20:47:53] PHP Fatal error:  Call to a member function assign() on a non-object in /home/inspectb/public_html/dev/modules/newsletter/action.admin.php on line 28
+[18-Jul-2011 20:49:18] PHP Fatal error:  Call to a member function assign() on a non-object in /home/inspectb/public_html/dev/modules/newsletter/action.admin.php on line 28
+[18-Jul-2011 20:58:12] PHP Fatal error:  Call to a member function getRows() on a non-object in /home/inspectb/public_html/dev/modules/general/inc/regions.php on line 10
+[18-Jul-2011 20:59:13] PHP Fatal error:  Call to a member function getRows() on a non-object in /home/inspectb/public_html/dev/modules/general/inc/regions.php on line 10
+[18-Jul-2011 23:33:59] PHP Parse error:  syntax error, unexpected $end in /home/inspectb/public_html/dev/modules/newsletter/action.admin.php on line 51
+[19-Jul-2011 02:00:48] PHP Fatal error:  Call to undefined function _respone() in /home/inspectb/public_html/dev/modules/newsletter/action.admin.php on line 27
+[19-Jul-2011 02:04:57] PHP Fatal error:  Call to undefined function _respone() in /home/inspectb/public_html/dev/modules/newsletter/action.admin.php on line 27
+[19-Jul-2011 02:10:00] PHP Fatal error:  Call to undefined function _respone() in /home/inspectb/public_html/dev/modules/newsletter/action.admin.php on line 27
+[19-Jul-2011 02:23:02] PHP Fatal error:  Call to undefined function _respone() in /home/inspectb/public_html/dev/modules/newsletter/action.admin.php on line 28
+[19-Jul-2011 02:25:05] PHP Fatal error:  Call to undefined function _respone() in /home/inspectb/public_html/dev/modules/newsletter/action.admin.php on line 28
+[12-Apr-2012 01:46:51 UTC] PHP Warning:  in_array() expects parameter 2 to be array, integer given in /home/inspectb/public_html/templates_c/%%CD^CDC^CDCAEB43%%newsletter.popup.customize.tpl.php on line 57
+[12-Apr-2012 01:46:51 UTC] PHP Warning:  in_array() expects parameter 2 to be array, integer given in /home/inspectb/public_html/templates_c/%%CD^CDC^CDCAEB43%%newsletter.popup.customize.tpl.php on line 57
+[12-Apr-2012 01:46:51 UTC] PHP Warning:  in_array() expects parameter 2 to be array, integer given in /home/inspectb/public_html/templates_c/%%CD^CDC^CDCAEB43%%newsletter.popup.customize.tpl.php on line 57
+[12-Apr-2012 01:46:51 UTC] PHP Warning:  in_array() expects parameter 2 to be array, integer given in /home/inspectb/public_html/templates_c/%%CD^CDC^CDCAEB43%%newsletter.popup.customize.tpl.php on line 57
+[12-Apr-2012 01:48:17 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/inspectb/public_html/templates_c/%%CD^CDC^CDCAEB43%%newsletter.popup.customize.tpl.php on line 57
+[12-Apr-2012 01:48:17 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/inspectb/public_html/templates_c/%%CD^CDC^CDCAEB43%%newsletter.popup.customize.tpl.php on line 57
+[12-Apr-2012 01:48:17 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/inspectb/public_html/templates_c/%%CD^CDC^CDCAEB43%%newsletter.popup.customize.tpl.php on line 57
+[12-Apr-2012 01:48:17 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/inspectb/public_html/templates_c/%%CD^CDC^CDCAEB43%%newsletter.popup.customize.tpl.php on line 57
+[13-Apr-2012 08:12:32 UTC] PHP Warning:  usort() expects parameter 2 to be a valid callback, function 'function($a, $b) use($dir,$column) {
+      if ((float)$a[$column] && (float)$b[$column]){
+            if ($a[$column] == $b[$column]) $cmp = 0;
+            $cmp = $a[$column] > $b[$column]?1:-1;
+       }else{
+            $cmp = strcmp($a[$column], $b[$column]);
+       }
+       if ($dir == 'ASC') return $cmp;
+       return $cmp == 0?$cmp:-$cmp;
+    }' not found or invalid function name in /home/inspectb/public_html/modules/newsletter/action.admin.php on line 206
+[17-Apr-2012 04:19:59 UTC] PHP Warning:  usort() expects parameter 2 to be a valid callback, function 'function($a, $b) use($dir,$column) {
+      if ((float)$a[$column] && (float)$b[$column]){
+            if ($a[$column] == $b[$column]) $cmp = 0;
+            $cmp = $a[$column] > $b[$column]?1:-1;
+       }else{
+            $cmp = strcmp($a[$column], $b[$column]);
+       }
+       if ($dir == 'ASC') return $cmp;
+       return $cmp == 0?$cmp:-$cmp;
+    }' not found or invalid function name in /home/inspectb/public_html/modules/newsletter/action.admin.php on line 206
+[25-Apr-2012 03:38:36 UTC] PHP Warning:  usort() expects parameter 2 to be a valid callback, function 'function($a, $b) use($dir,$column) {
+          if ((float)$a[$column] && (float)$b[$column]){
+                if ($a[$column] == $b[$column]) $cmp = 0;
+                $cmp = $a[$column] > $b[$column]?1:-1;
+          }else{
+                $cmp = strcmp($a[$column], $b[$column]);
+          }
+            if ($dir == "ASC") return $cmp;
+          return $cmp == 0?$cmp:-$cmp;
+    }' not found or invalid function name in /home/inspectb/public_html/modules/newsletter/action.admin.php on line 208
+[25-Apr-2012 03:39:34 UTC] PHP Warning:  usort() expects parameter 2 to be a valid callback, function 'function($a, $b) use($dir,$column) {
+          if ((float)$a[$column] && (float)$b[$column]){
+                if ($a[$column] == $b[$column]) $cmp = 0;
+                $cmp = $a[$column] > $b[$column]?1:-1;
+          }else{
+                $cmp = strcmp($a[$column], $b[$column]);
+          }
+            if ($dir == "ASC") return $cmp;
+          return $cmp == 0?$cmp:-$cmp;
+    }' not found or invalid function name in /home/inspectb/public_html/modules/newsletter/action.admin.php on line 208
+[25-Apr-2012 03:44:55 UTC] PHP Warning:  usort() expects parameter 2 to be a valid callback, function 'function($a, $b) use($dir,$column) {
+          if ((float)$a[$column] && (float)$b[$column]){
+                if ($a[$column] == $b[$column]) $cmp = 0;
+                $cmp = $a[$column] > $b[$column]?1:-1;
+          }else{
+                $cmp = strcmp($a[$column], $b[$column]);
+          }
+            if ($dir == "ASC") return $cmp;
+          return $cmp == 0?$cmp:-$cmp;
+    }' not found or invalid function name in /home/inspectb/public_html/modules/newsletter/action.admin.php on line 207
+[25-Apr-2012 04:33:27 UTC] PHP Warning:  usort() expects parameter 2 to be a valid callback, function 'function($a, $b) use($dir,$column) {
+          if ((float)$a[$column] && (float)$b[$column]){
+                if ($a[$column] == $b[$column]) $cmp = 0;
+                else $cmp = $a[$column] > $b[$column]?1:-1;
+          }else{
+                $cmp = strcmp($a[$column], $b[$column]);
+          }
+            if ($dir == "ASC") return $cmp;
+          return $cmp == 0?$cmp:-$cmp;
+    })' not found or invalid function name in /home/inspectb/public_html/modules/newsletter/action.admin.php on line 207
+[25-Apr-2012 06:26:44 UTC] PHP Warning:  usort() expects parameter 2 to be a valid callback, function 'function($a, $b) use($dir,$column) {
+          if ((float)$a[$column] && (float)$b[$column]){
+                if ($a[$column] == $b[$column]) $cmp = 0;
+                else $cmp = $a[$column] > $b[$column]?1:-1;
+          }else{
+                $cmp = strcmp($a[$column], $b[$column]);
+          }
+            if ($dir == "ASC") return $cmp;
+          return $cmp == 0?$cmp:-$cmp;
+    }' not found or invalid function name in /home/inspectb/public_html/modules/newsletter/action.admin.php on line 207
+[21-May-2012 08:47:16 UTC] PHP Fatal error:  Cannot redeclare A_optionName() (previously declared in /home/inspectb/public_html/modules/agent/inc/agent.php:20) in /home/inspectb/public_html/modules/agent/inc/agent.php on line 32
+[21-May-2012 08:47:21 UTC] PHP Fatal error:  Cannot redeclare A_optionName() (previously declared in /home/inspectb/public_html/modules/agent/inc/agent.php:20) in /home/inspectb/public_html/modules/agent/inc/agent.php on line 32
+[21-May-2012 08:47:33 UTC] PHP Fatal error:  Cannot redeclare A_optionName() (previously declared in /home/inspectb/public_html/modules/agent/inc/agent.php:20) in /home/inspectb/public_html/modules/agent/inc/agent.php on line 32
+[26-May-2012 01:17:16 UTC] PHP Fatal error:  Cannot redeclare A_optionName() (previously declared in /home/inspectb/public_html/modules/agent/inc/agent.php:20) in /home/inspectb/public_html/modules/agent/inc/agent.php on line 32
+[26-May-2012 01:17:30 UTC] PHP Fatal error:  Cannot redeclare A_optionName() (previously declared in /home/inspectb/public_html/modules/agent/inc/agent.php:20) in /home/inspectb/public_html/modules/agent/inc/agent.php on line 32
+[26-May-2012 01:17:33 UTC] PHP Fatal error:  Cannot redeclare A_optionName() (previously declared in /home/inspectb/public_html/modules/agent/inc/agent.php:20) in /home/inspectb/public_html/modules/agent/inc/agent.php on line 32
+[26-May-2012 01:23:23 UTC] PHP Fatal error:  Cannot redeclare A_optionName() (previously declared in /home/inspectb/public_html/modules/agent/inc/agent.php:20) in /home/inspectb/public_html/modules/agent/inc/agent.php on line 32

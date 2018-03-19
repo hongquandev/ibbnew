@@ -1,0 +1,488 @@
+<?php
+//ini_set('display_errors', 1);
+//set_exception_handler('exception_handler');
+include_once ROOTPATH.'/modules/theblock/inc/background.php';
+global $property_entity_option_cls;
+/*
+$action = view-auction-list,
+		view-auction-detail,
+		view-sale-list,
+		view-sale-list
+*/
+
+//BEGIN FOR AUCTION SALE
+$auction_sale_ar = PEO_getAuctionSale();
+//END
+//print_r(date('Y-m-d h:m:d'));
+
+switch (@$actions[2]) {
+	case 'list':
+		//BEGIN PAGGING
+
+        $p = (int)restrictArgs(getQuery('p',0));
+		$p = $p <= 0 ? 1 : $p;
+        // BEGIN "Commercial" & "Residential" for Live Auction, Forthcoming Auction, Passed In and For Sale.
+        $page = restrictArgs(getParam('page','any'),'[^0-9A-Za-z_-]');
+        //print_r($page);
+        $kind_ar = PEO_getKindId();
+        $isKindTitleBar = false;
+        //print_r($page);
+        if($page == 'any')
+        {
+            //print_r('alo');
+            $kind_ar[$page] = ' 1 OR pro.kind = 2 ';
+            $isKindTitleBar = true;
+        }
+        $smarty->assign('isKindTitleBar',$isKindTitleBar);
+        $isSubpage = false;
+        if(!isset($kind_ar[$page]) OR $kind_ar[$page] == '')
+        {
+            //redirect(ROOTURL.'/notfound.html');
+			redirect('/notfound.html');
+        }else{
+            if(($page == "commercial" OR $page ==  "residential" ))
+            {
+                $isSubpage = true;
+            }
+        }
+
+        //END
+		//BEGIN SELECT LEN FOR PAGE
+		if (getPost('len',0) > 0) {
+			$_SESSION['len'] = (int)restrictArgs(getPost('len'));
+		}
+
+		if (isPost()) {
+			$_SESSION['property_kind'] = (int)restrictArgs(getPost('property_kind', 0));
+		}
+
+		$form_action = array('module' => 'property',
+							 'action' => '');
+
+		$auction_sale = $auction_sale_ar['auction'];
+		$wh_clause = array();
+		switch ($actions[1]) {
+			case 'auction':
+				$property_title_bar = 'ONLINE AUCTIONS';
+                $auction_type = getParam('auction_type','');
+                $property_title_bar = $auction_type == 'rental_auction' ? 'Rental Auctions' : 'Sale Auctions';
+                $auction_type_cond = '';
+                $auction_sale_options = PEO_getOptions('auction_sale',array());
+                if(strlen(trim($auction_type)) > 0){
+                    foreach($auction_sale_options as $code => $type){
+                        if(strtolower(trim(str_replace(' ','_',$type))) == strtolower(trim(str_replace(' ','_',$auction_type)))){
+                            $auction_type_cond = 'AND pro.auction_sale = '.$code;
+                            break;
+                        }
+                    }
+
+
+                }
+                $auction_sale = $auction_sale_ar['ebidda30'];
+                $wh_clause[] = ''.$auction_type_cond.'
+                                AND ((pro.confirm_sold = 0
+								        AND pro.stop_bid = 0
+								    ) OR (pro.confirm_sold = 1
+								        AND datediff(\''.date('Y-m-d H:i:s').'\', pro.end_time) < 365
+								        AND pro.stop_bid = 1
+								    ))
+								AND pro.end_time > pro.start_time
+								AND (pro.kind = '. $kind_ar[$page].')
+								AND pro.pay_status = '.Property::CAN_SHOW;
+
+				/*$entityOption = $property_entity_option_cls->getItem($auction_sale,'for_agent');
+                if ($entityOption == Property::AUCTION_CODE_AGENT){
+                    $wh_clause[] = 'AND (SELECT agtype.title
+                               FROM '.$agent_cls->getTable('agent_type')." AS agtype
+                               WHERE agtype.agent_type_id = agt.type_id) = 'agent'";
+                }*/
+                //print_r($wh_clause);
+				$form_action['action'] = 'view-auction-list';
+                $_SESSION['type_prev'] = 'auction';
+			break;
+            case 'passedin':
+                $auction_type = getParam('auction_type','');
+                $auction_type_cond = '';
+                $auction_sale_options = PEO_getOptions('auction_sale',array(),$_SESSION['agent']['type'] == 'agent'?1:0);
+                if(strlen(trim($auction_type)) > 0){
+                    foreach($auction_sale_options as $code => $type){
+                        if(strtolower(trim(str_replace(' ','_',$type))) == strtolower(trim(str_replace(' ','_',$auction_type)))){
+                            $auction_type_cond = 'AND pro.auction_sale = '.$code;
+                            break;
+                        }
+                    }
+                }
+				$property_title_bar = 'PASSED IN AUCTIONS';
+                $auction_sale = array($auction_sale_ar['ebidda30'],$auction_sale_ar['ebiddar'],$auction_sale_ar['auction'],$auction_sale_ar['bid2stay']);
+                $wh_clause[] = ' AND pro.auction_sale != ' . $auction_sale_ar['private_sale'] . '
+                                 '.$auction_type_cond.'
+                                 AND IF((SELECT agt_typ.title FROM ' . $property_cls->getTable('agent_type') . ' AS agt_typ
+                                         LEFT JOIN ' . $agent_cls->getTable() . ' AS agt ON agt.type_id = agt_typ.agent_type_id
+                                         WHERE pro.agent_id = agt.agent_id) = \'agent\' AND pro.auction_sale = '.$auction_sale_ar['auction'].'
+                                         ,1
+                                         ,(
+                                            (SELECT IF(ISNULL(max(bid.price)),0,max(bid.price))
+                                                FROM ' . $property_cls->getTable('bids') . ' AS bid
+                                                WHERE pro.property_id = bid.property_id)
+                                            <
+                                            (SELECT pro_term.value
+                                                FROM ' . $property_term_cls->getTable() . ' AS pro_term
+                                                LEFT JOIN ' . $auction_term_cls->getTable() . ' AS term
+                                                     ON pro_term.auction_term_id = term.auction_term_id
+                                                WHERE term.code = \'reserve\'
+                                                AND pro.property_id = pro_term.property_id )
+                                            )
+				                        OR(
+                                            pro.agent_id IN (SELECT bid.agent_id
+                                            FROM '.$property_cls->getTable('bids').' AS bid
+                                            WHERE pro.property_id = bid.property_id
+                                                  AND (SELECT IF(ISNULL(max(bid.price)),0,max(bid.price))
+                                                    FROM '.$property_cls->getTable('bids').' AS bid
+                                                    WHERE pro.property_id = bid.property_id) = bid.price
+                                            )
+                                            AND
+                                             ((SELECT IF(ISNULL(max(bid.price)),0,max(bid.price))
+                                            FROM '.$property_cls->getTable('bids').' AS bid
+                                            WHERE pro.property_id = bid.property_id)
+                                                >=
+                                            (SELECT pro_term.value
+                                            FROM '.$property_term_cls->getTable().' AS pro_term
+                                            LEFT JOIN '.$auction_term_cls->getTable().' AS term
+                                                 ON pro_term.auction_term_id = term.auction_term_id
+                                            WHERE term.code = \'reserve\'
+                                            AND pro.property_id = pro_term.property_id ))
+
+                                        )
+				                        )
+								AND pro.end_time >= pro.start_time
+								AND (pro.kind = '. $kind_ar[$page].')
+								AND (pro.stop_bid = 1 OR pro.end_time < \'' . date('Y-m-d H:i:s') . '\' )
+
+								AND pro.confirm_sold = ' . Property::SOLD_UNKNOWN . '
+								AND (SELECT agt_typ.title FROM ' . $property_cls->getTable('agent_type') . ' AS agt_typ
+                                     LEFT JOIN ' . $agent_cls->getTable() . ' AS agt ON agt.type_id = agt_typ.agent_type_id
+                                     WHERE pro.agent_id = agt.agent_id)
+                                    != \'theblock\'
+                                AND pro.pay_status = ' . Property::CAN_SHOW;
+
+                /*$wh_clause[] = ' AND pro.auction_sale != ' . $auction_sale_ar['private_sale'] . '
+                                 AND IF((SELECT agt_typ.title FROM ' . $property_cls->getTable('agent_type') . ' AS agt_typ
+                                         LEFT JOIN ' . $agent_cls->getTable() . ' AS agt ON agt.type_id = agt_typ.agent_type_id
+                                         WHERE pro.agent_id = agt.agent_id) = \'agent\' AND pro.auction_sale = '.$auction_sale_ar['auction'].'
+                                         ,1
+                                         ,((SELECT CASE
+                                                    WHEN pro.auction_sale != '.$auction_sale_ar['private_sale'].'
+                                                         AND ( date(pro.start_time) > \''.date('Y-m-d H:i:s').'\' OR isnull(max(bid.price)) ) THEN
+                                                        (SELECT pro_term.value
+                                                         FROM '.$property_cls->getTable('property_term').' AS pro_term
+                                                         LEFT JOIN '.$property_cls->getTable('auction_terms'). ' AS term
+                                                            ON pro_term.auction_term_id = term.auction_term_id
+                                                         WHERE term.code = \'auction_start_price\'
+                                                                AND pro.property_id = pro_term.property_id)
+                                                    WHEN auction_sale = '.$auction_sale_ar['private_sale'].' AND pro.price != 0 THEN pro.price
+                                                    WHEN auction_sale = '.$auction_sale_ar['private_sale'].' AND pro.price = 0 AND pro.price_on_application != 0 THEN pro.price_on_application
+                                                ELSE max(bid.price)
+                                                END
+                                         FROM bids AS bid WHERE bid.property_id = pro.property_id) + 0)
+                                         < (SELECT pro_term.value
+                                                FROM ' . $property_term_cls->getTable() . ' AS pro_term
+                                                LEFT JOIN ' . $auction_term_cls->getTable() . ' AS term
+                                                     ON pro_term.auction_term_id = term.auction_term_id
+                                                WHERE term.code = \'reserve\'
+                                                AND pro.property_id = pro_term.property_id )
+                                       )
+								AND pro.end_time > pro.start_time
+								AND (pro.kind = '. $kind_ar[$page].')
+								AND (pro.stop_bid = 1 OR pro.end_time < \'' . date('Y-m-d H:i:s') . '\' )
+								AND pro.confirm_sold = ' . Property::SOLD_UNKNOWN . '
+								AND pro.start_time <= \'' . date('Y-m-d H:i:s') . '\'
+								AND (SELECT agt_typ.title FROM ' . $property_cls->getTable('agent_type') . ' AS agt_typ
+                                     LEFT JOIN ' . $agent_cls->getTable() . ' AS agt ON agt.type_id = agt_typ.agent_type_id
+                                     WHERE pro.agent_id = agt.agent_id)
+                                    != \'theblock\'
+                                AND pro.pay_status = ' . Property::CAN_SHOW;*/
+
+				$form_action['action'] = 'view-passedin-list';
+                $_SESSION['type_prev'] = 'passedin';
+			break;
+			case 'forthcoming':
+                global $mobileBrowser;
+
+                if ($mobileBrowser){
+                    $property_title_bar = 'FORTHCOMING AUCTIONS';
+                }else{
+                    $property_title_bar = 'FORTHCOMING ONLINE AUCTIONS';
+                }
+
+                $auction_sale = $auction_sale_ar['ebidda30'];
+                $entityOption = $property_entity_option_cls->getItem($auction_sale,'for_agent');
+
+
+				$wh_clause[] = 'AND pro.confirm_sold = 0
+								AND pro.stop_bid = 0
+								AND (pro.kind = '. $kind_ar[$page].')
+								AND pro.end_time > pro.start_time
+								AND pro.start_time >= \''.date('Y-m-d H:i:s').'\'
+								AND pro.pay_status = '.Property::CAN_SHOW;
+                if ($entityOption == Property::AUCTION_CODE_AGENT){
+                    $wh_clause[] = 'AND (SELECT agtype.title
+                                   FROM '.$agent_cls->getTable('agent_type')." AS agtype
+                                   WHERE agtype.agent_type_id = agt.type_id) = 'agent'";
+                }
+				$form_action['action'] = 'view-forthcoming-list';
+                $_SESSION['type_prev'] = 'forthcoming';
+                $_SESSION['auction_type'] = $auction_sale;
+			break;
+            case 'live_agent':
+            case 'live_vendor':
+                $auction_sale_type = getParam('at','auction');
+                $auction_sale = $auction_sale_ar[$auction_sale_type];
+                $auction_option = PEO_getOptionById($auction_sale_ar[$auction_sale_type]);
+
+                $property_title_bar = 'LIVE '.strtoupper($auction_option['title']).' AUCTIONS';
+				$wh_clause[] = '
+				                AND (( 1
+								AND pro.confirm_sold = 0
+								AND pro.stop_bid = 0
+								) OR (
+								pro.end_time <= \''.date('Y-m-d H:i:s').'\'
+								AND pro.confirm_sold = 1
+								AND 1
+								AND pro.stop_bid = 1
+								AND 1
+								))
+								AND pro.end_time > pro.start_time
+								AND (pro.kind = '. $kind_ar[$page].')
+								AND pro.pay_status = '.Property::CAN_SHOW.$condition;;
+				$entityOption = $property_entity_option_cls->getItem($auction_sale,'for_agent');
+                if ($entityOption == Property::AUCTION_CODE_AGENT){
+                    $wh_clause[] = 'AND agt.type_id IN (SELECT agent_type_id AS at
+								                    FROM '.$agent_cls->getTable('agent_type').' AS at
+								                    WHERE at.title = \'agent\')';
+                }
+
+				$form_action['action'] = $action;
+                $_SESSION['type_prev'] = $actions[1];
+                $_SESSION['auction_type'] = $auction_sale;
+                break;
+            case 'forthcoming_agent':
+            case 'forthcoming_vendor':
+                $auction_sale_type = getParam('at','auction');
+                $auction_sale = $auction_sale_ar[$auction_sale_type];
+                $auction_option = PEO_getOptionById($auction_sale_ar[$auction_sale_type]);
+                global $mobileBrowser;
+
+                $title = $auction_sale == $auction_sale_ar['auction']?'AGENT':strtoupper($auction_option['title']);
+                if ($mobileBrowser){
+                    $property_title_bar = 'FORTHCOMING AUCTIONS';
+                }else{
+                    $property_title_bar = 'FORTHCOMING '.$title.' AUCTIONS';
+                }
+
+				$wh_clause[] = 'AND pro.confirm_sold = 0
+								AND pro.stop_bid = 0
+								AND (pro.kind = '. $kind_ar[$page].')
+								AND pro.end_time > pro.start_time
+								AND pro.start_time >= \''.date('Y-m-d H:i:s').'\'
+								AND pro.pay_status = '.Property::CAN_SHOW.$condition;;
+
+                $entityOption = $property_entity_option_cls->getItem($auction_sale,'for_agent');
+                if ($entityOption == Property::AUCTION_CODE_AGENT){
+                    $wh_clause[] = 'AND agt.type_id IN (SELECT agent_type_id AS at
+								                    FROM '.$agent_cls->getTable('agent_type').' AS at
+								                    WHERE at.title = \''.$atAr[1].'\')';
+                }
+				$form_action['action'] = $action;
+                $_SESSION['type_prev'] = $actions[1];
+                $_SESSION['auction_type'] = $auction_sale;
+			break;
+			case 'sale':
+                if($isSubpage)
+                {
+                    $_SESSION['property_kind'] = 0;
+					if (!isset($_SESSION['wh_str'])) {
+						$_SESSION['wh_str'] = ' AND pro.kind = '. $kind_ar[$page].' ';
+					} else {
+						$_SESSION['wh_str'] .= ' AND pro.kind = '. $kind_ar[$page].' ';
+					}
+                }
+				$auction_sale = $auction_sale_ar['private_sale'];
+
+				$property_title_bar = 'FOR SALE';
+                if($page == 'commercial')
+                {
+                    $property_title_bar = 'FOR SALE: COMMERCIAL';
+                }
+                if($page == 'residential')
+                {
+                    $property_title_bar = 'FOR SALE: RESIDENTIAL';
+                }
+				$form_action['action'] = 'view-sale-list';
+                $wh_clause[] = 'AND (pro.kind = '. $kind_ar[$page].') AND ((IF (pro.confirm_sold = 1  AND datediff(\''.date('Y-m-d H:i:s').'\', pro.sold_time) < 14 ,1,0) = 1)
+                                OR pro.confirm_sold = 0)';
+                //print_r($wh_clause);
+                $_SESSION['type_prev'] = 'sale';
+			break;
+			case 'search':
+				$form_action['action'] = 'search';
+			break;
+		}
+
+
+		$site_meta_description .=  ' '.$form_action['action'];
+
+		/*$wh_clause[] = 'AND IF (pro.auction_sale != '.$auction_sale_ar['private_sale'].'
+                                AND (SELECT IF (ISNULL(pro_term.value) OR pro_term.value = \'\',0,pro_term.value)
+                                     FROM '.$property_term_cls->getTable().' AS pro_term
+                                     LEFT JOIN '.$auction_term_cls->getTable().' AS term
+                                        ON pro_term.auction_term_id = term.auction_term_id
+                                     WHERE term.code = \'auction_start_price\'
+                                        AND pro.property_id = pro_term.property_id )
+                                AND  (SELECT IF (ISNULL(pro_term.value) OR pro_term.value = \'\',0,pro_term.value)
+                                     FROM '.$property_term_cls->getTable().' AS pro_term
+                                     LEFT JOIN '.$auction_term_cls->getTable().' AS term
+                                        ON pro_term.auction_term_id = term.auction_term_id
+                                     WHERE term.code = \'reserve\'
+                                        AND pro.property_id = pro_term.property_id )
+                                AND  IF((SELECT pro_term.value
+                                     FROM '.$property_term_cls->getTable().' AS pro_term
+                                     LEFT JOIN '.$auction_term_cls->getTable().' AS term
+                                        ON pro_term.auction_term_id = term.auction_term_id
+                                     WHERE term.code = \'auction_start_price\'
+                                        AND pro.property_id = pro_term.property_id )
+                                     >
+                                     (SELECT pro_term.value
+                                     FROM '.$property_term_cls->getTable().' AS pro_term
+                                     LEFT JOIN '.$auction_term_cls->getTable().' AS term
+                                        ON pro_term.auction_term_id = term.auction_term_id
+                                     WHERE term.code = \'reserve\'
+                                        AND pro.property_id = pro_term.property_id ),0,1)
+                                = 0, 0, 1) = 1';*/
+
+
+		//$wh_clause[] = is_array($auction_sale) && count($auction_sale) > 0?' AND pro.auction_sale IN('.implode(',',$auction_sale).')':' AND pro.auction_sale = '.$auction_sale;
+
+		if ($_SESSION['property_kind'] > 0) {
+			$wh_clause[] = 'AND pro.kind = '.(int)$_SESSION['property_kind'];
+		}
+		$smarty->assign('ul_cls', $ul_cls);
+
+		$form_action = '?'.http_build_query($form_action);
+        $_SESSION['where'] = 'list';
+
+		$len = isset($_SESSION['len']) ? $_SESSION['len'] : 9;
+        $pro_data = array();
+		$smarty->assign('ROOTURL', ROOTURL);
+		$smarty->assign('len', $len);
+		$smarty->assign('len_ar', PE_getItemPerPage());
+		$smarty->assign('form_action', $form_action);
+
+        //print_r($wh_clause);
+        $pro_data = Property_getList(' '.implode(' ',$wh_clause), $p, $len);
+
+		$smarty->assign('property_data', $pro_data );
+        $smarty->assign('agent_id', $_SESSION['agent']['id']);
+        $property_title_bar = Localizer::translate($property_title_bar);
+        $_SESSION['property_list_title_bar'] = $property_title_bar;
+		$smarty->assign('property_title_bar', $property_title_bar);
+		$smarty->assign('property_kind', $_SESSION['property_kind']);
+        $data_agent_info = $_SESSION['agent'];
+		if (is_array($data_agent_info) && count($data_agent_info) > 0) {
+			foreach($data_agent_info as $key => $data_a) {
+				$data_agent_info[$key] = str_replace("'",'',$data_a);
+			}
+		}
+
+        $smarty->assign('agent_info',$data_agent_info);
+		$smarty->assign('pag_link', parseRedirectUrl(@$_SERVER['REDIRECT_URL']));
+		$smarty->assign('pag_link_list', parseRedirectUrl(@$_SERVER['REDIRECT_URL']));
+		$smarty->assign('pag_link_grid', parseRedirectUrl(@$_SERVER['REDIRECT_URL']).'&mode=grid');
+	break;
+    case 'agent_detail':
+    break;
+
+	default://detail
+        ini_set('display_errors', 0);
+        $id = (int)restrictArgs(getParam('id', 0));
+        Report_propertyAdd($id);
+        $data = Property_getDetail($id);
+        if (is_array($data['info']) and $data['info']['agent_id'] > 0){
+             $bg_data = BG_getBackgroundForAgent($data['info']['agent_id']);
+        }
+        if (isset($_SESSION['is_showalert']) && $_SESSION['is_showalert'] == 1){
+            $smarty->assign('is_showalert',1);
+            unset($_SESSION['is_showalert']);
+        }
+        $smarty->assign('isSafari',isSafari());
+        $smarty->assign('bg_data',$bg_data);
+        $smarty->assign('printDetail', printDetail());
+        $user_viewer = 'guest-viewer-detail';
+        if(!empty($_SESSION['agent']['type'])){
+            $user_viewer = $_SESSION['agent']['type'].'-viewer-detail';
+        }
+        $smarty->assign('user_viewer', $user_viewer);
+	break;
+}
+
+//GET AGENT INFO
+$row = $agent_cls->getRow('agent_id = '.(int)$_SESSION['agent']['id']);
+if (is_array($row) and count($row) > 0) {
+	$agent_info = array('agent_id' => $_SESSION['agent']['id'],
+						'name' => $row['firstname'].' '.$row['lastname'],
+						'email' => $row['email_address'] ,
+						'telephone' => $row['telephone']);
+    foreach ($agent_info as $key => $value){
+        $agent_info[$key] = addslashes($value);
+    }
+	$smarty->assign('agent_info',array_merge($agent_info,$_SESSION['agent']));
+}
+//END
+$smarty->assign('agent_id', (int)@$_SESSION['agent']['id']);
+$smarty->assign('auto_property_id', (int)@$_SESSION['agent']['auto_property_id']);
+//$agent_info = $_SESSION['agent'];
+//$smarty->assign('agent_info',$agent_info);
+$smarty->assign('no_more_bids_msg',$config_cls->getKey('no_more_bids_msg'));
+if (isset($_SESSION['item_number']) && isset($_SESSION['full_info'])){
+    $smarty->assign('item_number',$_SESSION['item_number']);
+    unset($_SESSION['item_number']);
+    unset($_SESSION['full_info']);
+}
+function printDetail(){
+    $html = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                        "http://www.w3.org/TR/html4/loose.dtd">
+                <html>
+                <head>
+                    <title>'.SITE_TITLE.'</title>
+                    <link rel="stylesheet" type="text/css" href="/modules/general/templates/style/detail-print.css"/>
+                    <script type="text/javascript" src="/modules/general/templates/js/javascript.php"></script>
+                    <script type="text/javascript" src="/modules/property/templates/js/print.js"></script>
+                </head>
+                <body>
+                    <div class="wrapper-print">
+                        <div class="logo-box" style="float: left;">
+                            <a href=""><img src="/modules/general/templates/images/ibb-logo.png" alt="logo iBB"/></a>
+                        </div>
+                        <p style="float:right; margin-top:85px;">
+                            <a href="javascript:void(0)" id="prt" onclick="return window.print();">
+                                <img src="/modules/general/templates/images/Printer-icon.png" alt="" style="border:none" />
+                            </a>
+                        </p>
+                        <div class="clearthis"></div>
+                        {col-main}
+                    </div>
+                </body>
+                </html>';
+    return $html;
+}
+
+function isSafari(){
+    $browserAsString = $_SERVER['HTTP_USER_AGENT'];
+
+    if (strstr($browserAsString, " AppleWebKit/") && strstr($browserAsString, " Mobile/"))
+    {
+        return 1;
+    }
+
+    return 0;
+}
+?>

@@ -1,0 +1,10 @@
+.howitwork-intro {margin: 20px 0; border-top: solid 1px #e0e1dc; border-bottom: solid 1px #e0e1dc;color: #2E3440;font-weight: bold;font-size: 15px;line-height: 24px;}
+.howitwork-steps {}
+.howitwork-steps-container {}
+.howitwork-step-content {border: solid 1px #e0e1dc;margin-bottom: 15px;display: none;}
+.howitwork-step-content-content {padding: 10px;}
+.howitwork-steps-content-header {background-color: #2e3640;color: #ffffff;font-weight: bold;text-transform: uppercase;padding: 4px 10px;position: relative;}
+.howitwork-step {cursor: pointer;margin-bottom: 10px;}
+.howitwork-step-link {display: block;}
+.howitwork-wrapper {margin-bottom: 20px;padding: 0 12px;}
+a.close-link {position: absolute;top: 4px;right: 7px; color: #ddd; text-transform: lowercase;}

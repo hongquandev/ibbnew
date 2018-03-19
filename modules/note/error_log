@@ -1,0 +1,1 @@
+[04-Sep-2011 17:42:28] PHP Fatal error:  Call to undefined method Agent::getFullname() in /home/inspectb/public_html/dev/modules/note/action.admin.php on line 106

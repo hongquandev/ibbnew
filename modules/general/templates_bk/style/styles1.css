@@ -1,0 +1,385 @@
+/*-----------CUSTOME THEME1-----------*/
+.custom-theme1.col2-right-layout .col-main{
+    width: 620px;
+}
+.custom-theme1 .auctions-box .bar-title{
+    background-image: none;
+    border-top: 1px solid #e0e1dd ;
+    border-bottom: 1px solid #e0e1dd;
+    margin-left: 0;
+    width: 620px;
+    height: 21px;
+    padding: 3px 0;
+    margin-bottom: 9px;
+}
+.custom-theme1 .auctions-box .bar-title .pagging-search-list {
+    margin: 0;
+    margin-right: 30px !important;
+    line-height: 18px;
+}
+.custom-theme1 .auctions-box .bar-title h2 {
+    font-weight: bold;
+    font-size: 18px;
+    padding-top: 0;
+    color: #2f2f2f;
+    padding-left: 0;
+    margin-left: 0;
+}
+.custom-theme1 .auctions-box .bar-title .bar-filter .bar-title-view-top4 {
+    padding-top: 0;
+}
+/*PROPERTY LIST*/
+.custom-theme1 .hightlight-top-item {
+    float: left;
+    width: 610px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.custom-theme1 .hightlight-top-item-left {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+ }
+.custom-theme1 .hightlight-top-item-right span span {
+    color: white;
+    font-size: 15px;
+}
+.custom-theme1 .locat-list .pro-list-item {
+    background-color: white !important;
+}
+.custom-theme1 .locat-list .property-list-item:nth-child(2n) .hightlight-top-item{
+    background-color: #2e3640;
+}
+.custom-theme1 .locat-list .property-list-item:nth-child(2n+1) .hightlight-top-item{
+    background-color: #017db9;
+}
+.custom-theme1 .locat-list .pro-list-item .sr-new-info {
+    margin: 10px 0 20px 0;
+}
+.custom-theme1 .locat-list .pro-list-item .sr-new-info p {
+    color:#2f2f2f; font-size:15px;font-weight: normal;
+}
+.custom-theme1 .locat-list .pro-list-item {
+}
+.custom-theme1 .locat-list .pro-list-item .desc.desc-list{
+    min-height: 60px;
+}
+.custom-theme1 .locat-list .pro-list-item .title .title-span {
+    color:#2f2f2f; font-size:15px;
+}
+.custom-theme1 .tbl-info-item ul li .col-span-1{
+    color: #66b2e0;
+    font-size: 14px;
+    float: left;
+}
+.custom-theme1 .tbl-info-item ul li{
+    border: 0 none;
+    margin: 0;
+    list-style-type: none;
+    padding: 1px;
+    padding-left: 0;
+}
+.custom-theme1 .tbl-info-item ul li .col-span-2,.custom-theme1 .tbl-info-item ul li .col-span-2 a{
+    color: #a1a1a1 !important;
+    font-size: 14px !important;
+    float: left !important;
+    font-weight: normal !important;
+    padding-left: 5px !important;
+}
+.custom-theme1 .tbl-info-item ul li .col-span-2 .span-star{ float: left}
+.custom-theme1 .tbl-info-item ul li .col-span-2 .span-star .star-white{
+    float: left;
+}
+.custom-theme1 .locat-list .pro-list .i-info {
+    width: 290px !important;
+}
+.custom-theme1 .locat-list .pro-list .f-right.img {
+    width: 300px !important;
+    height: auto;
+}
+.custom-theme1 .img-big-watermark {
+    width: 300px !important;
+    height: 182px;
+}
+.auctions-box .pro-list .img, #live .locat-list .pro-list .img, #forthcoming .locat-list .pro-list .img, #sale .locat-list .pro-list .img {
+    background-image: none;
+}
+.custom-theme1 .pro-list .toolbar-img {
+    background-color: #e0e1dd;
+}
+.custom-theme1 .pro-list .toolbar-img .img-num{
+    float: none;
+    margin: 0;
+}
+.custom-theme1 .btn-list1 {
+    width: 300px;
+    float: left;
+}
+.custom-theme1 .btn-list1 button{
+    margin-right: 5px;
+    margin-left: 0;
+}
+.custom-theme1 .div-list-box {
+    width: auto;
+}
+
+
+/*PROPERTY GRID*/
+.custom-theme1 .auctions-box .auctions-list {
+    width: 620px;
+    margin-left: 0;
+}
+.custom-theme1 .auctions-box .auctions-list .auction-item {
+    padding: 0; height: auto;
+}
+.custom-theme1 .auctions-box .auctions-list .auction-item,
+.custom-theme1 .auctions-box .auctions-list .auction-item-highlight{
+    width: 300px !important;
+    border: 0 none !important;
+    background: none !important;
+}
+.custom-theme1 .auctions-box .auctions-list ul li.property-grid-item .hightlight-top-item{
+    float: none;
+    width: 290px;
+}
+.custom-theme1 .auctions-box .auctions-list ul li.property-grid-item {
+    padding: 0;
+    margin: 0;
+}
+.custom-theme1 .auctions-box .auctions-list ul li.property-grid-item:nth-child(2n){}
+.custom-theme1 .auctions-box .auctions-list ul li.property-grid-item:nth-child(2n+1){ margin-right: 20px;clear: both}
+.custom-theme1 .auctions-box .auctions-list ul li.property-grid-item:nth-child(2n) .hightlight-top-item{
+    background-color: #2e3640;
+}
+.custom-theme1 .auctions-box .auctions-list ul li.property-grid-item:nth-child(2n+1) .hightlight-top-item{
+    background-color: #017db9;
+}
+.custom-theme1 .auctions-box .auctions-list .hightlight-top-item-top {
+    color: white;
+    font-size: 15px;
+}
+.custom-theme1 .auctions-box .auctions-list .hightlight-top-item-bottom .price-bold {
+    color: white;
+    font-size: 15px;
+}
+.custom-theme1 .auctions-box .auctions-list .auction-item .auc-img-watermark {
+    padding: 0;
+    margin: 0;
+}
+.custom-theme1 .auctions-box .auctions-list .home_live_img {
+    background: none !important;
+    height: 182px !important;
+}
+.custom-theme1 .auctions-box .auctions-list .img-gird-box {
+    height: 182px !important;
+    width: 300px;
+    padding: 0;
+}
+.custom-theme1 .auctions-box .auctions-list .toolbar-img {
+    background-color: #e0e1dd;
+    float: left;
+    width: 100%;
+    padding: 4px 0;
+}
+.custom-theme1 .auctions-box .auctions-list .toolbar-img .toolbar-img-cont {
+    float: right;
+    width: 70px;
+}
+.custom-theme1 .auctions-box .auctions-list .toolbar-img .img-prev{
+    background-position: -2px -92px;
+    cursor: pointer;
+    margin-right: 3px;
+    padding: 3px 10px;
+}
+.custom-theme1 .auctions-box .auctions-list .toolbar-img .img-next{
+    background-position: -2px -113px;
+    cursor: pointer;
+    margin-right: 3px;
+    padding: 3px 10px;
+
+}
+.custom-theme1 .detail-icons-a {
+}
+.custom-theme1 .detail-icons-a span {
+    font-style: normal;
+}
+.custom-theme1 .detail-icons-b {
+    width: auto;
+    float: left;
+    clear: none;
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.custom-theme1 .detail-icons span.bed {
+    padding: 2px 30px 2px 0;
+    background-position: 100% -242px;
+    margin-right: 3px;
+    color: #017db9;
+    font-size: 15px;
+}
+.custom-theme1 .detail-icons span.bath{
+    color: #017db9;
+    font-size: 15px;
+}
+.custom-theme1 .detail-icons span.car{
+    color: #017db9;
+    font-size: 15px;
+}
+.custom-theme1 .auctions-box .auctions-list ul li.property-grid-item .tbl-info-item {
+    float: left;
+    margin-bottom: 25px;
+}
+.custom-theme1 .auctions-box .auctions-list ul li.property-grid-item .btn-view-wht {
+   margin: 10px 0;
+}
+/*--------PROPERTY DETAIL----------*/
+.custom-theme1 .property-box.property-box-detail{}
+.custom-theme1 .property-box.property-box-detail#property-box-d .bar-title{
+    background-image: none;
+    border-top: 1px solid #e0e1dd ;
+    border-bottom: 1px solid #e0e1dd;
+    margin-left: 0;
+    width: 620px;
+    height: 21px;
+    padding: 3px 0;
+    margin-bottom: 20px;
+}
+.custom-theme1 .property-box.property-box-detail#property-box-d .bar-title h2 .bar-title-backto {
+    padding-left: 15px;
+    background: url(../images/icons.png) -2px -304px no-repeat;
+}
+.custom-theme1 .property-box.property-box-detail#property-box-d .bar-title h2 {
+    font-weight: bold;
+    font-size: 18px;
+    padding-top: 0;
+    color: #2f2f2f;
+    padding-left: 0;
+    margin-left: 0;
+}
+.custom-theme1 .property-box.property-box-detail .property-detail .detail-2col .col1{
+    width: 100%;
+}
+.custom-theme1 .property-box.property-box-detail .pag-short .l-r-icons{
+    background-color: #e0e1dc;
+    width: 130px;
+    padding: 10px 0;
+}
+.custom-theme1 .property-box.property-box-detail .pag-short .l-r-icons .icons {
+    background: none;
+}
+.custom-theme1 .property-box.property-box-detail .pag-short .l-r-icons .icons a{
+    color: #7b7b85;
+}
+.custom-theme1 .property-box.property-box-detail .bar-title{
+    background-image: none;
+    border-top: 1px solid #e0e1dd ;
+    border-bottom: 1px solid #e0e1dd;
+    margin-left: 0;
+    width: 620px;
+    height: 21px;
+    padding: 3px 0;
+    margin-bottom: 9px;
+}
+.custom-theme1 .property-box.property-box-detail .hightlight-top-item{
+    background-color: #2e3640;
+}
+.custom-theme1 .property-box.property-box-detail .col1.f-left{}
+.custom-theme1 .property-box.property-box-detail .col1.f-left .a-left-right{
+    font-size: 15px; color: #2f2f2f;
+}
+.custom-theme1 .property-box.property-box-detail .col1.f-left .a-left-title{float: left}
+.custom-theme1 .property-box.property-box-detail .col1.f-left .a-right-visits{ float: right}
+.custom-theme1 .property-box.property-box-detail .col1.f-left .a-left-info{margin-top: 10px;float: left; width: 300px}
+.custom-theme1 .property-box.property-box-detail .col1.f-left .a-right-bids{ float: right;margin-top: 10px}
+.custom-theme1 .property-box.property-box-detail .col1.f-left .propertyid{
+    float: left;
+    margin-right: 15px;
+}
+.custom-theme1 .property-box.property-box-detail .col1.f-left {}
+.custom-theme1 .property-box.property-box-detail .col1.f-left .auction-info-box { font-size: 18px;margin-top: 30px}
+.custom-theme1 .property-box.property-box-detail .col1.f-left .auction-info-box .auc-time {
+    font-size: 18px;
+    color: #66b2e0;
+}
+.custom-theme1 .property-box.property-box-detail .col1.f-left .auction-info-box .bid {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2f2f2f;
+    text-transform: uppercase;
+}
+.custom-theme1 .property-box.property-box-detail .col1.f-left .auction-info-box .auc-bid {
+
+}
+.custom-theme1 .property-box.property-box-detail .col1.f-left .auction-info-box .lasted {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.custom-theme1 .property-box.property-box-detail .col1.f-left .auction-info-box .buttons-set {
+    padding: 0;
+    text-align: left;
+    float: left;
+}
+.custom-theme1 .property-box.property-box-detail .col1.f-left .auction-info-box .auc-actions {
+    padding: 0;
+    text-align: left;
+    float: none;
+    clear: both;
+    margin-bottom: 10px;
+}
+.custom-theme1 .property-box.property-box-detail .p-watermark-detail-big {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 465px;
+}
+.custom-theme1 .property-box.property-box-detail .img-list-box .img-list {
+    width: 590px;
+    height: 93px;
+}
+.custom-theme1 .property-box.property-box-detail #img-list-slide .item img {
+    width: 146px;
+    height: 93px;
+}
+.custom-theme1 .property-box.property-box-detail .property-desc {
+    margin-bottom: 15px;
+}
+.custom-theme1 .property-box.property-box-detail .property-desc .div-des-detail {
+    font-size: 15px !important;
+}
+.custom-theme1 .property-box.property-box-detail .property-detail .map {
+    width: 590px;
+    margin-top: 20px;
+    padding: 0;
+    border: 0 none;
+    background: none;
+}
+.custom-theme1 .property-box.property-box-detail .btn-print {
+    background: url('../images/btn-print.png') 0 0 no-repeat;
+    width: 45px; height: 24px;display: block; border: 0 none; cursor: pointer;
+    margin-right: 5px;
+}
+.custom-theme1 .property-box.property-box-detail .btn-email {
+    background: url('../images/btn-email.png') 0 0 no-repeat;
+    width: 50px; height: 24px;display: block;border: 0 none; cursor: pointer;
+    margin-right: 5px;
+}
+.custom-theme1 .property-box.property-box-detail .btn-make-an-ofer { width: 45px;margin-right: 5px;}
+.custom-theme1 .property-box.property-box-detail .btn-add-to-wtachlist {
+    margin-right: 5px;
+}
+.custom-theme1 .property-box.property-box-detail .btn-bid-reg{
+    margin-right: 5px;
+}
+.custom-theme1 .backtotop-cls {
+    text-align: center;
+    margin: 20px auto;
+}
+.custom-theme1 .back-to-top {
+    font-size: 18px;
+    color: #2e3540;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: normal;
+}

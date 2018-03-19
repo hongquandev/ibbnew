@@ -1,0 +1,4 @@
+[09-Feb-2011 18:14:40] PHP Fatal error:  Class 'Smarty' not found in /home/inspectb/public_html/dev/modules/contacts/index.php on line 3
+[09-Feb-2011 18:15:03] PHP Fatal error:  Call to a member function assign() on a non-object in /home/inspectb/public_html/dev/modules/contacts/lang/contactus.en.lang.php on line 23
+[07-Mar-2011 23:59:43] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'inspectb'@'localhost' (using password: NO) in /home/inspectb/public_html/dev/modules/contacts/createxml.php on line 23
+[07-Mar-2011 23:59:43] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/inspectb/public_html/dev/modules/contacts/createxml.php on line 23

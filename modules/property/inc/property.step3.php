@@ -1,0 +1,69 @@
+<?php
+$step = (int)getParam('step', 0);
+if (isSubmit()) {
+    $_SESSION['property']['step'] = $step;
+    $track = (int)getPost('track');
+    if ($track == 1) {
+        $message = 'Saved successfully.';
+        $property_cls->update(array('step' => $step), 'property_id = ' . $_SESSION['property']['id']);
+    } else {
+        redirect(ROOTURL . '/?module=' . $module . '&action=register&step=' . ($step + 1));
+    }
+}
+$photo_ar = PM_getPhoto($_SESSION['property']['id'], true, 300, 182, false);
+$photo_rows = array();
+$video_rows = array();
+if (is_array($photo_ar['photo_thumb']) && count($photo_ar['photo_thumb']) > 0) {
+    foreach ($photo_ar['photo_thumb'] as $key => $row) {
+        ${'photo_rows'}[$key] = $row;
+        ${'photo_rows'}[$key]['file_name'] = MEDIAURL . '/' . $row['file_name'];
+        ${'photo_rows'}[$key]['action'] = '/modules/property/action.php?action=delete-media&type=photo&media_id=' . $row['media_id'];
+    }
+}
+if ($config_cls->getKey('youtube_enable') == 1) {
+    $video_ar = PM_getYT($_SESSION['property']['id']);
+    if (is_array($video_ar['video']) && count($video_ar['video']) > 0) {
+        foreach ($video_ar['video'] as $key => $row) {
+            ${'video_rows'}[$key] = $row;
+            ${'video_rows'}[$key]['file_name'] = $row['file_name'];
+        }
+    }
+    $smarty->assign('is_yt', true);
+} else {
+    $smarty->assign('is_yt', false);
+    $video_ar = PM_getVideo($_SESSION['property']['id']);
+    if (is_array($video_ar['video']) && count($video_ar['video']) > 0) {
+        foreach ($video_ar['video'] as $key => $row) {
+            ${'video_rows'}[$key] = $row;
+            ${'video_rows'}[$key]['file_name'] = MEDIAURL . '/' . $row['file_name'];
+            ${'video_rows'}[$key]['action'] = '/modules/property/action.php?action=delete-media&type=video&media_id=' . $row['media_id'];
+            ${'video_rows'}[$key]['ext'] = strtolower(end(explode(".", ${'video_rows'}[$key]['file_name'])));
+        }
+    }
+}
+$row = $property_cls->getRow('SELECT pk.video_capacity
+							  FROM ' . $property_cls->getTable() . ' AS p, ' . $package_cls->getTable() . ' AS pk
+							  WHERE p.package_id = pk.package_id AND p.property_id = ' . $_SESSION['property']['id'], true);
+$data = array('photos' => $photo_rows,
+    'videos' => $video_rows,
+    'can_upload_photo' => PA_canUploadImage($_SESSION['property']['id']),
+    'can_upload_video' => PA_canUploadVideo($_SESSION['property']['id']));
+if (isset($row['video_capacity'])) {
+    $mb = (int)str_replace('mb', '', $row['video_capacity']);
+    $data['video_max_size'] = '; Max size:' . $mb . ' M';
+}
+//$photo_num = PK_getAttribute('photo_num', (int)@$_SESSION['property']['id']);
+$packageInfo = PA_getPackageByPropertyId($_SESSION['property']['id']);
+$photo_num = isset($packageInfo['photo_upload']) ? $packageInfo['photo_upload'] : 0;
+$smarty->assign($data);
+$smarty->assign('property_id', (int)@$_SESSION['property']['id']);
+//$smarty->assign('max_allow', $photo_num == 'all' ? $photo_num : $photo_num - count($photo_rows));
+$smarty->assign('max_allow', $photo_num);
+$smarty->assign('is_ie', (int)isIE());
+// test
+//$smarty->assign('is_ie', 1);
+//$smarty->assign('is_yt', false);
+if ($config_cls->getKey('youtube_enable') == 1 && !empty($client) && function_exists('ytCheckAndForm')) {
+    $smarty->assign('yt_form', ytCheckAndForm($client));
+}
+?>

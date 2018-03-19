@@ -1,0 +1,43 @@
+.common-questions h1 {
+
+    color: #359729;
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+ul.questions li span.title {
+    font-weight:bold;
+    font-size: 13px;
+}
+.brx {
+  /*border-top:1px dotted #D2D2D2;*/
+ 
+}
+.common-questions dl dd ul.questions li {
+    border-bottom: 1px dotted #D2D2D2;
+    list-style: none outside none;
+    padding: 15px 15px 15px 0px;
+}
+
+#ttr {
+    margin-left: 20px;
+    margin-top: -18px;
+}
+ul.questions li .content p {
+    margin-bottom: 10px;
+}
+
+ul.questions li {
+    /* background-color: #F1F0EC; */
+}
+.questions li.active {
+    background-color: #F1F0EC;
+}
+
+ul.questions li .content {
+    padding: 10px 10px 10px 30px;
+}
+.common-questions {
+	/*margin-left:20px; */
+}

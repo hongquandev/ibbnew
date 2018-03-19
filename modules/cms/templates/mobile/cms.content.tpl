@@ -1,0 +1,1 @@
+{include file = "cms.content.theme`$row.theme_id`.tpl"}

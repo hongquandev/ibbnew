@@ -1,0 +1,167 @@
+.rental-content {
+    margin: 20px 0 30px 0;
+    font-size: 18px;
+    color: black;
+    display: block;
+}
+.rental-step-title{
+    color: #39c;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+.rental-form-list {}
+.rental-row{
+    margin-bottom: 10px;
+    display: flex;
+}
+.rental-row label{
+    width: 15%;
+    text-align: left;
+    float: left;
+    line-height: 32px;
+}
+.rental-row .input-text{
+    border: 1px solid #000000;
+    padding: 5px;
+    height: 20px;
+    width: 50%;
+}
+.rental-rows{display: flex; margin-bottom: 10px;}
+.rental-rows label{
+    text-align: left;
+}
+.rental-rows .rental-row-file{
+    float: left;
+    width: 47%;
+    margin-right: 2%;
+}
+.rental-rows .rental-row-file:nth-child(2n){
+    margin-right: 0;
+}
+.file-box{
+    border: 1px solid #4d7cd6;
+    background-color: #5a9bd5;
+    height: 30px;
+    padding: 5px;
+    margin-top: 5px;
+}
+.file-box .file-button{
+    border: none;
+    background-color: #ffffff;
+    padding: 7px 20px;
+    margin-left: 10px;
+    color: #3B95CC;
+    font-weight: bold;
+}
+.file-box .file-action{
+    float: right;
+    line-height: 32px;
+    margin-right: 10px;
+    color: #ffffff;
+}
+.file-box .file-name{
+    line-height: 32px;
+    color: #ffffff;
+    margin-left: 10px;
+}
+.file-box .file-text{
+    text-align: center;
+    line-height: 32px;
+    color: #ffffff;
+    font-size: 20px;
+}
+.input-check {
+}
+.rental-link {
+    text-decoration: underline;
+}
+.file-box.btn-control{
+    cursor: pointer;
+    text-align: center;
+}
+.file-box.btn-control:hover{
+    background-color: #4d7cd6 ;
+}
+.fileWrap{position:relative;}
+/*
+
+input[type="checkbox"] { position: absolute; opacity: 0; z-index: -1; }
+input[type="checkbox"]+span { font: 16pt sans-serif; color: #000; }
+input[type="checkbox"]+span:before { font: 16pt FontAwesome; content: '\00f096'; display: inline-block; width: 16pt; padding: 2px 0 0 3px; margin-right: 0.5em; }
+input[type="checkbox"]:checked+span:before { content: '\00f046'; }
+input[type="checkbox"]:focus+span:before { outline: 1px dotted #aaa; }
+input[type="checkbox"]:disabled+span { color: #999; }
+input[type="checkbox"]:not(:disabled)+span:hover:before { text-shadow: 0 1px 2px #77F; }*/
+
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+    position: absolute;
+    left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+    content: '';
+    position: absolute;
+    left:0; top: -6px;
+    width: 30px; height: 30px;
+    border: 2px solid #4d7cd6;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+}
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+    content: '✔';
+    position: absolute;
+    top: 3px; left: 4px;
+    font-size: 18px;
+    line-height: 0.8;
+    color: #09ad7e;
+    transition: all .2s;
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+    transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+    opacity: 1;
+    transform: scale(1);
+}
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+    box-shadow: none;
+    border-color: #bbb;
+    background-color: #ddd;
+}
+[type="checkbox"]:disabled:checked + label:after {
+    color: #999;
+}
+[type="checkbox"]:disabled + label {
+    color: #aaa;
+}
+/* accessibility */
+[type="checkbox"]:checked:focus + label:before,
+[type="checkbox"]:not(:checked):focus + label:before {
+    border: 2px solid blue;
+}
+/* hover style just for information */
+label:hover:before {
+    border: 2px solid #4778d9!important;
+}
+span.sp-delete {
+    text-decoration: underline;
+    cursor: pointer;
+}

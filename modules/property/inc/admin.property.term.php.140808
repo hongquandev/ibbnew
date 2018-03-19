@@ -1,0 +1,252 @@
+<?php
+$data_ar= array();
+$auction_terms = AT_getTerms();
+if (is_array($auction_terms) and count($auction_terms)>0) {
+	foreach ($auction_terms as $key => $row) {
+		switch ($auction_terms[$key]['type']) {
+			case 'text':
+				$data_ar[$key] = array('id' => $key , 'parent_id' => $key,'value' => '');
+			break;
+			case 'checkbox':
+				$data_ar[$key] = array('id' => $key , 'parent_id' => $key,'value' => 0);
+			break;
+			case 'select':
+				if ((PE_isAuction($property_id,'ebiddar') || PE_isAuction($property_id,'bid2stay')) && in_array($auction_terms[$key]['code'],array('deposit_required','settlement_period','contract_and_deposit_timeframe'))){
+                    unset($auction_terms[$key]);
+                }else{
+                    $def_child_id = 0;
+                    $auction_terms[$key]['is_validate_zero'] = "validate-number-gtzero";
+                    $auction_terms[$key]['options'] = AT_getOptions($key,1,'ASC',PEO_getCodeAuctionSale($property_id));
+                    foreach($auction_terms[$key]['options'] as $index => $value)
+                    {
+                        if($index === 0){$auction_terms[$key]['is_validate_zero'] = ""; break;};
+                    }
+                    $childs = AT_getChildIds($key);
+                    if (is_array($childs) and count($childs) > 0) {
+                        $def_child_id = $childs[0];
+                    }
+                    $data_ar[$key] = array('id' => $def_child_id , 'parent_id' => $key,'value' => 0);
+                }
+			break;
+		}
+	}
+}
+$isBlock = PE_isTheBlock($property_id);
+$ofAgent = PE_isTheBlock($property_id,'agent');
+$isAuction = PE_isNormalAuction($property_id)?1:0;
+
+if (@$_SERVER['REQUEST_METHOD'] == 'POST') {//FOR POST
+	if (isset($_POST['fields']['term'])) {
+		foreach ($_POST['fields']['term'] as $key => $val) {
+			//$key is auction_term_id, we must hold $key with $type in ('text','checkbox')
+			//but have to change to child of $key with select
+			$type = AT_getType($key);
+			switch ($type) {
+				case 'text':
+					$data_ar[$key] = array('id' => $key , 'parent_id' => $key,'value' => $val);
+				break;
+				case 'checkbox':
+					$data_ar[$key] = array('id' => $key , 'parent_id' => $key,'value' => 1);
+				break;
+				case 'select':
+					$child_id = AT_getChildId($val, $key);
+					$data_ar[$key] = array('id' => $child_id , 'parent_id' => $key,'value' => $val);
+				break;
+			}
+		}
+		$error = false;
+        if (!$error)
+        { //print_r($data_ar['end_time']['value']);
+            $_end_time = $isBlock || ($ofAgent && $isAuction) ?'5000-01-01 00:00:00':$_POST['end_time'];
+            $end_time = new DateTime($_end_time);
+            $now = new DateTime(date('Y-m-d H:i:s'));
+            if ($end_time < $now) {
+                $error = true;
+                $message = 'End time must be larger than current time.';
+            }
+            if ($_POST['auction_start_price'] > $_POST['reserve']) {
+			$error = true;
+			$message = '"Auction start price" must be less than "Reserve price"';
+            }
+            if ($_POST['initial_auction_increments'] > $_POST['reserve']) {
+			$error = true;
+			$message = '"Initial auction increments" must be less than "Reserve price"';
+		    }
+            if($_end_time < $_POST['start_time']) {
+			$error = true;
+			$message = "Start time can't more than End time ";
+		    }
+            if (!isValidDateTime($_end_time)) {
+			$error = true;
+			$message = "End time is invalid.";
+		    }
+        }
+        if (!$error) {
+
+			foreach ($data_ar as $key => $info) {
+				//we do not search by "property_id and auction_term_parent_id" NOT by "property_id and auction_term_id"
+				$_code = AT_getCodeById((int)$info['parent_id']);
+				if ($_code == 'auction_date' && strlen($info['value']) > 8) {
+					$info['value'] = AT_date2db($info['value']);
+				}
+				
+				$row = $property_term_cls->getRow('property_id = '.$property_id.' AND auction_term_parent_id = '.(int)$info['parent_id']);
+				if ($property_term_cls->hasError()) {
+					
+				} else if (is_array($row) and count($row) > 0) {
+                    // Quan: check change Data when submit
+                    $term_row = $property_term_cls->getRow('property_id='.$property_id);
+                    $changed_data = false;
+					if (is_array($data) && count($data) > 0) {
+						foreach($data as $key => $val)
+						{
+							if(isset($term_row[$key]))
+							{
+								if($data[$key] != $term_row[$key])
+								{
+									$changed_data = true;
+									break;
+								}
+							}
+						}
+					}
+                    if($changed_data)
+                    $property_cls->update(array('last_update_time' => date('Y-m-d H:i:s')),'property_id='.$property_id);
+                    //end
+
+					$data = array('value' => $info['value']);
+					$property_term_cls->update($data,'property_id = '.$property_id.' AND auction_term_parent_id = '.(int)$info['parent_id']);
+
+				} else {
+					$data = array('property_id' => (int)$property_id,
+									'auction_term_id' => (int)$info['id'],
+									'auction_term_parent_id' => (int)$info['parent_id'],
+									'value' => $info['value']);
+					$property_term_cls->insert($data);
+					
+				}
+			}
+
+			/*
+			$data['end_time'] = $_POST['time']['year'].'-'.$_POST['time']['month'].'-'.$_POST['time']['day'].' '.
+				$_POST['time']['hour'].':'.$_POST['time']['minute'].':'.$_POST['time']['second'];
+			*/
+			if ($isBlock || ($ofAgent && $isAuction)){
+                $data['end_time'] = '5000-01-01';
+            }else{
+                if (isset($_POST['end_time'])) {
+                    $data['end_time'] = $_POST['end_time'];
+                } else {
+                    $data['end_time'] = date('Y-m-d H:i:s');
+                }
+            }
+
+			
+			if (isset($_POST['start_time'])) {
+				$data['start_time'] = $_POST['start_time'];
+			} else {
+				$data['start_time'] = date('Y-m-d H:i:s');
+			}
+
+			/*$property_cls->update(array('end_time' => $data['end_time']),'property_id = '.$property_id);
+			$property_cls->update(array('start_time'=>$data['start_time']),'property_id = '.$property_id);*/
+            $detail_data = array();
+            $detail_data['end_time'] =  $data['end_time'];
+            $detail_data['start_time'] = $data['start_time'];
+            if ($property_cls->isAdminCreated($property_id)){
+                $detail_data['pay_status'] = Property::PAY_COMPLETE;
+                $detail_data['agent_active'] = 1;
+            }
+            $property_cls->update($detail_data,'property_id = '.$property_id);
+			
+			if(is_array($row) and count($row) > 0) {
+			
+				// Write Logs					
+				$systemlog_cls->insert(array ('Updated' => date("Y-m-d H:i:s"), 
+						 'Action' => 'UPDATE',
+						 'Detail' => "UPDATE PROPERTY TERM ID :". $property_id, 
+						 'UserID' => $_SESSION['Admin']['EmailAddress'],
+						 'IPAddress' =>$_SERVER['REMOTE_ADDR']
+						  ));
+			} else {
+				
+					// Write Logs					
+					 $systemlog_cls->insert(array ('Updated' => date("Y-m-d H:i:s"), 
+							 'Action' => 'INSERT',
+							 'Detail' => "ADD PROPERTY TERM ID :". $property_id, 
+							 'UserID' => $_SESSION['Admin']['EmailAddress'],
+							 'IPAddress' =>$_SERVER['REMOTE_ADDR']
+							  ));	
+			}
+			
+			//FOR AUCTION PROPERTY
+			PE_updateHasAuctionTerm($property_id);
+			
+			if ($error || $property_term_cls->hasError()) {
+				$message = 'Error during processing.';
+			} else {
+				$message = 'Added / Edited successful.';
+				if ($_POST['next'] == 1) {
+					//redirect(ROOTURL.'/admin/?module='.$module.'&action=edit-option&property_id='.$property_id.'&token='.$token);
+                    redirect(ROOTURL.'/admin/?module='.$module.'&action=list&token='.$token);
+
+				}
+			}
+		}
+	}
+} 
+
+
+//
+$form_data = array();
+$row = $property_cls->getRow('property_id = '.$property_id);
+$is_auction = (PE_isAuction($property_id))?'true':'false';
+//$form_data['end_time'] = $form_data['start_time'] = '';
+if (is_array($row) && count($row) > 0) {
+	//extractDateTime($row['end_time'],$form_data);	
+	//$form_data['end_time'] = $row['end_time'];
+	//$form_data['start_time'] = $row['start_time'];
+    $readonly = '';
+    if($is_auction == 'true' && $row['pay_status']==Property::PAY_COMPLETE){
+        $st_time = new DateTime($row['start_time']);
+        $now = new DateTime(date('Y-m-d H:i:s'));
+        $readonly = ($st_time < $now || Property_datediff(date('Y-m-d H:i:s'),$row['start_time']))?'readonly="readonly"':'';
+    }
+    $form_data = $row;
+}
+if ($form_data['end_time'] == '0000-00-00 00:00:00') {
+	$form_data['end_time'] = '';
+}
+
+if ($form_data['start_time'] == '0000-00-00 00:00:00') {
+	$form_data['start_time'] = '';
+}
+
+if ((PE_isAuction($property_id,'ebiddar') || PE_isAuction($property_id,'ebidda30') || PE_isAuction($property_id,'bid2stay')) && $form_data['end_time'] == '5000-01-01 00:00:00'){
+        $form_data['end_time'] = '';
+    }
+
+$form_action = '?module='.$module.'&action=edit-term&property_id='.$property_id.'&token='.$token;
+
+
+
+$property_terms = PT_getTermsKeyParentId($property_id);
+if (!strlen($property_terms[(int)AT_getIdByCode('reserve')])){
+    $property_terms[(int)AT_getIdByCode('reserve')] = $row['price'];
+}
+
+$price[(int)AT_getIdByCode('auction_start_price')] = showPrice($property_terms[(int)AT_getIdByCode('auction_start_price')]);
+$price[(int)AT_getIdByCode('reserve')] = showPrice($property_terms[(int)AT_getIdByCode('reserve')]);
+//$cur_date =  date("m/d/Y", mktime(0, 0, 0, date('m'), date('d')+14, date('Y')));
+
+//$smarty->assign('cur_date',$cur_date);
+$smarty->assign('is_auction',$is_auction);
+$smarty->assign('readonly',$readonly);
+$smarty->assign('auction_terms',$auction_terms);
+$smarty->assign('property_terms',formUnescapes($property_terms));
+$smarty->assign('form_data',$form_data);
+$smarty->assign('price',$price);
+$smarty->assign('isBlock',$isBlock?1:0);
+$smarty->assign('ofAgent',$ofAgent?1:0);
+$smarty->assign('isAuction',$isAuction);
+?>

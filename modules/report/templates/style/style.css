@@ -1,0 +1,12 @@
+.banner_container{
+	position:absolute;
+	z-index:10;
+	padding:2px;
+	border:5px solid #CDCDCD;
+	background-color:#FFFFFF;
+}
+
+.tbl-messages{
+	/*display:none;*/
+}
+

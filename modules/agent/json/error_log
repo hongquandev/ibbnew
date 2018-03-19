@@ -1,0 +1,36 @@
+[21-Feb-2011 21:10:18] PHP Warning:  include_once(ROOTPATH/includes/model.class.php) [<a href='function.include-once'>function.include-once</a>]: failed to open stream: No such file or directory in /home/inspectb/public_html/dev/modules/agent/inc/agent.class.php on line 2
+[21-Feb-2011 21:10:18] PHP Warning:  include_once() [<a href='function.include'>function.include</a>]: Failed opening 'ROOTPATH/includes/model.class.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/inspectb/public_html/dev/modules/agent/inc/agent.class.php on line 2
+[21-Feb-2011 21:10:18] PHP Fatal error:  Class 'Model' not found in /home/inspectb/public_html/dev/modules/agent/inc/agent.class.php on line 3
+[21-Feb-2011 21:11:43] PHP Warning:  include_once(ROOTPATH/includes/model.class.php) [<a href='function.include-once'>function.include-once</a>]: failed to open stream: No such file or directory in /home/inspectb/public_html/dev/modules/agent/inc/agent.class.php on line 2
+[21-Feb-2011 21:11:43] PHP Warning:  include_once() [<a href='function.include'>function.include</a>]: Failed opening 'ROOTPATH/includes/model.class.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/inspectb/public_html/dev/modules/agent/inc/agent.class.php on line 2
+[21-Feb-2011 21:11:43] PHP Fatal error:  Class 'Model' not found in /home/inspectb/public_html/dev/modules/agent/inc/agent.class.php on line 3
+[21-Feb-2011 21:13:24] PHP Warning:  include_once(ROOTPATH/includes/model.class.php) [<a href='function.include-once'>function.include-once</a>]: failed to open stream: No such file or directory in /home/inspectb/public_html/dev/modules/agent/inc/agent.class.php on line 2
+[21-Feb-2011 21:13:24] PHP Warning:  include_once() [<a href='function.include'>function.include</a>]: Failed opening 'ROOTPATH/includes/model.class.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/inspectb/public_html/dev/modules/agent/inc/agent.class.php on line 2
+[21-Feb-2011 21:13:24] PHP Fatal error:  Class 'Model' not found in /home/inspectb/public_html/dev/modules/agent/inc/agent.class.php on line 3
+[21-Feb-2011 21:13:26] PHP Warning:  include_once(ROOTPATH/includes/model.class.php) [<a href='function.include-once'>function.include-once</a>]: failed to open stream: No such file or directory in /home/inspectb/public_html/dev/modules/agent/inc/agent.class.php on line 2
+[21-Feb-2011 21:13:26] PHP Warning:  include_once() [<a href='function.include'>function.include</a>]: Failed opening 'ROOTPATH/includes/model.class.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/inspectb/public_html/dev/modules/agent/inc/agent.class.php on line 2
+[21-Feb-2011 21:13:26] PHP Fatal error:  Class 'Model' not found in /home/inspectb/public_html/dev/modules/agent/inc/agent.class.php on line 3
+[21-Feb-2011 21:14:27] PHP Warning:  require(../../configs/config.inc.php) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/inspectb/public_html/dev/modules/agent/json/agent.notification.json.php on line 2
+[21-Feb-2011 21:14:27] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required '../../configs/config.inc.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/inspectb/public_html/dev/modules/agent/json/agent.notification.json.php on line 2
+[12-May-2012 02:39:20 UTC] PHP Fatal error:  Class 'Model' not found in /home/inspectb/public_html/modules/agent/inc/agent.class.php on line 2
+[12-May-2012 02:41:24 UTC] PHP Fatal error:  Cannot use [] for reading in /home/inspectb/public_html/modules/agent/json/agent.notification.json.php on line 21
+[12-May-2012 02:46:52 UTC] PHP Fatal error:  Class 'Model' not found in /home/inspectb/public_html/modules/agent/inc/agent.class.php on line 2
+[12-May-2012 02:56:04 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/inspectb/public_html/modules/agent/json/agent.notification.json.php on line 22
+[12-May-2012 02:59:41 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/inspectb/public_html/modules/agent/json/agent.notification.json.php on line 17
+[26-Sep-2012 09:54:26 UTC] PHP Fatal error:  Call to undefined function formUnescape() in /home/inspectb/public_html/includes/model.class.php on line 136
+[27-Sep-2012 04:46:03 UTC] PHP Fatal error:  Call to undefined function formUnescape() in /home/inspectb/public_html/includes/model.class.php on line 136
+[09-Apr-2013 04:36:05 UTC] PHP Fatal error:  Call to undefined function formUnescape() in /home/inspectb/public_html/includes/model.class.php on line 136
+[27-May-2013 01:31:37 UTC] PHP Fatal error:  Call to undefined function formUnescape() in /home/inspectb/public_html/includes/model.class.php on line 136
+[27-May-2013 01:31:37 UTC] PHP Fatal error:  Call to undefined function formUnescape() in /home/inspectb/public_html/includes/model.class.php on line 136
+[29-May-2013 06:40:03 UTC] PHP Fatal error:  Call to undefined function formUnescape() in /home/inspectb/public_html/includes/model.class.php on line 136
+[29-May-2013 07:22:18 UTC] PHP Fatal error:  Call to undefined function formUnescape() in /home/inspectb/public_html/includes/model.class.php on line 136
+[29-May-2013 07:22:25 UTC] PHP Fatal error:  Call to undefined function formUnescape() in /home/inspectb/public_html/includes/model.class.php on line 136
+[29-May-2013 07:22:45 UTC] PHP Fatal error:  Call to undefined function formUnescape() in /home/inspectb/public_html/includes/model.class.php on line 136
+[29-May-2013 07:25:38 UTC] PHP Fatal error:  Call to undefined function formUnescape() in /home/inspectb/public_html/includes/model.class.php on line 136
+[29-May-2013 07:29:42 UTC] PHP Fatal error:  Call to undefined function formUnescape() in /home/inspectb/public_html/includes/model.class.php on line 136
+[29-May-2013 07:30:14 UTC] PHP Fatal error:  Call to undefined function formUnescape() in /home/inspectb/public_html/includes/model.class.php on line 136
+[29-May-2013 07:30:59 UTC] PHP Fatal error:  Call to undefined function formUnescape() in /home/inspectb/public_html/includes/model.class.php on line 136
+[29-May-2013 07:32:00 UTC] PHP Fatal error:  Call to undefined function formUnescape() in /home/inspectb/public_html/includes/model.class.php on line 136
+[29-May-2013 07:32:45 UTC] PHP Fatal error:  Call to undefined function formUnescape() in /home/inspectb/public_html/includes/model.class.php on line 136
+[29-May-2013 07:35:34 UTC] PHP Fatal error:  Call to undefined function formUnescape() in /home/inspectb/public_html/includes/model.class.php on line 136
+[29-May-2013 07:36:19 UTC] PHP Fatal error:  Call to undefined function formUnescape() in /home/inspectb/public_html/includes/model.class.php on line 136

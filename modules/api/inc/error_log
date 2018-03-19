@@ -1,0 +1,1 @@
+[22-Nov-2012 09:44:26 UTC] PHP Fatal error:  Call to undefined function restrictArgs() in /home/inspectb/public_html/modules/api/inc/report.bid.php on line 2

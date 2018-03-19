@@ -1,0 +1,336 @@
+/*Agent*/
+	/*admin.agent.bar.tpl*/
+	/*admin.agent.ccdetail.tpl*/
+	/*admin.agent.company.tpl*/
+	/*admin.agent.lawyer.tpl*/
+	/*admin.agent.legalcontact.tpl*/
+	/*admin.agent.list.tpl*/
+	/*admin.agent.note.tpl*/
+	/*admin.agent.note2.tpl*/
+	/*admin.agent.personal.tpl*/
+	/*admin.agent.search.tool.tpl*/
+	/*admin.agent.tpl*/
+	/*agent.account.tpl*/
+	/*agent.auction.tpl*/
+	/*agent.comment.tpl*/
+	/*agent.company.tpl*/
+	/*agent.confirm.tpl*/
+	/*agent.contact.tpl*/
+	/*agent.creditcard.tpl*/
+	/*agent.dashboard.tpl*/
+	/*agent.finish_register.tpl*/
+	/*agent.forgot.tpl*/
+	/*agent.lawyer.tpl*/
+	/*agent.list.partner.tpl*/
+	/*agent.list.tpl*/
+	/*agent.login.tpl*/
+	/*agent.logout.tpl*/
+	/*agent.message.tpl*/
+	/*agent.notification.tpl*/
+	/*agent.partner.side.right.tpl*/
+	/*agent.personal.tpl*/
+	/*agent.property.tpl*/
+	/*agent.property_bids.grid.tpl*/
+	/*agent.property_bids.list.tpl*/
+	/*agent.property_bids.tpl*/
+	/*agent.register.right.tpl*/
+	/*agent.register.step1.tpl*/
+	/*agent.register.step2.tpl*/
+	/*agent.register.step3.tpl*/
+	/*agent.register.step4.tpl*/
+	/*agent.register.step5.tpl*/
+	/*agent.register.tpl*/
+	/*agent.report.popup.tpl*/
+	/*agent.report.tpl*/
+	/*agent.side.right.tpl*/
+	/*agent.tpl*/
+	/*agent.view.tpl*/
+	/*agent.watchlist.grid.tpl*/
+	/*agent.watchlist.list.tpl*/
+	/*agent.watchlist.tpl*/
+	/*partner.view.grid.tpl*/
+	/*partner.view.list.tpl*/
+	/*partner.view.top-bar.tpl*/
+/*Banner*/
+	/*adbanner.tpl*/
+	/*admin.banner.bar.tpl*/
+	/*admin.banner.search.tool.tpl*/
+	/*admin.banner.tpl*/
+	/*banner.add.tpl*/
+	/*banner.edit.tpl*/
+	/*banner.formAdd.tpl*/
+	/*banner.formList.tpl*/
+	/*banner.formUpdate.tpl*/
+	/*banner.listPage.tpl*/
+	/*banner.property.list.tpl*/
+	/*banner.search.list.tpl*/
+	/*banner.tpl*/
+	/*banner.view.tpl*/
+	/*banner_view_auction_sale.tpl*/
+	/*Calendar*/
+	/*calendar.form.grid.tpl*/
+	/*calendar.form.tpl*/
+	/*calendar.popup.tpl*/
+	/*calendar.tpl*/
+	/*calendar.view.grid.tpl*/
+/*Cms*/
+	/*admin.addPage.tpl*/
+	/*admin.cms.bar.tpl*/
+	/*admin.cms.search.tool.tpl*/
+	/*admin.cms.tpl*/
+	/*admin.listPage.tpl*/
+	/*admin.updatePage.tpl*/
+	/*cms.faq.tpl*/
+	/*cms.landing.tpl*/
+	/*cms.listPage.tpl*/
+	/*cms.tpl*/
+	/*cms.view.detail.tpl*/
+	/*Comment*/
+	/*admin.comment.bar.tpl*/
+	/*admin.comment.edit.tpl*/
+	/*admin.comment.list.tpl*/
+	/*admin.comment.search.tool.tpl*/
+	/*admin.comment.tpl*/
+/*Config*/
+	/*admin.config.bar.tpl*/
+	/*admin.config.notification.tpl*/
+	/*admin.config.tpl*/
+	/*Configuration*/
+	/*admin.configuration.bar.tpl*/
+	/*admin.configuration.calendar.tpl*/
+	/*admin.configuration.captcha.tpl*/
+	/*admin.configuration.email.tpl*/
+	/*admin.configuration.facebook.tpl*/
+	/*admin.configuration.general.tpl*/
+	/*admin.configuration.google.tpl*/
+	/*admin.configuration.notification.tpl*/
+	/*admin.configuration.payment.tpl*/
+	/*admin.configuration.sms.tpl*/
+	/*admin.configuration.tpl*/
+/*Contacts*/
+	/*admin.addcontact.tpl*/
+	/*admin.contacts.tpl*/
+	/*contacts.addcontact.tpl*/
+	/*contacts.tpl*/
+	/*Contentfag*/
+	/*admin.contentfaq.bar.tpl*/
+	/*admin.contentfaq.manager.tpl*/
+	/*admin.contentfaq.tpl*/
+	/*contentfaq.addcontent.tpl*/
+	/*contentfaq.formadd.tpl*/
+	/*contentfaq.formlist.tpl*/
+	/*contentfaq.formupdate.tpl*/
+	/*contentfaq.listfaq.tpl*/
+	/*contentfaq.tpl*/
+/*Email_template*/
+	/*contact-vendor.tpl*/
+/*Emailalert*/
+	/*admin.emailalert.list.tpl*/
+	/*admin.emailalert.search.tool.tpl*/
+	/*admin.emailalert.tpl*/
+	/*emailalert.add.tpl*/
+	/*emailalert.edit.tpl*/
+	/*emailalert.tpl*/
+	/*emailalert.view.find.tpl*/
+	/*emailalert.view.tpl*/
+/*Emailenquired*/
+	/*admin.emailenquired.tpl*/
+	/*emailenquired.formList.tpl*/
+	/*emailenquired.tpl*/
+/*Faq*/
+	/*admin.faq.bar.tpl*/
+	/*admin.faq.manager.tpl*/
+	/*admin.faq.tpl*/
+	/*faq.addcontent.tpl*/
+	/*faq.formadd.tpl*/
+	/*faq.formlist.tpl*/
+	/*faq.formupdate.tpl*/
+	/*faq.listfaq.tpl*/
+	/*faq.tpl*/
+	/*Fb_tw*/
+
+/*General*/
+	/*admin.footer.tpl*/
+	/*admin.general.tpl*/
+	/*admin.header.tpl*/
+	/*admin.login.tpl*/
+	/*agent.banner.right.tpl*/
+	/*bid_history.tpl*/
+	/*footer.tpl*/
+	/*general.tpl*/
+	/*header.tpl*/
+	/*partner.quicksearch.login.tpl*/
+	/*partner.quicksearch.tpl*/
+	/*quicksearch.tpl*/
+	/*side.right.tpl*/
+/*Media*/
+	/*admin.media.popup.tpl*/
+	/*media.list.tpl*/
+	/*media.popup.tpl*/
+/*News*/
+	/*admin.news.form.tpl*/
+	/*admin.news.list.tpl*/
+	/*admin.news.tpl*/
+/*Newsletter*/
+	/*admin.newsletter.tpl*/
+	/*newsletter.edit.tpl*/
+	/*newsletter.popup.customize.tpl*/
+	/*newsletter.sendmail.tpl*/
+	/*newsletter.tpl*/
+	/*newsletter.unsubscribe.tpl*/
+/*Note*/
+	/*admin.note.bar.tpl*/
+	/*admin.note.edit.tpl*/
+	/*admin.note.list.tpl*/
+	/*admin.note.search.tool.tpl*/
+	/*admin.note.tpl*/
+/*Option*/
+	/*admin.option.bar.tpl*/
+	/*admin.option.contact_method.tpl*/
+	/*admin.option.security_question.tpl*/
+	/*admin.option.tpl*/
+	/*Pagestatistics*/
+	/*admin.listsview.tpl*/
+	/*admin.pagestatistics.search.tool.tpl*/
+	/*admin.pagestatistics.tpl*/
+	/*admin.searchpage.tpl*/
+	/*Permission*/
+	/*admin.permission.bar.tpl*/
+	/*admin.permission.edit.tpl*/
+	/*admin.permission.tpl*/
+/*Property*/
+	/*admin.property.bar.tpl*/
+	/*admin.property.comment.list.tpl*/
+	/*admin.property.comment.tpl*/
+	/*admin.property.detail.tpl*/
+	/*admin.property.detail2.tpl*/
+	/*admin.property.document.tpl*/
+	/*admin.property.list.tp*/
+	/*admin.property.media.tpl*/
+	/*admin.property.note.list.tpl*/
+	/*admin.property.note.tpl*/
+	/*admin.property.option.tpl*/
+	/*admin.property.rating.tpl*/
+	/*admin.property.search.tool.tpl*/
+	/*admin.property.term.tpl*/
+	/*admin.property.tpl*/
+	/*partner.display.center.tpl*/
+	/*partner.display.left.tpl*/
+	/*property.auto-bid.popup.tpl*/
+	/*property.bid-history.popup.grid.tpl*/
+	/*property.bid-history.popup.tpl*/
+	/*property.comment.tpl*/
+	/*property.confirm.tpl*/
+	/*property.home.auction.forthcoming.tpl*/
+	/*property.home.auction.live.tpl*/
+	/*property.home.feature.tpl*/
+	/*property.home.focus.tpl*/
+         .focus-owner-block {
+        background: url('/modules/general/templates/images/owner-theblock.png') no-repeat scroll 0 0 transparent;
+        position: absolute;
+        z-index: 3;
+        width: 350px; height: 80px; top: 119px; right: -16px;
+
+        }
+        .focus-owner-block .title
+        {
+            padding-top: 41px;
+            padding-left: 40px;
+            padding-right: 7px;
+            text-align: center;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: bold;
+
+        }
+	/*property.make-an-offer.popup.tpl*/
+	/*property.register.right.tpl*/
+	/*property.register.step1.tpl*/
+	/*property.register.step2.tpl*/
+	/*property.register.step3.tpl*/
+	/*property.register.step4.tpl*/
+	/*property.register.step5.tpl*/
+	/*property.register.step6.tpl*/
+	/*property.register.step7.tpl*/
+	/*property.register.step8.tpl*/
+	/*property.register.tpl*/
+	/*property.search.partner.tpl*/
+	/*property.search.tpl*/
+	/*property.send-friend.popup.tpl*/
+	/*property.tpl*/
+	/*property.view.auction.grid.tpl*/
+	/*property.view.auction.list.tpl*/
+	/*property.view.detail.tpl*/
+	/*property.view.forthcoming.grid.tpl*/
+	/*property.view.forthcoming.list.tpl*/
+	/*property.view.sale.grid.tpl*/
+	/*property.view.sale.list.tpl*/
+	/*property.view.search.advance.tpl*/
+	/*property.view.top-bar.tpl*/
+	/*property.view.tpl*/
+	/*property.view.tv.show.tpl*/
+	/*property.viewmore.doc.tpl*/
+	/*property.viewmore.media.tpl*/
+	/*property.viewmore.popup.tpl*/
+	/*property.viewmore.popup2.tpl*/
+	/*property.viewmore.rating.tpl*/
+	/*property.viewmore.term.tpl*/
+	/*property.viewmore.top-bar.tpl*/
+	/*search.view.grid.tpl*/
+	/*search.view.list.tpl*/
+	/*search.view.top-bar.tpl*/
+	/*searchpartner.viewmode.list.tpl*/
+/*Propertystatistics*/
+	/*admin.propertystatistics.tpl*/
+	/*admin.searchpage.tpl*/
+	/*admin.viewlistproperty.tpl*/
+/*Report*/
+	/*admin.report.agent.search.tool.tpl*/
+	/*admin.report.agent.tpl*/
+	/*admin.report.banner.click.tpl*/
+	/*admin.report.banner.tpl*/
+	/*admin.report.banner.view.tpl*/
+	/*admin.report.email_alert.tpl*/
+	/*admin.report.email_enquire.tpl*/
+	/*admin.report.page.tpl*/
+	/*admin.report.popup.tpl*/
+	/*admin.report.price_range.tpl*/
+	/*admin.report.property.tpl*/
+	/*admin.report.tpl*/
+/*Role*/
+	/*admin.role.bar.tpl*/
+	/*admin.role.edit.tpl*/
+	/*admin.role.list.tpl*/
+	/*admin.role.tpl*/
+	/*Systemlog*/
+/*admin.lists.tpl*/
+	/*admin.systemlog.tpl*/
+/*Tab*/
+	/*admin.tab.bar.tpl*/
+	/*admin.tab.edit.tpl*/
+	/*admin.tab.list.tpl*/
+	/*admin.tab.search.tool.tpl*/
+	/*admin.tab.tpl*/
+/*User*/
+	/*admin.user.bar.tpl*/
+	/*admin.user.edit.tpl*/
+	/*admin.user.list.tpl*/
+	/*admin.user.myaccount.tpl*/
+	/*admin.user.search.tool.tpl*/
+	/*admin.user.tpl*/
+	/*Users*/
+	/*admin.changepassword.tpl*/
+	/*admin.users.add.tpl*/
+	/*admin.users.edit.tpl*/
+	/*admin.users.list.tpl*/
+	/*admin.users.tpl*/
+	/*users.edit.tpl*/
+	/*users.list.tpl*/
+	/*users.register.right.tpl*/
+	/*users.register.step1.tpl*/
+	/*users.register.step2.tpl*/
+	/*users.register.step3.tpl*/
+	/*users.register.step4.tpl*/
+	/*users.register.step5.tpl*/
+	/*users.register.tpl*/
+	/*users.tpl*/

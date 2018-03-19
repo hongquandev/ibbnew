@@ -1,0 +1,99 @@
+.jPanelMenu-panel {
+    -moz-box-shadow: 0 0 25px #222;
+    -webkit-box-shadow: 0 0 25px #222;
+    box-shadow: 0 0 25px #222;
+    -webkit-overflow-scrolling: touch;
+}
+
+#jPanelMenu-menu li {
+    list-style: none;
+    border-bottom: 1px solid #ffffff
+}
+
+#jPanelMenu-menu li a.level-1 {
+    float: left;
+    width: 67%;
+}
+
+#jPanelMenu-menu li a {
+    font-weight: 700;
+    display: block;
+    padding: 10px 5%;
+    /*    border-top: 1px solid #484848;
+        border-bottom: 1px solid #2e2e2e;*/
+    text-decoration: none;
+    /*text-shadow: 0 -1px 2px #222;*/
+    color: #f7f7f7;
+    font-size: 17px;
+    font-family: ProximaNova-SemiBold;
+}
+
+#jPanelMenu-menu li:hover,
+#jPanelMenu-menu li a:hover,
+#jPanelMenu-menu li.nav-show a { /*background: #787F89 !important*//*color:black;*//*text-shadow: 0 0 0 #222;*/
+
+}
+#jPanelMenu-menu li ul.sub-nav{ background-color: #ffFFFF;}
+#jPanelMenu-menu li ul.sub-nav li{
+
+}
+#jPanelMenu-menu li ul.sub-nav li a{
+    color: black;
+}
+#jPanelMenu-menu li.first a:hover {
+    background: #787F89 !important;
+    color: white
+}
+
+#jPanelMenu-menu li.first a {
+    padding-left: 30px;
+    background: rgb(238, 236, 232);
+    color: #ffffff; /*text-shadow: 0 1px 1px rgb(151, 151, 151);*/
+}
+
+#jPanelMenu-menu .block .title {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ffFFFF;
+    border-bottom: 1px solid #011F2E;
+    font-size: 19px;
+    padding: 10px;
+}
+
+#jPanelMenu-menu .block.first .title,
+#jPanelMenu-menu .block.first {
+    padding-top: 10px !important
+}
+
+#jPanelMenu-menu {
+    /*background: #017DB9;*/
+    background: rgb(46,52,64);
+    text-transform: uppercase;
+}
+
+#jPanelMenu-menu .block ul {
+    border-top: 2px solid #ffffff;
+}
+
+.log-out {
+    background: url('../images/icon-account.png') 100% -40px no-repeat;
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.block.account h1 {
+    color: #F2AF27;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.icon-nav {
+    float: right;
+    font-size: 20px;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+}

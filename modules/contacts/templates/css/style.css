@@ -1,0 +1,43 @@
+#contact-wrapper {
+	/*width:800px;*/
+	/* border:1px solid #e2e2e2 */;
+	/*	background:#f1f1f1; */
+	padding:7px;
+}
+#contact-wrapperx {
+	width:800px; 
+	padding:20px;
+	background-color: #EFF5EA;
+    /* background-image: url("../images/i_msg-success.gif"); */
+    border-color: #446423;
+	font-family:Georgia,Times New Roman,Times,serif;
+    color: #980000;
+	border-style: solid !important;
+    border-width: 1px !important;
+}
+#contact-wrapper div {
+	clear:both;
+	margin:1em 0;
+}
+#contact-wrapper label {
+	display:block;
+	float:none;
+	width:auto;
+	font-size:12px;
+}
+form#contactform input {
+	/* border-color:#B7B7B7 #E8E8E8 #E8E8E8 #B7B7B7; 
+	border-style:solid;
+	border-width:1px;
+	padding:5px;
+	color:#333;
+	*/
+}
+
+
+#contact-wp
+{
+
+}
+
+

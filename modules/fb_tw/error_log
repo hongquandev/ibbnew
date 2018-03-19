@@ -1,0 +1,1 @@
+[23-Jun-2011 23:46:31] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'username'@'localhost' (using password: YES) in /home/inspectb/public_html/dev/modules/fb_tw/config/dbconfig.php on line 7

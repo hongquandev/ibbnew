@@ -1,0 +1,1 @@
+{include file = "admin.homepage_slides.`$action`.tpl"}

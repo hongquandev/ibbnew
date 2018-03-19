@@ -1,0 +1,5 @@
+.popup_container{
+	display:none;
+}
+#popup_container .buttons {line-height:26px; width:160px; float:right; padding:10px 8px 0;} 
+#popup_container .buttons div {float:right; margin-left:4px; width:70px; height:26px; color:#666; font-weight:bold; text-align:center; background:url(../images/button.gif) repeat-x; border:1px solid #bbb; cursor:pointer;} 

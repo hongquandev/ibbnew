@@ -1,0 +1,119 @@
+@charset "utf-8";
+/* CSS Document */
+/* CSS Document */
+body {
+	font-family: Arial, Helvetica, sans-serif, Times New Roman; 
+	font-size: 11px;
+	margin: 0 5px 0 5px; color: #333333;
+}
+
+td { font-size:11px;}
+ 
+form { margin: 0px; }
+
+textarea { font-family:Arial, Helvetica, sans-serif; font-size:11px; width:100%}
+
+.bold12white{
+	font-family: Arial;
+	font-size:12px;
+	font-weight:bold;
+	color: white;
+	}
+	
+.bold12white .adm-left a,.bold12white .adm-right a{
+	color:#FFFFFF;
+	font-weight:normal;
+	text-decoration:none;
+}	
+.bold12white .adm-right{
+	float:right;
+}
+.bold12white .adm-left{
+	float:left;
+}
+.textbox{
+	font-family: Arial;
+	font-size:11px;
+	color: #333333;
+	 
+	padding:2px 2px 2px 2px;
+	}
+ 
+
+.padding {
+   	padding:8px 8px 8px 8px;}
+	
+.padding1 {
+	padding:5px 5px 5px 5px;}
+
+	
+a:link {color: #000; text-decoration: underline  ;  }
+a:visited { text-decoration: underline; color:#000; }
+a:hover { text-decoration: underline; color: #000; }
+a:active { text-decoration: underline; color: #000;}	
+
+a.topmenu:link {color: white; text-decoration: none; font-size:12px; }
+a.topmenu:visited { text-decoration: none; color: white; font-size:12px; }
+a.topmenu:hover { text-decoration: none; color: white; font-size:12px; }
+a.topmenu:active { text-decoration: none; color: white; font-size:12px; }
+/*-----------------Change Pass-------------------------------------------*/
+td.lable ,td.value{
+    padding-bottom: 5px ;
+    padding-left: 5px ;
+    padding-top: 5px ;
+	}
+td.input{width:200px;}
+	
+.message-box{
+	border:1px solid #B70000;
+	padding:2px 2px 2px 5px;
+	color:#B70000;
+	display:block;
+}
+
+.error-box{
+	border:1px solid #ff0000;
+	padding:10px;
+	margin:10px;
+	display:block;
+}
+
+#tooltip{
+	position:absolute;
+	border:1px solid #333;
+	background:#f7f5d1;
+	padding:2px 5px;
+	color:#333;
+	display:none;
+}
+
+.table-search{
+}
+.table-search .label-search{
+	font-size:25px;
+	color:#4D4D4D;
+}
+.table-search .input-text{
+	height:25px;
+	width:300px;
+	color:#111111;
+	border:1px solid #7F7F7F;
+}
+.table-search .note{
+	font-size:10px;
+	font-style:italic;
+	color:#8C8C8C;
+}
+.table-search .button{
+	background:#202020;
+	color:#FFFFFF;
+	font-weight:bold;
+	padding:2px 5px 2px 5px;
+	border-left:1px solid #828282;
+	border-top:1px solid #828282;
+	border-right:1px solid #111111;
+	border-bottom:1px solid #111111;
+}	 
+#confirm-e .form-list li.wide .input-box{
+    float:right !important;
+}

@@ -1,0 +1,112 @@
+.css-ie8{}
+.pdf-documents-download {
+    margin-bottom: 20px;
+}
+.pdf-documents-download .btn-pdf-download {
+    background: url("../images/btn-pdfdocument-fix.jpg") repeat scroll 0 0 transparent;
+    border: medium none;
+    cursor: pointer;
+    height: 30px;
+    padding-left: 5px;
+    text-align: left;
+    width: 205px;
+}
+#ftrtitle {
+	font-size:11px;
+}
+.search-results {
+	border-top:none !important;
+}
+
+.step-info .srrules {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #bfbfbf;
+}
+/*---Lan Fixed CSS-----*/
+.myaccount2 .ma-info .btn-red {margin-right: 5px !important;}
+/*---price bids----*/
+.price-all{padding-top: 1px !important;}
+.price-all2{padding-top: 2px !important;}
+/*---end price bids----*/
+#content-dashboard .popup_container_require{z-index:89 !important;position: absolute !important;}
+/*---End Lan Fixed CSS-----*/
+/*Begin View auction list*/
+.locat-list .pro-list .i-time-bid-auc-list {
+	bottom: -5px !important;
+	margin-bottom: -5px !important;
+}
+/*End View auction list*/
+
+/*Begin View auction grid*/
+.btn-wht-auc-grid {
+	margin-right: 17px !important;
+	margin-top: 2px !important;
+}
+/*End View auction grid*/
+.btn-make-an-ofer-f{margin-right: 66px !important;}
+
+/*Begin ----fix css------agent.property.tpl---------*/
+
+.tbl-info .col2 .sp-ie8 {
+	margin-top: 3px !important;
+}
+.tbl-info .col2 .last-bid-ie8 {
+	height: 14px !important;
+
+}
+#content-dashboard .tbl-info .col2 .last-bid-ie8 {
+	height: 17px !important;
+
+}
+.bid-price-coll8{padding: 4px 0px !important;}
+.acc-sp-ie8-blo{padding: 6px 0px 5px 0px !important;}
+/*End----fix css------agent.property.tpl---------*/
+
+/* Email alert add/edit */
+.col22-set .col-22 {
+    float: right;
+    width: 48.55%;
+}
+.col-main .popup_container {
+    position: relative !important;
+    z-index: 0 !important;
+}
+#property-box-d .popup_container {
+    position: absolute !important;}
+.property-box-detail .property-detail .detail-info-box .auc-actions .popup_container_ie{position: absolute !important;}
+
+.frm-mao #content{
+	border:1px inset #f5f5f5 !important;
+	}
+
+.frm-mao #agent_email{padding: 1px;border-top:1px inset !important;
+    border-left:1px inset !important;
+    border-right:1px inset #f5f5f5 !important;
+    border-bottom:1px inset #f5f5f5 !important;}
+.property-box-detail .make-an-offer-popup{/*margin-top: -119px !important;*/}
+/*#note_time_popup_child{top: 649px !important;}*/
+/*---banner.add.tpl---*/
+.form-list-edit-banner{margin-top:253px;}
+/*---banner.add.tpl---*/
+/*---- Menu ----*/
+.menu .nav .sub-nav p {
+   padding-top:3px;
+   padding-right:5px;
+   padding-left:5px;
+   padding-bottom:5px;
+}
+
+/*End */
+#input-box-contact{height: 135px;}
+#contact-wrapper #submit-contact{margin-top: 0px !important;}
+.auctions-box-live-fg img.watermark {height:118px !important;}
+#chi-img-partner-ie8{width:209px;}
+.partner-grid .img-partner{width: 200px;}
+.partner-grid .chi-img-partner-ie7{width: 200px;}
+.tv-show .text-box-uniform{width: 122px;}
+.bar-title-view-top{margin-left:0px !important;}
+
+.popup-countdown-child .content .audio {
+    top: 0 !important;
+}

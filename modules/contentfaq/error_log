@@ -1,0 +1,2 @@
+[05-Sep-2011 17:46:10] PHP Fatal error:  Call to a member function insert() on a non-object in /home/inspectb/public_html/dev/modules/contentfaq/action.admin.php on line 29
+[05-Sep-2011 17:46:57] PHP Fatal error:  Call to a member function insert() on a non-object in /home/inspectb/public_html/dev/modules/contentfaq/action.admin.php on line 29

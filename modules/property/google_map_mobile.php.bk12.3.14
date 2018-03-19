@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+ <script type="text/javascript" src="/modules/general/templates/js/jquery-1.8.3.min.js"></script>
+ 
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Google Maps JavaScript API Example: Controls</title>
+    <?php
+	switch ($_SERVER['HTTP_HOST']) {
+		case 'bidRhino.com':
+			$key = 'AIzaSyB0dcNEy03iL7JBdASL3aFhEdaU8Wk_aAE';
+		break;
+        case 'www.bidRhino.com':
+            $key = 'AIzaSyBKi_smxIkROdOljKheAVpzbinHiil4YXE';
+            break;
+		case 'staging.bidRhino.com':
+			$key = 'ABQIAAAABJp8jwhnFa4ksdX16JMFnxQkaZL16NpZacYXu81BXi7ZDivY-hT_ltvRuLtU1AOqSuVXGteHnbBT4Q';
+		break;	
+		case 'ibbdev.bidRhino.com':
+			$key = 'AIzaSyBM0qDg3oO_Qf_luRgAdGK6-LQK32pwUJA';
+		break;	
+		case 'www.ebidda.com.au':
+			$key = 'AIzaSyCB5QDQ01yiS8kaV_mdAfi9Mb137E7QWRY';
+		break;	
+		case 'ebidda.com.au':
+			$key = 'AIzaSyA9L5oexOUUKeAHERceHTDkjbuFhs8ovp0';
+		break;		
+		default:
+			$key = 'AIzaSyAO0j2f11AfEAY4MiahSF5bgmhGX_uIpW8';
+		break;		
+	}
+	?>
+    <script src="https://maps.google.com/maps?file=api&v=2&sensor=false&key=<?php echo $key;?>" type="text/javascript"></script>
+    <script type="text/javascript">
+	
+    function initialize() {
+      	if (GBrowserIsCompatible()) {
+				 
+				var address = '<?php echo $_GET['address']?>';
+				var map      = null;
+				var geocoder = null;
+				var marker   = null;
+				var infoTabs = [
+					new GInfoWindowTab("Introduce", "<div class='box'><label>Property address :</label>"+address+"</div>")
+				];
+				map = new GMap2(document.getElementById("map_canvas"));
+				map.setCenter(new GLatLng(37.4419, -122.1419), 14);
+				geocoder = new GClientGeocoder();
+				
+				map.addControl(new GSmallMapControl());
+				map.addControl(new GMapTypeControl());
+			
+				geocoder.getLatLng(
+					address,
+					function(point)
+					{
+						if (!point) 
+						{	
+							alert(address + " not found");
+
+						} 
+						else 
+						{
+							map.setCenter(point, 14);
+							var marker = new GMarker(point);
+							map.addOverlay(marker);
+							//map.addOverlay(createMarker(marker,point, i + 1));
+
+							marker.openInfoWindowTabsHtml(infoTabs);
+						}
+					}
+				);
+      	}
+    }
+    </script>
+    <style>
+	.box{
+		font-size:10px;
+		width:200px;
+	}
+	.box label{
+		font-weight:bold;
+		text-decoration:underline;
+		display:block;
+	}
+	#map_canvas{width: 290px;height: 230px;}
+	</style>
+  </head>
+  <body onload="initialize()" onunload="GUnload()">
+    <div id="map_canvas"  ></div>
+  </body>
+<script type="text/javascript">
+    $(document).ready(function() {/*
+        var width = jQuery(window).width()-17;
+        $('#map_canvas').css({
+             'width' : width 
+        });*/
+    });
+</script>
+</html>
+
+
+

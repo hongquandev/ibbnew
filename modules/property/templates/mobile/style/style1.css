@@ -1,0 +1,898 @@
+body div.wrapper > div.co-part1 > p > span > em{
+    color: #2a3540;
+    font-size: 17px;
+    font-family: ProximaNova-Bold, sans-serif;
+}
+/*TAB MENU ON PROPERTY DETAIL*/
+.property-view-detail .tabdiv {
+    border-top-color: #0094d8 !important;
+    border-top-style: solid;
+    border-top-width: 2px;
+}
+.property-view-detail .tabnav li{
+    border: none;
+    background: #e1e2dd;
+    border-bottom: 2px solid #FFFFff;
+    border-right: 5px solid #ffffff !important;
+}
+.property-view-detail .tabnav li:last-child{
+    border-right: none !important;
+}
+.property-view-detail .tabnav li a{
+    color: #0094d8;
+    font-size: 17px;
+    font-family: ProximaNova-Bold, sans-serif;
+}
+.property-view-detail .tabnav li:hover,
+.property-view-detail .tabnav li:active,
+.property-view-detail .tabnav li.ui-tabs-selected{
+    background: #0094d8;
+    /*border-bottom: 2px solid #0094d8;*/
+}
+.property-view-detail .tabnav li:hover a,
+.property-view-detail .tabnav li:active a,
+.property-view-detail .tabnav li.ui-tabs-selected a{
+    color: #ffffff;
+}
+/*breadcrumbs*/
+#breadcrumbs{padding: 10px}
+.container{padding: 0 10px}
+
+/*----BUTTONS-----*/
+
+.property-view-detail .property-control-buttons {
+    margin: 10px 0 10px 0;
+    border-top: 1px solid #d3d3d4;
+    border-bottom: 1px solid #d3d3d4;
+    padding: 10px 0 0 0;
+    position: relative;
+}
+.property-control-buttons {}
+.property-control-buttons .buttons-col-1 {
+     width: 100%;
+ }
+.property-control-buttons .buttons-col-2 {
+    padding-top: 10px;
+    padding-right: 10px;
+    width: 100%;
+}
+.property-control-buttons .make-an-offer-popup {
+    left: 0;
+    width: 90%;
+}
+button.btn-pv::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+/* FF Fix */
+
+button.btn-pv {
+    -webkit-border-fit: lines;
+}
+/* <- Safari & Google Chrome Fix */
+
+button.btn-pv {
+    overflow: visible;
+    width: auto;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    cursor: pointer;
+}
+button.btn-pv span {
+    display: block;
+    height: 35px;
+    border: none;
+    padding: 0 8px;
+    text-align: center;
+    white-space: nowrap;
+}
+button.btn-pv span span {
+    border: 0;
+    padding: 0;
+}
+button.btn-pv {
+    width: 47%;
+    line-height: 35px;
+    height: 35px;
+}
+button.btn-pv span {
+    background: #e1e2dd;
+    color: #0080bb;
+    font-weight: bold;
+    font-size: 17px;
+    font-family: ProximaNova-Bold;
+}
+button.btn-pv span:hover,
+button.btn-pv span:hover span {
+    color: #ffffff;
+    background: #0080bb;
+}
+button.btn-pv span span {}
+.property-control-buttons button.btn-pv {
+   margin-right: 10px;
+   margin-bottom: 10px;
+}
+.property-control-buttons button.btn-pv.btn-pv-offer,
+.property-control-buttons button.btn-pv.btn-pv-refresh{
+    margin-right: 0;
+}
+button.btn-status-disabled {
+    background: #e1e2dd;
+    color: #ffffff;
+    cursor: default;
+}
+button.btn-status-disabled span {
+    color: #fff;
+}
+button.btn-status-disabled span:hover,
+button.btn-status-disabled span:hover span {
+    color: #ffffff;
+    background: #e1e2dd;
+}
+.btn-pv1 {
+    overflow: visible;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    text-transform: none;
+    text-decoration: none;
+    width: 65px;
+    height: 45px;
+    margin-right: 40px;
+}
+.btn-pv-inspect {
+    background: url("../images/view/btn-more-bg.png") 0 0 no-repeat;
+}
+.btn-pv-brochure {
+    background: url("../images/view/btn-more-bg.png") -71px 0 no-repeat;
+}
+.btn-pv-legals {
+    background: url("../images/view/btn-more-bg.png") -144px 0 no-repeat;
+}
+.btn-pv-contact {
+    background: url("../images/view/btn-more-bg.png") -220px 0 no-repeat;
+}
+.btn-pv-watchlist {
+    background: url("../images/view/btn-more-bg.png") -285px 0 no-repeat;
+    margin-right: 0;
+}
+/*AGENT DETAIL*/
+
+.property-agentdetail {
+    color: #58595b;
+    margin-bottom: 20px;
+    font-family: ProximaNova-Light, Helvetica, Sans-serif;
+}
+.agentdetail-block {
+    border: 1px solid #d3d3d4;
+}
+.agentdetail-block h3.agentdetail-title {
+    text-align: center;
+    font-size: 15px;
+    color: #58595b;
+    padding: 0;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #d3d3d4;
+    font-weight: normal;
+}
+.agentdetail-content {}
+.agentdetail-content .agentdetail-image {
+    width: 100%;
+    height: 190px;
+    border-right: 1px solid #d3d3d4;
+    text-align: center;
+    border-bottom: 1px solid #d3d3d4;
+}
+.agentdetail-content .agentdetail-image img {
+    position: relative;
+    top: 25%;
+    /*transform: translateY(-50%);*/
+}
+.agentdetail-content .agentdetail-info {
+    padding-top: 25px;
+    width: 97%;
+    padding-bottom: 25px;
+    padding-left: 10px;
+}
+.auction-start-status,
+.auction-mao-status,
+.auction-sold-status,
+.auction-underoffer-status {
+    background: url('../images/view/status_bg.png') 0 0 repeat-x;
+}
+.view-all-agents{
+    background: url('../images/view/status_bg.png') 0 0 repeat-x;
+    height: 30px;
+    font-size: 15px;
+    font-family: ProximaNova-Bold, Helvetica, sans-serif;
+    color: #ffffff;
+    text-align: center;
+    line-height: 33px;
+    margin-bottom: 0px;
+    width: 100%;
+    text-transform: uppercase;
+    background-position: 0 -252px;
+    margin-top: 15px;
+}
+.view-all-agents a{
+    color: #ffffff;
+}
+.view-all-agents a:hover{
+    color: #0094d8;
+}
+.rrssb-buttons {
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    height: 36px;
+    margin: 0;
+    padding: 0;
+    width: 100%
+}
+.rrssb-buttons:after {
+    clear: both
+}
+.rrssb-buttons:after,
+.rrssb-buttons:before {
+    content: ' ';
+    display: table
+}
+.rrssb-buttons li {
+    box-sizing: border-box;
+    float: left;
+    height: 100%;
+    line-height: 13px;
+    list-style: none;
+    margin: 0;
+    padding: 0 2px
+}
+.rrssb-buttons li.rrssb-email a {
+    background-color: #0a88ff
+}
+.rrssb-buttons li.rrssb-email a:hover {
+    background-color: #006ed6
+}
+.rrssb-buttons li.rrssb-facebook a {
+    background-color: #306199
+}
+.rrssb-buttons li.rrssb-facebook a:hover {
+    background-color: #244872
+}
+.rrssb-buttons li.rrssb-tumblr a {
+    background-color: #32506d
+}
+.rrssb-buttons li.rrssb-tumblr a:hover {
+    background-color: #22364a
+}
+.rrssb-buttons li.rrssb-linkedin a {
+    background-color: #007bb6
+}
+.rrssb-buttons li.rrssb-linkedin a:hover {
+    background-color: #005983
+}
+.rrssb-buttons li.rrssb-twitter a {
+    background-color: #26c4f1
+}
+.rrssb-buttons li.rrssb-twitter a:hover {
+    background-color: #0eaad6
+}
+.rrssb-buttons li.rrssb-googleplus a {
+    background-color: #e93f2e
+}
+.rrssb-buttons li.rrssb-googleplus a:hover {
+    background-color: #ce2616
+}
+.rrssb-buttons li.rrssb-youtube a {
+    background-color: #df1c31
+}
+.rrssb-buttons li.rrssb-youtube a:hover {
+    background-color: #b21627
+}
+.rrssb-buttons li.rrssb-reddit a {
+    background-color: #8bbbe3
+}
+.rrssb-buttons li.rrssb-reddit a:hover {
+    background-color: #62a3d9
+}
+.rrssb-buttons li.rrssb-pinterest a {
+    background-color: #b81621
+}
+.rrssb-buttons li.rrssb-pinterest a:hover {
+    background-color: #8a1119
+}
+.rrssb-buttons li.rrssb-pocket a {
+    background-color: #ed4054
+}
+.rrssb-buttons li.rrssb-pocket a:hover {
+    background-color: #e4162d
+}
+.rrssb-buttons li.rrssb-github a {
+    background-color: #444
+}
+.rrssb-buttons li.rrssb-github a:hover {
+    background-color: #2b2b2b
+}
+.rrssb-buttons li.rrssb-instagram a {
+    background-color: #125688
+}
+.rrssb-buttons li.rrssb-instagram a:hover {
+    background-color: #0c3a5b
+}
+.rrssb-buttons li.rrssb-delicious a {
+    background-color: #0b79e5
+}
+.rrssb-buttons li.rrssb-delicious a:hover {
+    background-color: #095fb4
+}
+.rrssb-buttons li.rrssb-vk a {
+    background-color: #4d71a9
+}
+.rrssb-buttons li.rrssb-vk a:hover {
+    background-color: #3d5a86
+}
+.rrssb-buttons li.rrssb-hackernews a {
+    background-color: #f60
+}
+.rrssb-buttons li.rrssb-hackernews a:hover {
+    background-color: #cc5200
+}
+.rrssb-buttons li a {
+    background-color: #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+    display: block;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 700;
+    height: 100%;
+    padding: 11px 7px 12px 27px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-transition: background-color .2s ease-in-out;
+    transition: background-color .2s ease-in-out;
+    width: 100%
+}
+.rrssb-buttons li a .rrssb-icon {
+    display: block;
+    left: 10px;
+    padding-top: 9px;
+    position: absolute;
+    top: 0;
+    width: 10%
+}
+.rrssb-buttons li a .rrssb-icon svg {
+    height: 17px;
+    width: 17px
+}
+.rrssb-buttons li a .rrssb-icon svg path {
+    fill: #fff
+}
+.rrssb-buttons li a .rrssb-text {
+    color: #fff
+}
+.rrssb-buttons li a:active {
+    box-shadow: inset 1px 3px 15px 0 rgba(22, 0, 0, .25)
+}
+.rrssb-buttons li.small a {
+    padding: 0
+}
+.rrssb-buttons li.small a .rrssb-icon {
+    left: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    top: auto;
+    width: 100%
+}
+.rrssb-buttons li.small a .rrssb-text {
+    visibility: hidden
+}
+.rrssb-buttons.large-format,
+.rrssb-buttons.large-format li {
+    height: auto
+}
+.rrssb-buttons.large-format li a {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: .2em;
+    padding: 8.5% 0 8.5% 12%
+}
+.rrssb-buttons.large-format li a .rrssb-icon {
+    height: 100%;
+    left: 7%;
+    padding-top: 0;
+    width: 12%
+}
+.rrssb-buttons.large-format li a .rrssb-icon svg {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%
+}
+.rrssb-buttons.large-format li a .rrssb-text {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden
+}
+.rrssb-buttons.small-format {
+    padding-top: 5px
+}
+.rrssb-buttons.small-format li {
+    height: 80%;
+    padding: 0 1px
+}
+.rrssb-buttons.small-format li a .rrssb-icon {
+    height: 100%;
+    padding-top: 0
+}
+.rrssb-buttons.small-format li a .rrssb-icon svg {
+    height: 48%;
+    position: relative;
+    top: 6px;
+    width: 80%
+}
+.rrssb-buttons.tiny-format {
+    height: 22px;
+    position: relative
+}
+.rrssb-buttons.tiny-format li {
+    padding-right: 7px
+}
+.rrssb-buttons.tiny-format li a {
+    background-color: transparent;
+    padding: 0
+}
+.rrssb-buttons.tiny-format li a .rrssb-icon svg {
+    height: 70%;
+    width: 100%
+}
+.rrssb-buttons.tiny-format li a:active,
+.rrssb-buttons.tiny-format li a:hover {
+    background-color: transparent
+}
+.rrssb-buttons.tiny-format li.rrssb-email a .rrssb-icon svg path {
+    fill: #0a88ff
+}
+.rrssb-buttons.tiny-format li.rrssb-email a .rrssb-icon:hover .rrssb-icon svg path {
+    fill: #0054a3
+}
+.rrssb-buttons.tiny-format li.rrssb-facebook a .rrssb-icon svg path {
+    fill: #306199
+}
+.rrssb-buttons.tiny-format li.rrssb-facebook a .rrssb-icon:hover .rrssb-icon svg path {
+    fill: #18304b
+}
+.rrssb-buttons.tiny-format li.rrssb-tumblr a .rrssb-icon svg path {
+    fill: #32506d
+}
+.rrssb-buttons.tiny-format li.rrssb-tumblr a .rrssb-icon:hover .rrssb-icon svg path {
+    fill: #121d27
+}
+.rrssb-buttons.tiny-format li.rrssb-linkedin a .rrssb-icon svg path {
+    fill: #007bb6
+}
+.rrssb-buttons.tiny-format li.rrssb-linkedin a .rrssb-icon:hover .rrssb-icon svg path {
+    fill: #003650
+}
+.rrssb-buttons.tiny-format li.rrssb-twitter a .rrssb-icon svg path {
+    fill: #26c4f1
+}
+.rrssb-buttons.tiny-format li.rrssb-twitter a .rrssb-icon:hover .rrssb-icon svg path {
+    fill: #0b84a6
+}
+.rrssb-buttons.tiny-format li.rrssb-googleplus a .rrssb-icon svg path {
+    fill: #e93f2e
+}
+.rrssb-buttons.tiny-format li.rrssb-googleplus a .rrssb-icon:hover .rrssb-icon svg path {
+    fill: #a01e11
+}
+.rrssb-buttons.tiny-format li.rrssb-youtube a .rrssb-icon svg path {
+    fill: #df1c31
+}
+.rrssb-buttons.tiny-format li.rrssb-youtube a .rrssb-icon:hover .rrssb-icon svg path {
+    fill: #84111d
+}
+.rrssb-buttons.tiny-format li.rrssb-reddit a .rrssb-icon svg path {
+    fill: #8bbbe3
+}
+.rrssb-buttons.tiny-format li.rrssb-reddit a .rrssb-icon:hover .rrssb-icon svg path {
+    fill: #398bcf
+}
+.rrssb-buttons.tiny-format li.rrssb-pinterest a .rrssb-icon svg path {
+    fill: #b81621
+}
+.rrssb-buttons.tiny-format li.rrssb-pinterest a .rrssb-icon:hover .rrssb-icon svg path {
+    fill: #5d0b11
+}
+.rrssb-buttons.tiny-format li.rrssb-pocket a .rrssb-icon svg path {
+    fill: #ed4054
+}
+.rrssb-buttons.tiny-format li.rrssb-pocket a .rrssb-icon:hover .rrssb-icon svg path {
+    fill: #b61124
+}
+.rrssb-buttons.tiny-format li.rrssb-github a .rrssb-icon svg path {
+    fill: #444
+}
+.rrssb-buttons.tiny-format li.rrssb-github a .rrssb-icon:hover .rrssb-icon svg path {
+    fill: #111
+}
+.rrssb-buttons.tiny-format li.rrssb-instagram a .rrssb-icon svg path {
+    fill: #125688
+}
+.rrssb-buttons.tiny-format li.rrssb-instagram a .rrssb-icon:hover .rrssb-icon svg path {
+    fill: #061d2e
+}
+.rrssb-buttons.tiny-format li.rrssb-delicious a .rrssb-icon svg path {
+    fill: #0b79e5
+}
+.rrssb-buttons.tiny-format li.rrssb-delicious a .rrssb-icon:hover .rrssb-icon svg path {
+    fill: #064684
+}
+.rrssb-buttons.tiny-format li.rrssb-vk a .rrssb-icon svg path {
+    fill: #4d71a9
+}
+.rrssb-buttons.tiny-format li.rrssb-vk a .rrssb-icon:hover .rrssb-icon svg path {
+    fill: #2d4263
+}
+.rrssb-buttons.tiny-format li.rrssb-hackernews a .rrssb-icon svg path {
+    fill: #f60
+}
+.rrssb-buttons.tiny-format li.rrssb-hackernews a .rrssb-icon:hover .rrssb-icon svg path {
+    fill: #993d00
+}
+/*-----------------------------------------------------------*/
+
+.property-view-detail .detail-imgs {
+    /*margin: 15px 0px;*/
+
+    margin: 32px 0px;
+}
+.property-view-detail .detail-imgs .img-main {
+    margin-bottom: 4px;
+}
+.property-view-detail .detail-imgs .img-list-box {
+    height: 93px;
+}
+.property-view-detail .detail-imgs .img-list-box .item {
+    opacity: 0.5;
+    filter: alpha(opacity 50);
+    float: left;
+    margin-right: 1px;
+    cursor: pointer;
+}
+.property-view-detail .detail-imgs .img-list-box .item:hover,
+.property-view-detail .detail-imgs .img-list-box .active {
+    opacity: 1;
+    filter: alpha(opacity 100);
+}
+.property-view-detail .detail-imgs .img-list-box .img-prev {
+    opacity: 0.5;
+    filter: alpha(opacity 50);
+    float: left;
+    width: 14px;
+    height: 15px;
+    padding: 39px 0px;
+    background-color: #000;
+    margin-right: 1px;
+}
+.property-view-detail .detail-imgs .img-list-box .img-prev:hover {
+    opacity: 1;
+    filter: alpha(opacity 100);
+}
+.property-view-detail .detail-imgs .img-list-box .img-prev span {
+    background-position: left -206px;
+    width: 14px;
+    height: 15px;
+    display: block;
+}
+.property-view-detail .detail-imgs .img-list-box .img-next {
+    opacity: 0.5;
+    filter: alpha(opacity 50);
+    float: left;
+    width: 14px;
+    height: 15px;
+    padding: 39px 0px;
+    background-color: #000;
+}
+.property-view-detail .detail-imgs .img-list-box .img-next:hover {
+    opacity: 1;
+    filter: alpha(opacity 100);
+}
+.property-view-detail .detail-imgs .img-list-box .img-next span {
+    background-position: right -224px;
+    width: 14px;
+    height: 15px;
+    display: block;
+}
+/*------------------------------------------*/
+
+div.popup_container div.title {
+    background-color: #2e3640;
+    line-height: 21px;
+}
+div.popup_container div.title h2 {
+    font-family: ProximaNova-Bold, Helvetica, Sans-serif;
+    font-size: 15px;
+    float: none;
+}
+div.popup_container div.title h2 span.btn-x {
+    left: auto;
+    float: right;
+    padding: 0;
+    margin: 0;
+    top: 0;
+}
+div.popup_container .content#msg {
+    font-family: ProximaNova-Light, Helvetica, Sans-serif;
+    color: #2e3640;
+    font-size: 15px;
+    text-align: center;
+    width: 95%;
+    float: left;
+    margin-top: 5px;
+
+}
+div.popup_container .btn-red-fix {
+    background: #0094d8;
+    color: #ffffff;
+    font-size: 15px;
+    font-family: ProximaNova-Bold, Helvetica, Sans-serif;
+    border: none;
+    border-radius: 0;
+    text-align: center;
+    width: 120px !important;
+    height: 28px;
+    line-height: 28px;
+}
+div.popup_container .btn-red {
+    background: #000000;
+    color: #ffffff;
+    font-size: 15px;
+    font-family: ProximaNova-Bold, Helvetica, Sans-serif;
+    border: none;
+    border-radius: 0;
+    text-align: center;
+    width: 120px;
+    height: 28px;
+    line-height: 28px;
+}
+div.popup_container .btn-red span {
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+/*---------------------------------------*/
+
+.auction-time-bid-rt {
+    margin-top: 20px;
+    border: 1px solid #d3d3d4;
+    border-bottom: 0 none;
+    height: auto;
+    margin-bottom: 15px;
+}
+.auction-time-bid-rt .time-left {
+    width: 100%;
+    line-height: 20px;
+    text-align: center;
+    height: 60px;
+}
+.auction-time-bid-rt .lastbid {
+    width: 100%;
+    line-height: 25px;
+    text-align: center;
+    height: 60px;
+    background: url('../images/view/last_bid_bg.png') 0 -1px repeat-x;
+    padding-top: 12px;
+}
+/*LASTBID*/
+
+.auction-time-bid-rt .lastbid.current-bid-under {
+    background-position: 0 -1px;
+}
+.auction-time-bid-rt .lastbid.current-bid-over {
+    background-position: 0 -87px;
+}
+.auction-time-bid-rt .lastbid.current-bid-passedin {
+    background-position: 0 -167px;
+}
+.time-left-label {
+    color: #0094d8;
+    font-size: 20px;
+    font-family: ProximaNova-Light, Helvetica, sans-serif;
+    display: inline-block;
+    margin-top: 15px;
+}
+.time-left-value {
+    color: #0094d8;
+    font-size: 20px;
+    display: inline-block;
+    font-family: ProximaNova-Bold, Helvetica, sans-serif;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+.last-bidder-label,
+.last-bidder-value {
+    font-size: 15px;
+    color: #a3a3a3;
+    /*font-weight: bold;*/
+    font-family: ProximaNova-Bold, Helvetica, sans-serif;
+    display: inline-block;
+    text-transform: uppercase;
+}
+.last-bid-label {
+    color: #ffffff;
+    font-size: 20px;
+    font-family: ProximaNova-Light, Helvetica, sans-serif;
+    display: block;
+    text-transform: uppercase;
+}
+.last-bid-value {
+    color: #ffffff;
+    font-size: 30px;
+    font-family: ProximaNova-Bold, Helvetica, sans-serif;
+    display: block;
+}
+/*--------------------------------*/
+.auction-status-button,
+.auction-start-status {
+    height: 60px;
+    font-size: 14px;
+    font-family: ProximaNova-Bold, Helvetica, sans-serif;
+    color: #ffffff;
+    text-align: center;
+    line-height: 60px;
+    margin-bottom: 15px;
+    width: 100%;
+    text-transform: uppercase;
+}
+.auction-mao-status {
+    background-position: 0 -87px;
+    cursor: pointer;
+}
+.auction-mao-status:hover {
+    background: none;
+    background-color: #4c7c08;
+}
+.auction-sold-status {
+    background-position: 0 -170px;
+}
+.auction-leased-status {
+    background-position: 0 -170px;
+}
+.auction-underoffer-status {
+    background-position: 0 -252px;
+}
+.auction-passed-in-status {
+    background-position: 0 -252px;
+}
+/*--------------------------------*/
+
+.property-bid-history {
+    margin-top: 10px;
+    position: relative;
+    margin-bottom: 15px
+}
+.property-bid-history-content {}
+
+.property-bid-history-content .bid-title h3 {
+    font-size: 15px;
+    color: #ffffff;
+    background: #0094d8;
+    height: 35px;
+    line-height: 35px;
+    padding-left: 10px;
+}
+.tbl-bid tr td {
+    padding: 10px;
+    border-bottom: 1px solid #e1e1e2;
+}
+.tbl-bid thead {
+    background: #e1e2dd;
+    color: #0094d8;
+    font-size: 15px;
+    padding: 20px;
+    font-weight: bold;
+}
+.tbl-bid thead tr td {
+    padding: 10px;
+}
+.tbl-bid tbody tr td {
+    color: #2e3640;
+    text-align: left;
+}
+.tbl-bid tbody tr td.empty {
+    padding: 35px;
+    border: 1px solid #e1e1e2;
+    text-align: center
+}
+/*------------------------------*/
+
+.loading-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    text-align: center;
+    background: #000000;
+    opacity: 0.5;
+    color: #ffffff;
+    font-size: 30px;
+    display: none;
+}
+.loading-overlay img {
+    position: absolute;
+    top: 48%;
+    left: 40%;
+    width: 32px;
+    height: 32px;
+}
+/*FIX=================================*/
+.property-view-detail .hightlight-top-item {
+    background-color: #2e3640;
+    width: 100%;
+    margin-top: 10px;
+    padding: 5px 0;
+}
+.property-view-detail .hightlight-top-item-left{
+    color: #ffffff;
+    font-size: 17px;
+    margin-left: 10px;
+}
+.hightlight-top-item-right .price span{
+    color: #0094d8;
+    font-size: 20px;
+}
+.hightlight-top-item-right {
+    margin-top: 10px;
+}
+.property-head {
+    margin-top: 10px;
+}
+
+div.popup_container .btn-red{
+    padding: 0;
+    width: 70px;
+}
+.property-view-detail .format-desc,.property-view-detail .format-desc strong{
+    font-size: 14px !important; color: #58595b !important;
+}
+.property-view-detail .format-desc a{
+    font-size: 14px !important; color: #58595b !important;
+}
+.content-popup-vm .content-menu-right{
+    width: 100%;
+    display: none;
+    min-height: 100px;
+}
+.property-desc {
+    margin-bottom: 30px;
+}
+.popup_container{
+    border: none;
+}
+.popup-vm-menu-left li.child a{
+    color: #0094d8;
+}
+#term_popup_child .content .btn-width span span{
+    padding: 5px 10px !important;
+}
+#term_popup_child .content .btn-width{
+    width: auto;
+}
+.locat-list .pro-list li .i-info .img-mobile img.main-img{
+    width: 100%; max-width: 355px; height: auto;
+}
+.locat-list .pro-list li .pro-form img.agent_logo{
+    max-width: 150px !important;
+}
+.property-view-detail .a-right-bids {
+    color: #fa2121;
+}
+.popup_container .content{
+    width: 94% !important;
+}

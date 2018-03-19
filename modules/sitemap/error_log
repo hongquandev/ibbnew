@@ -1,0 +1,2 @@
+[13-Jun-2012 08:25:44 UTC] PHP Fatal error:  Call to undefined function Property_getListForSitemap() in /home/inspectb/public_html/modules/sitemap/cron.php on line 28
+[13-Jun-2012 08:27:15 UTC] PHP Fatal error:  Call to undefined function Property_getListForSitemap() in /home/inspectb/public_html/modules/sitemap/cron.php on line 28

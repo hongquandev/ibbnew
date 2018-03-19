@@ -1,0 +1,3 @@
+[12-Sep-2011 02:53:13] PHP Fatal error:  Call to a member function insert() on a non-object in /home/inspectb/public_html/dev/modules/role/action.admin.php on line 59
+[01-Feb-2013 01:34:18 UTC] PHP Fatal error:  Cannot redeclare Tab_getOptions() (previously declared in /home/inspectb/public_html/modules/tab/inc/tab.php:10) in /home/inspectb/public_html/modules/tab/inc/tab.php on line 28
+[07-Feb-2013 01:45:47 UTC] PHP Fatal error:  Cannot redeclare Tab_getOptions() (previously declared in /home/inspectb/public_html/modules/tab/inc/tab.php:10) in /home/inspectb/public_html/modules/tab/inc/tab.php on line 28

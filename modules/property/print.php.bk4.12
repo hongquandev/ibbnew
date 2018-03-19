@@ -1,0 +1,299 @@
+<?php
+	require '../../configs/config.inc.php';
+	require ROOTPATH.'/includes/functions.php';
+	include ROOTPATH.'/includes/model.class.php';
+	include_once ROOTPATH.'/modules/general/inc/regions.php';
+	include_once 'inc/property.php';
+	include_once ROOTPATH.'/modules/general/inc/medias.class.php';
+	include_once ROOTPATH.'/modules/property/inc/property_entity_option.class.php';
+	
+	 if(detectBrowserMobile()){ 
+            $smarty->compile_dir = ROOTPATH.'/m.templates_c/';
+        }else{
+            $smarty->compile_dir = ROOTPATH.'/templates_c/';
+        }
+
+	include_once ROOTPATH.'/modules/configuration/inc/config.class.php';
+	
+	
+	if (!isset($config_cls) || !($config_cls instanceof Config)) {
+	$config_cls = new Config();
+	}
+	
+	if (!isset($media_cls) or !($media_cls instanceof Medias)) {
+		$media_cls = new Medias();
+	}
+	
+	$auction_sale_ar = PEO_getAuctionSale();
+	$id = (int)($_GET['id'] ? $_GET['id'] : 0);
+	$ac = $_GET['action'] ? $_GET['action'] : '';
+    $ac = explode('-',$ac);
+	$str = '';
+    $id = restrictArgs($id,'[^0-9a-zA-Z\-]');
+	if (isset($ac) && isset($id)) {
+
+        $start_price = '(SELECT pro_term.value
+                                 FROM '.$property_cls->getTable('property_term').' AS pro_term
+                                 LEFT JOIN '.$property_cls->getTable('auction_terms'). ' AS term
+                                      ON pro_term.auction_term_id = term.auction_term_id
+                                 WHERE term.code = \'auction_start_price\'
+                                       AND pro.property_id = pro_term.property_id)';
+	
+		$sql = 'SELECT SQL_CALC_FOUND_ROWS  pro.*,
+		                                    pro.livability_rating_mark,
+		                                    pro.green_rating_mark,
+		                                    pro.owner,
+								 date_format(end_time, "%b %d, %Y") as end_time,  date_format(start_time, "%b %d, %Y") as start_time,
+								(SELECT SUM(pro_log.view) - 1
+											FROM '.$property_cls->getTable('property_log').' AS pro_log
+											WHERE pro_log.property_id = pro.property_id
+											)AS views,
+								(SELECT reg1.name FROM '.$region_cls->getTable().' AS reg1 WHERE reg1.region_id = pro.state) AS state_name,
+								(SELECT reg2.code FROM '.$region_cls->getTable().' AS reg2 WHERE reg2.region_id = pro.state) AS state_code,
+								(SELECT reg3.name FROM '.$region_cls->getTable().' AS reg3 WHERE reg3.region_id = pro.country) AS country_name,
+								(SELECT reg4.code FROM '.$region_cls->getTable().' AS reg4 WHERE reg4.region_id = pro.country) AS country_code,
+								(SELECT pro_opt1.value 
+									FROM '.$property_entity_option_cls->getTable().' AS pro_opt1 
+									WHERE pro_opt1.property_entity_option_id = pro.bathroom) AS bathroom_value,
+								(SELECT pro_opt2.value 
+									FROM '.$property_entity_option_cls->getTable().' AS pro_opt2 
+									WHERE pro_opt2.property_entity_option_id = pro.bedroom) AS bedroom_value,
+								(SELECT pro_opt3.value 
+									FROM '.$property_entity_option_cls->getTable().' AS pro_opt3 
+									WHERE pro_opt3.property_entity_option_id = pro.car_port) AS carport_value,
+								(SELECT med.file_name
+									FROM '.$property_media_cls->getTable('medias').' AS med,'.$property_media_cls->getTable().' AS pro_med 
+									WHERE med.media_id = pro_med.media_id AND med.type = \'photo\' AND pro_med.property_id = \''.$id.'\' LIMIT 1) AS file_name,
+										
+								(SELECT pro_opt5.title 
+									FROM '.$property_entity_option_cls->getTable().' AS pro_opt5 
+									WHERE pro_opt5.property_entity_option_id = pro.land_size) AS landsize_title,
+                        		(SELECT pro_opt6.title
+									FROM '.$property_entity_option_cls->getTable().' AS pro_opt6
+									WHERE pro_opt6.property_entity_option_id = pro.type) AS type_name,
+								(SELECT CASE
+                                    WHEN pro.auction_sale = '.$auction_sale_ar['auction'].' THEN
+                                        (SELECT CASE
+                                             WHEN pro.pay_status = '.Property::PAY_COMPLETE.' THEN
+                                                 (SELECT CASE
+                                                     WHEN (date(pro.start_time) > \''.date('Y-m-d H:i:s').'\' OR isnull(max(bid.price)) ) THEN
+                                                     '.$start_price.'
+                                                     ELSE max(bid.price)
+                                                     END
+                                                     FROM bids AS bid WHERE bid.property_id = pro.property_id) + 0
+                                             ELSE
+                                                 (SELECT CASE
+                                                     WHEN !isnull('.$start_price.') THEN '.$start_price.'
+                                                     ELSE pro.price
+                                                     END)
+                                             END)
+                                    ELSE pro.price
+                                    END) AS prices
+							
+								FROM property_media AS pro_med, '.$property_cls->getTable().' AS pro
+								
+								LEFT JOIN '.$property_rating_mark_cls->getTable().' AS pro_rat_mrk ON pro_rat_mrk.property_id = pro.property_id
+								WHERE 1
+								AND pro.property_id = '.$id;
+       /* WHERE pro.active = 1*/
+									
+		$row = $property_cls->getRow($sql,true);								
+		//echo $property_cls->sql;		 
+		$linkstyle = '<link href="'.ROOTURL.'/modules/general/templates/style/styles.css" type="text/css" rel="stylesheet"/>
+					  <link href="'.ROOTURL.'/modules/property/templates/style/styles.css" type="text/css" rel="stylesheet"/>
+					  <script type="text/javascript" src="'.ROOTURL.'/modules/property/templates/js/print.js"></script> ';
+		$str.= ''.$linkstyle.'';    
+		      
+		if (is_array($row) and count($row)>0) {
+					
+				$row['livability_rating_mark'] = showStar((float)$row['livability_rating_mark']);
+				$row['green_rating_mark']      =  showStar((float)$row['green_rating_mark']);
+				$row['prices_show'] = showPrice($row['prices']);
+				$row['description'] = nl2br($row['description']);
+				
+				if ($ac[1] == 'forthcoming') {
+					$row['title'] = 'FORTH COMING : '.@$row['start_time'];
+                    $reserve_price = PT_getValueByCode($row['property_id'],'reserve');
+					$row['prices_show'] = showLowPrice($reserve_price).' - '.showHighPrice($reserve_price);
+					$forth = '<p class="bid" id="auc-price-'.$row['property_id'].' ">
+								'.$row['start_time'].'
+							  </p>';
+							  
+				} elseif($ac[1] == 'sale') {
+					$row['title'] = 'FOR SALE : '.strtoupper(@$row['suburb']);
+				} else
+                    $row['title'] = PE_isTheBlock($row['property_id'])?/*'OWNER: '.*/$row['owner']:'AUCTION ENDS : '.@$row['end_time'];
+				
+				//BEGIN FOR MEDIA
+				 $media_row = $property_media_cls->getRow('SELECT med.media_id, med.file_name
+										FROM '.$media_cls->getTable().' AS med,'.$property_media_cls->getTable().' AS pro_med
+										WHERE med.type = \'photo\' AND med.media_id = pro_med.media_id AND pro_med.property_id = '.$id,true);
+										
+				if ($property_media_cls->hasError()) {
+				
+				} elseif (is_array($media_row) and count($media_row) > 0) {
+					//$row['file_name'] = trim($media_row['file_name'],'/');
+					$row['file_name'] = ROOTURL.'/'.trim($media_row['file_name'],'/');
+				}
+                else{
+                    $_photo = PM_getPhoto($row['property_id']);
+                    $row['photo_default'] = $_photo['photo_default'];
+                    $row['file_name'] = ROOTURL.'/'.trim($row['photo_default'],'/');
+                }
+
+				$row['address'] = $row['address'].', '.$row['suburb'].', '.$row['state_name'].', '.$row['postcode'].', '.$row['country_name'];
+		               				  
+	}  // End is_array($row) and count($row)>0
+    //print_r($row);
+	$str.= '<div style="float:left; margin-left:40px; margin-bottom:0px; width:100%" >
+				<img src="'.ROOTURL.'/modules/general/templates/images/ibb-logo.png" style="border:none" width="376" height="80" />				
+			</div>';
+	$str .= '<p style="float:right; margin-right:120px;">
+				 <a href="javascript:void(0)" id="prt" onclick="return prints();">
+				 	<img src="'.ROOTURL.'/modules/general/templates/images/Printer-icon.png" style="border:none" />
+				 </a>
+			</p>';
+	$str .= '<div class="col-main" style="margin-left:50px;"  >
+	<div class="property-box" id="property-box-d">
+    <div class="bar-title">
+        <h2>'.$row['title'].'</h2>
+    </div>
+    <div class="property-detail">
+
+            <div class="detail-2col">
+
+            <div class="col1 f-left">
+
+                <div>
+                    <p class="price" id="price-{$property_data.info.property_id}">
+                       '.$row['prices_show'].'
+                    </p>
+                    <p class="address">
+                       '.$row['address'].'
+                    </p>
+                </div>
+                <div class="detail-imgs">
+
+                            <div class="img-list-box" id="img-list-box">
+                                <div class="img-list" style="overflow:hidden;float:left; margin-bottom:10px;">
+                                	<div id="img-list-slide">
+                                        <div class="" style=" cursor: pointer; float: left; margin-right: 1px;">
+											<img src="'.$row['file_name'].' " alt="photos" style="width: 400px; height: 300px;" />
+										</div>
+                                    </div>
+                                </div>
+                                <div class="clearthis">
+                                </div>
+                            </div>
+                </div>
+                <div class="property-desc">
+
+                    <h2>PROPERTY DESCRIPTION</h2>
+                    <div>
+                        <p>
+                           '.$row['description'].'
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col2 f-right">
+                <div class="a-right">
+                    <p class="propertyid">
+                        <strong>Property ID: '.$row['property_id'].'</strong>
+                    </p>
+                    <p class="detail-icons">
+                        <span class="type">'.$row['type_name'].' </span>';
+
+	if ($row['kind'] != 1) {
+		$str .= '<span class="bed icons" id="bed_ic1">'.$row['bedroom_value'].' </span>
+		<span class="bath icons" id="bed_ic2">'.$row['bathroom_value'].' </span>';
+	}
+	
+	if ($row['parking'] == 1) {
+		$str .= '<span class="car icons" id="bed_ic3">'.$row['carport_value'].' </span>';
+	}
+
+    $str .=             '</p>
+                    <p style="color: #980000; font-size: 11px; font-weight: bold; margin: 0; "> Visits : '.$row['views'].' </p>
+                </div>
+
+                <div class="detail-info-box">
+
+                        	<!--  <div class="auction-info-box" id="auc-'.$row['property_id'].' ">
+                                    <div class="auc-time">
+                                        <p id="auc-time-'.$row['property_id'].' ">
+                                           Auction Starts
+                                        </p>
+                                    </div>
+                                    <div class="auc-bid">
+										'.$forth.'
+                                    </div>
+                              </div>  -->
+
+
+                    <div class="detail-info detail-info-print">
+                        <ul>';
+	if ($row['kind'] != 1) {
+		$str .= '<li>
+				   <span class="detail-info-span-a">'.$row['bedroom_value'].'  Bedroom </span>
+				   <span class="detail-info-span">'.$row['bathroom_value'].' Bathroom </span>
+				</li>
+				<div class="clearthis"></div>';
+	}					
+	
+	if ($row['parking'] == 1) {
+        if($row['land_size'] == 0){
+            $str .= '<li>
+				   <span class="detail-info-span-a">'.$row['carport_value'].' Car Parking </span>
+				   <span style="display: none;" class="detail-info-span">'.$row['land_size'].' </span>
+				</li>
+			   <div class="clearthis"></div>';
+        }else{
+            $str .= '<li>
+				   <span class="detail-info-span-a">'.$row['carport_value'].' Car Parking </span>
+				   <span class="detail-info-span">'.$row['land_size'].' </span>
+				</li>
+			   <div class="clearthis"></div>';
+        }
+	}
+    else if($row['land_size'] == 0){
+        $str .='<li style="display: none;">
+           <span class="detail-info-span-a">Land size</span>
+           <span class="detail-info-span">'.$row['land_size'].'</span>
+        </li>
+        <div class="clearthis"></div>';
+    }else{
+        $str .='<li>
+           <span class="detail-info-span-a">Land size</span>
+           <span class="detail-info-span">'.$row['land_size'].'</span>
+        </li>
+        <div class="clearthis"></div>';
+    }
+                            
+    $str .=                      '
+                            <li>
+                               <span class="detail-info-span-a">iBB Sustainability</span>
+                                <div class="f-right" id="frgreen2">
+                                   '.$row['green_rating_mark'].'
+                                </div>
+                            </li>
+                            <div class="clearthis"></div>
+                        </ul>
+
+                    </div> <!-- End  <div class="detail-info"> -->
+
+                </div>
+
+            </div>
+            <div class="clearthis">
+            </div>
+        </div>
+    	</div>
+	</div>
+</div>
+';
+			
+		}	// End Isset ID	
+		echo $str;	
+?>

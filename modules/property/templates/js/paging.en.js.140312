@@ -1,0 +1,714 @@
+	/*
+ * Ext JS Library 2.2
+ * Copyright(c) 2006-2008, Ext JS, LLC.
+ * licensing@extjs.com
+ * 
+ * http://extjs.com/license
+ */
+var store = null;
+Ext.onReady(function(){
+
+    // create the Data Store
+    store = new Ext.data.JsonStore({
+ 		root : 'topics',
+        totalProperty : 'totalCount',
+        id : 'property_id',
+        remoteSort : true,
+        fields : [
+            'property_id', 
+			'address', 
+			'views', 
+			'auction_name', 
+			'auction_sale',
+			'type_name', 
+			'price', 
+			'bid_price', 
+			'bedroom_name', 
+			'bathroom_name', 
+			'land_size', 
+			'parking',
+			'car_space_name', 
+			'car_port_name',
+			'photo_num',
+			'video_num',
+			'doc_num',
+			'agent_fullname' , 
+			'feature', 
+			'focus', 
+			'stop_bid',
+			'set_jump',
+			'cproperty', 
+			'comproperty',
+			'bidproperty', 
+			'pay_status',
+			'agent_active',
+			'active',
+            'start_time',
+            'end_time',
+            'confirm_sold',
+            'isBlock',
+            'ofAgent',
+            'date_to_reg_bid',
+            'auction_sale_code'
+
+        ],
+        limit : 'limit',
+
+        // load using script tags for cross domain, if the data in on the same domain as
+        // this page, an HttpProxy would be better
+        proxy : new Ext.data.HttpProxy({
+            url : session.action_link.replace('[1]','action=list-' + session.action_type)
+        })
+    });
+	
+    store.setDefaultSort('property_id', 'DESC');
+	
+	
+	function renderPrice(val, i, rec) {
+		var str = 'Price :' + val;
+						
+		if (rec.data.auction_sale == 9) {
+			str += ' / Bid price:' + rec.data.bid_price;
+		}
+		return str;
+	}
+	
+	function renderEdit(val,i,rec) {
+		return '<a href = "'+session.url_link.replace('[1]','module=property&action=edit&property_id='+rec.data.property_id)+'"><img src = "resources/images/default/dd/table_edit.png"></a>';
+	}
+	
+	function renderDelete(val,i,rec) {
+		return '<a href = "javascript:void(0)" onclick="outAction(\'delete\','+rec.data.property_id+')"><img src = "resources/images/default/dd/delete.png"></a>';
+	}
+	
+	function renderAddress(val,i,rec) {
+		//return '<p style="white-space:normal">'+val+'</p>';
+		//var str = '<b style="white-space:normal"><a class = "grid_link" href="" target="_blank">'+val+'</a></b>';
+        var stop_bid = '';
+        if (rec.data.stop_bid == 1 && rec.data.auction_sale_code != 'private_sale'){
+            stop_bid += ' (<span style="color:#ff0000;font-size:13px">Bidding Stopped</span>)';
+        }
+        if(rec.data.confirm_sold == 1){
+            stop_bid += ' (<span style="color:#ff0000;font-size:13px">'+(rec.data.auction_sale_code == 'ebiddar' || rec.data.auction_sale_code == 'bid2stay'?'Leased':'Sold')+'</span>)';
+        }
+		//var stop_bid = (rec.data.stop_bid == 1 && rec.data.auction_sale == 9) ? '( <font style="color:#ff0000;font-size:14px">Bidding Stopped</font> )': '';
+		var str = '<b style="white-space:normal">'+val+'</b>'+stop_bid;
+		return str;
+	}
+	function renderType(val,i,rec){
+        var str = val;
+        /*if (rec.data.auction_name == 'Auction' && rec.data.pay_status == 'Completed'){
+                     str += '<br/><span class="grid_default">'+rec.data.start_time+' - '+rec.data.end_time+'</span>';
+           }*/
+        if (rec.data.start_time != '0000/00/00' && rec.data.end_time != '0000/00/00'){
+             str += '<br/><span class="grid_default">'+rec.data.start_time+' - '+rec.data.end_time+'</span>';
+        }
+        return str;
+    }
+	/*
+	function focus_render(val){
+		return focus_data.queryBy(function(rec){
+			return rec.data.id == val;
+		}).itemAt(0).data.focus;
+	}
+
+	var title_edit = new Ext.form.TextField();
+	
+	var focus_data = new Ext.data.SimpleStore({
+		fields : ['id', 'focus'],
+		data : [['1','Yes'],['0','No']]
+	});
+	var focus_edit = new Ext.form.ComboBox({
+		typeAhead : true,
+		triggerAction : 'all',
+		mode : 'local',
+		store : focus_data,
+		displayField : 'focus',
+		valueField : 'id'
+	});
+	*/
+    var pay_data = new Ext.data.SimpleStore({
+        fields : ['id', 'pay_status'],
+		data : [['0','Pending'],
+                ['1','Payment received'],
+                ['2','Completed']
+
+        ]
+    });
+	var sm = new Ext.grid.CheckboxSelectionModel({
+		listeners: {
+            // On selection change, set enabled state of the removeButton
+            // which was placed into the GridPanel using the ref config
+            selectionchange: function(sm) {
+                if (sm.getCount()) {
+                    grid.removeButton.enable();
+					Ext.getCmp('btnChange').enable();
+                    Ext.getCmp('btnChangePay').enable();
+					var l = sm.getCount();
+					var s = l != 1 ? 's' : '';
+					grid.setTitle(session.grid_title + ' <i>('+l+' item'+s+' selected)</i>');
+                } else {
+                    grid.removeButton.disable();
+                    Ext.getCmp('btnChange').disable();
+                    Ext.getCmp('btnChangePay').disable();
+					grid.setTitle(session.grid_title);
+                }
+            }
+        }												 
+	});
+
+    /*Filter by*/
+    var filter_store = new Ext.data.SimpleStore({
+           fields : ['key', 'title'],
+		    data : [
+                ['all','All'],
+                ['auction','Live Auction'],
+                ['forthcoming','Forthcoming Auction'],
+                ['ebidda-live','eBidda Agent'],
+                ['ebiddar','eBiddaR'],
+                ['ebidda30','eBidda30'],
+                ['bid2stay','Bid2Stay'],
+                ['sale','Privale Sale'],
+                ['stop_bid','Bidding Stopped'],
+                ['sold','Sold/Rent']
+
+        ]
+    });
+
+    var filter = new Ext.form.ComboBox({
+        width:110,
+        store: filter_store,
+        valueField:'key',
+        displayField:'title',
+        mode:'local',
+        hideTrigger:false,
+        triggerAction: 'all',
+        emptyText:'Filter by...',
+        selectOnFocus:false,
+        id:'cmbFilter',
+        listeners:{
+            select:function(combo, value) {
+                store.reload({params:{start:0, limit: jQuery('#ext-comp-1016').val(), key:combo.value}});
+            }
+        }
+    });
+    /*End*/
+
+
+   /* var grid = new Ext.grid.GridPanel({*/
+	var grid = new Ext.grid.EditorGridPanel({
+        renderTo : 'topic-grid',
+        /*width:1135,*/
+		width : 1140,
+        height : 540,
+        title : session.grid_title ,
+		iconCls: 'grid_icon',
+		frame : true,
+        store : store,
+        trackMouseOver : false,
+        //disableSelection : true,
+        loadMask : true,
+		clickstoEdit: 1,
+        id:"grid",
+        // grid columns
+        columns :[
+			sm,		  
+		  {
+            header : "ID",
+            dataIndex : 'property_id',
+            width : 40, 
+			align : 'center',
+            sortable : true 
+          }/*,{   
+			header : "Edit",
+            dataIndex : 'edit_link',
+            width : 50,  
+			align : 'center',
+			renderer : renderEdit
+		 }*/,{   
+			header : "Address",
+            dataIndex : 'address',
+            width : 490,
+			align : 'left',
+			renderer : renderAddress 
+		  },{   
+			header : "Price (AU$)",
+            dataIndex : 'price',
+            width : 90,
+			align : 'left',
+			sortable : true
+			//renderer : renderPrice
+		  },{
+			header : "Bid Price (AU$)",
+            dataIndex : 'bid_price',
+            width : 90,
+			align : 'left',
+			sortable : true
+			//renderer : renderPrice
+		  },{
+			header : "Auction/Sale",
+            dataIndex : 'auction_name',
+            width : 110,
+			align : 'left',
+			sortable : true
+            //renderer: renderType
+		  },{   
+			header : "Type",
+            dataIndex : 'type_name',
+            width : 70,  
+			align : 'left',
+			sortable : true 
+		  },{   
+			header : "Vendor Name",
+            dataIndex : 'agent_fullname',
+            width : 100,  
+			align : 'left'
+		 },{   
+			header : "Pay Status",
+            dataIndex : 'pay_status',
+            width : 100,  
+			align : 'left',
+			sortable : true,
+            editor: new Ext.form.ComboBox({
+               typeAhead: true,
+               store: pay_data,
+               displayField: 'pay_status',
+               fieldLabel: 'pay_status',
+               hiddenName:'cmbPay',
+               valueField: 'pay_status',
+               triggerAction: 'all',
+               mode: 'local',
+               lazyInit: false,
+               listeners: {
+                   click: function(obj) {
+                            obj.expand();
+                   },
+                   change: function(combo,value){
+                      //outAction('change_pay&pay=',this.value);
+                       var url = '../modules/property/action.admin.php?action=change_pay-property&token='+session.token;
+                       var sm =  grid.getSelectionModel();
+                       var sem = sm.getSelections();
+                       $.post(url,{pay:value,property_id:sem[0].get('property_id')},function(data){
+                               });
+                   }
+               }
+
+            })
+		 }],
+		sm: sm,
+        viewConfig: {
+            forceFit : true,
+            enableRowBody : true,
+            showPreview : true,
+            getRowClass : function(rec, rowIndex, p, store){
+				var str = '<p class="grid_expand1" style="margin-left:65px">';
+
+
+				//str += '<i>';
+				str += '<span>Bed : ('+rec.data.bedroom_name + ')</span>';
+				str += '<span>Bathroom : ('+rec.data.bathroom_name + ')</span>';
+				str += '<span>Landsize : ('+rec.data.land_size + ')</span>';
+				if (rec.data.parking == 1) {
+					str += '<span>Car space : ('+rec.data.car_space_name + ')</span>';
+					str += '<span>Garage : ('+rec.data.car_port_name + ')</span>';
+				}
+				str += '<span>Note : ('+rec.data.cproperty + ')</span>';
+				str += '<span>Comment : ('+rec.data.comproperty + ')</span>';
+				str += '<span>View : ('+rec.data.views + ')</span>';
+				str += '<span>Bid : ('+rec.data.bidproperty + ')</span>';
+				str += '<span>Photo : ('+rec.data.photo_num + ')</span>';
+				str += '<span>Video : ('+rec.data.video_num + ')</span>';
+				str += '<span>Doc : ('+rec.data.doc_num + ')</span>';
+
+				//str += '</i>';
+				str += '</p>';
+				
+				str += '<p class="grid_expand2" style="margin-left:65px">';
+                if (rec.data.confirm_sold == 0){
+                   /* if (rec.data.focus == 1) {
+                        str += '<a href = "javascript:void(0)" onclick="outAction(\'focus\','+rec.data.property_id+')">Focus : yes</a>';
+                    } else {
+                        str += '<a class="grid_warn" href = "javascript:void(0)" onclick="outAction(\'focus\','+rec.data.property_id+')">Focus : no</a>';
+                    }*/
+                    if (rec.data.focus == 1) {
+                        str += '<a href = "javascript:void(0)" onclick="confirmAdmin(\'focus\','+rec.data.property_id+',true)">Focus : Yes</a>';
+                    } else {
+                        str += '<a class="grid_warn" href = "javascript:void(0)" onclick="confirmAdmin(\'focus\','+rec.data.property_id+',false)">Focus : No</a>';
+                    }
+                    str += '<span>|</span>';
+
+                    if (rec.data.set_jump == 1) {
+                        str += '<a href = "javascript:void(0)" onclick="confirmAdmin(\'set_jump\','+rec.data.property_id+',true)">Home Page : Yes</a>';
+                    } else {
+                        str += '<a class="grid_warn" href = "javascript:void(0)" onclick="confirmAdmin(\'set_jump\','+rec.data.property_id+',false)">Home Page : No</a>';
+                    }
+                    str += '<span>|</span>';
+
+
+                    if (rec.data.active == 1) {
+                        str += '<a href = "javascript:void(0)" onclick="outAction(\'active\','+rec.data.property_id+')">Active</a>';
+                    } else {
+                        str += '<a class="grid_warn" href = "javascript:void(0)" onclick="outAction(\'active\','+rec.data.property_id+')">InActive</a>';
+                    }
+                    str += '<span>|</span>';
+
+
+                    if (rec.data.agent_active == 1) {
+                      /*  str += '<span class="grid_default">Online</span>';
+                    } else {
+                        str += '<span class="grid_warn">Offline</span>';
+                    }*/
+                        str += '<a href = "javascript:void(0)" onclick="outAction(\'agent_active\','+rec.data.property_id+')">Online</a>';
+                    } else {
+                        str += '<a class="grid_warn" href = "javascript:void(0)" onclick="outAction(\'agent_active\','+rec.data.property_id+')">Offline</a>';
+                    }
+
+                    str += '<span>|</span>';
+                    str += '<a href = "'+session.url_link.replace('[1]','module=property&action=edit&property_id='+rec.data.property_id)+'">Edit</a>';
+                    str += '<span>|</span>';
+
+                } else {
+
+                    if (rec.data.focus == 1) {
+                        str += '<span>Focus : Yes</span>';
+                    } else {
+                        str += '<span>Focus : No</span>';
+                    }
+                    str += '<span>|</span>';
+
+                    if (rec.data.set_jump == 1) {
+                        str += '<span>Home Page : Yes</span>';
+                    } else {
+                        str += '<span>Home Page : No</span>';
+                    }
+                    str += '<span>|</span>';
+
+
+                    if (rec.data.active == 1) {
+                        str += '<span>Active</span>';
+                    } else {
+                        str += '<span>InActive</span>';
+                    }
+                    str += '<span>|</span>';
+
+
+                    if (rec.data.agent_active == 1) {
+                        str += '<span>Online</span>';
+                    } else {
+                        str += '<span>Offline</span>';
+                    }
+
+                    str += '<span>|</span>';
+                    str += '<span>Edit</span>';
+                    str += '<span>|</span>';
+                }
+                str += '<a href = "javascript:void(0)" onclick="outAction(\'delete\','+rec.data.property_id+')">Delete</a>';
+                if (rec.data.auction_name == 'Auction' && rec.data.bid_price != '$0'){
+                     str += '<span>|</span>';
+                     str += '<span>Auction: '+rec.data.start_time;
+                    if (!(rec.data.isBlock || rec.data.ofAgent)){
+                        str += ' - '+rec.data.end_time+'</span>';
+                    }else if(rec.data.date_to_reg_bid != ''){
+                        str += '<span>|</span> Lock date: '+rec.data.date_to_reg_bid+'</span>';
+                    }
+                }
+				
+				str += '</p>';
+
+				p.body = str;
+				if (rec.data.stop_bid == 1) {
+					//return 'x-grid3-row-expanded-warning';
+				}
+				return rowIndex % 2 ? 'x-grid3-row-expanded' : 'x-grid3-row-expanded-ord';
+            },
+			stripeRows: true
+        },
+		
+		plugins:[new Ext.ux.grid.Search({
+					iconCls : 'icon-zoom'
+					,readonlyIndexes : ['note']
+					,disableIndexes : ['edit_link','auction_name','type_name','price','bid_price','bedroom_name','bathroom_name','land_size','car_space_name','agent_fullname','feature','focus','cproperty','comproperty','views','bidproperty','pay_status','agent_active','active','delete_link']
+					,minChars : 3
+					,autoFocus : true
+					,position : 'top'
+					,checkIndexes : ['property_id','address']
+					,showSelectAll : true
+					,width : 250
+					,align : 'right'
+
+				})]
+		,
+		tbar : [{
+					text : 'Add Property',
+					icon : '/admin/resources/images/default/dd/drop-add.gif',
+					handler : function() {
+						document.location = session.add_link;
+					}
+				},'-',
+				{
+					text : 'Delete Property',
+					icon : '/admin/resources/images/default/dd/delete.png',
+					cls : 'x-btn-text-icon',
+					ref: '../removeButton',
+					disabled: true,
+					handler : function() {
+						var sm = grid.getSelectionModel();
+						var sel = sm.getSelected();
+						if (sm.hasSelection()){
+							var id_ar = [];
+							var rows = sm.getSelections();
+							for (i = 0; i < rows.length; i++){
+								id_ar.push(rows[i].data.property_id);
+							}
+
+							if (id_ar.length > 0) {
+								outAction('multidelete',id_ar.join(','));
+							}
+						} else {
+							Ext.Msg.alert('Warning.','Please chose one row before deleting.');
+						}
+					}
+				},'-',
+				{
+					text : 'Change Status',
+					icon : '/admin/resources/images/default/dd/drop-yes.gif',
+                    tooltip: 'Change status the selected properties',
+					cls : 'x-btn-text-icon',
+					disabled: true,
+                    id:'btnChange',
+                    //ref: '../changeButton',
+					handler : function() {
+						var sm = grid.getSelectionModel();
+						var sel = sm.getSelected();
+						if (sm.hasSelection()){
+                            //Ext.getCmp('btnChange').disable();
+							var id_ar = [];
+							var rows = sm.getSelections();
+							for (i = 0; i < rows.length; i++){
+								id_ar.push(rows[i].data.property_id);
+							}
+
+							if (id_ar.length > 0) {
+								outAction('multiactive',id_ar.join(','));
+							}
+						} else {
+							Ext.Msg.alert('Warning.','Please chose one row before deleting.');
+						}
+					}
+				},
+                '-',
+				{
+					text : 'Change Payment',
+					icon : '/admin/resources/images/default/dd/order-icon.png',
+					cls : 'x-btn-text-icon',
+					disabled: true,
+                    id:'btnChangePay',
+                    menu:[
+                        {text:'Pending',
+                         handler:function(){
+                                var sm = grid.getSelectionModel();
+                                var sel = sm.getSelected();
+                                if (sm.hasSelection()){
+                                    var id_ar = [];
+                                    var rows = sm.getSelections();
+                                    for (var i = 0; i < rows.length; i++){
+                                        id_ar.push(rows[i].data.property_id);
+                                    }
+                                    changePayment(id_ar,'Pending');
+                                }else {
+                                    Ext.Msg.alert('Warning.','Please chose one row before deleting.');
+                                }
+                         }
+                        },
+                        {text:'Payment received',
+                         handler:function(){
+                                var sm = grid.getSelectionModel();
+                                var sel = sm.getSelected();
+                                if (sm.hasSelection()){
+                                    var id_ar = [];
+                                    var rows = sm.getSelections();
+                                    for (var i = 0; i < rows.length; i++){
+                                        id_ar.push(rows[i].data.property_id);
+                                    }
+                                    changePayment(id_ar,'Payment received');
+                                }else {
+                                    Ext.Msg.alert('Warning.','Please chose one row before deleting.');
+                                }
+                         }
+                        },
+                        {text:'Completed',
+                         handler:function(){
+                                var sm = grid.getSelectionModel();
+                                var sel = sm.getSelected();
+                                if (sm.hasSelection()){
+                                    var id_ar = [];
+                                    var rows = sm.getSelections();
+                                    for (var i = 0; i < rows.length; i++){
+                                        id_ar.push(rows[i].data.property_id);
+                                    }
+                                    changePayment(id_ar,'Completed');
+                                }else {
+                                    Ext.Msg.alert('Warning.','Please chose one row before deleting.');
+                                }}
+                        }
+                    ],
+                    handler:function(){
+                        var sm = grid.getSelectionModel();
+                        var sel = sm.getSelected();
+                        if (sm.hasSelection()){
+                            var id_ar = [];
+                            var rows = sm.getSelections();
+                            for (var i = 0; i < rows.length; i++){
+                                id_ar.push(rows[i].data.property_id);
+                            }
+                            return id_ar;
+                        }else {
+                            Ext.Msg.alert('Warning.','Please chose one row before deleting.');
+                        }
+                    }
+				},'->','Filter by',filter
+		],
+        // paging bar on the bottom
+        bbar : new Ext.PagingToolbar({
+            pageSize : 20,
+            store : store,
+            displayInfo : true,
+            displayMsg : 'Total topics <div style="display: none;">{0} - {1} </div> {2}',
+            emptyMsg : "No topics to display",
+            plugins : [new Ext.ux.plugin.PagingToolbarResizer( {options : [ 20, 50, 100, 200 ], prependCombo: true})]
+        })
+
+    });
+    // render i
+
+    grid.render();
+    //store.baseParams = {key: Ext.getCmp('cmbFilter').getValue()};
+    store.on('beforeload', function(store){
+	    //store.baseParams = {key: Ext.getCmp('cmbFilter').getValue()};
+        store.baseParams['key'] = Ext.getCmp('cmbFilter').getValue();
+    });
+    store.load({params : {start : 0, limit : 20, property_id :10,key:Ext.getCmp('cmbFilter').getValue()}});
+
+
+    /*store.baseParams['key'] = Ext.getCmp('cmbFilter').getValue();*/
+
+
+});
+
+
+/**
+@ function : outAction
+@ type : focus, set_jump, active, agent_active, delete, multidelete
+**/
+
+
+function ajaxAction(type,val,url) {
+	showWaitBox()
+	Ext.Ajax.request({
+		url : url,
+		params : {
+			type : type,
+			property_id : val
+		},
+		success : function ( result, request ) {
+			var jsonData = Ext.util.JSON.decode(result.responseText);
+			//var resultMessage = jsonData.data.result;
+			hideWaitBox();
+			store.reload({params:{key:Ext.getCmp('cmbFilter').getValue()}});
+			if (result.responseText && result.responseText.length > 0) {
+				Ext.Msg.show({
+                    title:'Warning !'
+                    ,msg:result.responseText
+                    ,icon:Ext.Msg.WARNING
+                    ,buttons:Ext.Msg.OK
+
+	            });
+			}
+		},
+		failure : function( result, request ) {
+			hideWaitBox();
+		}
+	});		
+}
+
+function confirmAdmin(action,property_id,type){
+    if (type == true){//yes (show popup confirm)
+        Ext.Msg.show({
+				title :'Warning?'
+				,msg :'Are you sure change property ?'
+				,icon : Ext.Msg.QUESTION
+				,buttons : Ext.Msg.YESNO
+				,scope : this
+				,fn : function(response) {
+					if('yes' !== response) {
+						return ;
+					}
+					outAction(action,property_id);
+				}
+			});
+    }else{//no (show popup)
+                var radio =  new Ext.form.RadioGroup({
+                                            id:'rdConfirm',
+                                           /* fieldLabel: 'Choose payment method',*/
+                                            columns:2,
+                                            autoHeight:true,
+                                            collapsed: true
+                                            //items: result.data
+                                       });
+                var options = new Ext.Window({
+                   title:'Advance property',
+                   bodyStyle:'padding:10px',
+                   //width:400,
+                   autoHeight:true,
+                   width:330,
+                   layout:'form',
+                   closable:false,
+                   items:radio,
+                   buttons:[{text:'Save',
+                             icon : '/admin/resources/images/default/dd/save.png',
+                             handler:function(){
+                                       var checkItem = Ext.getCmp('rdConfirm').getValue();
+                                       if (checkItem == null){
+                                           Ext.Msg.alert('Failure', 'Please choose a option !');
+                                       }else{
+                                           outAction(action,property_id);
+                                       }
+                                        radio.destroy();
+                                        options.hide();
+                             }},
+                            {text:'Cancel',
+                             icon : '/admin/resources/images/default/dd/cancel.png',
+                             handler:function(){
+                                   radio.destroy();
+                                   options.hide();
+                             }
+                            }
+                        ]
+
+                });
+                radio.items = [
+                    { boxLabel: 'Payment', name: 'confirm', inputValue: 'payment'},
+                    { boxLabel: 'Free', name: 'confirm', inputValue: 'free'}
+                   /* { boxLabel: 'Cancel', name: 'confirm', inputValue: 'cancel'}*/
+                ];
+                options.show();
+    }
+
+}
+
+function changePayment(id_ar,value){
+         if (id_ar.length > 0) {
+             var url = '../modules/property/action.admin.php?action=multichange_pay-property&token='+session.token;
+             $.post(url,{pay:value,property_id:id_ar.join(',')},function(data){
+                 var result = jQuery.parseJSON(data);
+                 if (result == 'success'){
+                    store.reload({params:{key:Ext.getCmp('cmbFilter').getValue()}});
+                 }else{
+                    Ext.Msg.alert('Warning.','Error when process. Please try again !');
+                 }
+             });
+         }
+    }
+
+
+

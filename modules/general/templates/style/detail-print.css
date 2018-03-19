@@ -1,0 +1,59 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+html, div, map, dt, isindex, form {
+    display: block;
+}
+
+@font-face {
+    font-family: 'HelveticaNeueCondensed';
+    src: url('font/helveticaneue-condensed-webfont.eot');
+    src: url('font/helveticaneue-condensed-webfont.eot?#iefix') format('embedded-opentype'), url('font/helveticaneue-condensed-webfont.woff') format('woff'), url('font/helveticaneue-condensed-webfont.ttf') format('truetype'), url('font/helveticaneue-condensed-webfont.svg#helveticaneueregularregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: HelveticaNeueCondensed, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #2f2f2f;
+}
+
+.wrapper-print {
+    /*width: 100%;*/
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 700px;
+}
+
+.print-page {
+    /*width: 100%;*/
+    width: 568px;
+    max-width: 568px;
+    margin: 0 auto;
+    font-size: 14px;
+    font-family: HelveticaNeueCondensed, Helvetica, sans-serif;
+}
+
+.content-print {
+    text-align: left;
+}
+
+.clearthis {
+    clear: both;
+    float: none;
+    height: 0px;
+    line-height: 0px;
+    font-size: 0px;
+}
+
+.f-left, .left {
+    float: left !important;
+}
+
+.f-right, .right {
+
+    float: right !important;
+}

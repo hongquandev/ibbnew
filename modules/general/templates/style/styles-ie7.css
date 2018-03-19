@@ -1,0 +1,2190 @@
+.css-ie7{}
+.auctions-box .bar-title h2 {
+	margin-top:-2px !important;
+    color: #fff !important;
+    text-transform: uppercase !important;
+    font-weight: normal !important;
+}
+.auctions-box .bar-title .bar-filter .bar-title-view-top3{margin-left:0px !important;}
+.auctions-box .bar-title .bar-filter .bar-title-view-top4{padding-right:2px !important;}
+.auctions-box .auctions-list ul {
+    list-style: none !important;
+	float:left !important;
+}
+#property-box-d .popup_container {
+    position: absolute !important;z-index: 101 !important;right: 328px;}
+#property-box-d #fridx {
+    /*margin-top: -15px !important;*/}
+.property-box {
+    margin-bottom: 29px !important;
+}
+.property-box .property-list-ie {
+	float: left !important;
+}
+.property-box .property-list ul {
+    list-style: none !important;
+}
+
+.property-box .property-list ul li {
+    display: inline-block;
+    margin: 10px 1px !important;
+}
+.property-box .property-list ul li.last {
+    margin: 10px 0px 10px 1px !important;
+	float: left !important; 
+}
+
+.auctions-box .auctions-list ul li.last {
+    margin: 10px 0px 10px 1px !important;
+	float:left !important;
+}
+.auctions-list {
+	float:left !important;
+}
+.header {
+    position: relative !important;
+}
+.header .login-box .button-field {
+    float: left !important;
+    margin-left: 2px !important;
+	margin-top:1px;
+}
+.panel-payment-step7{margin-top: 15px;}
+.tbl-info {
+	float:left;
+}
+.tbl-info-home {
+	margin-top: -10px !important;
+}
+.tbl-info-home ul li.livability {
+	margin-bottom: -6px !important;
+}
+.tbl-info-home ul li.livability span {
+	margin-right: 28px !important;
+}
+.btn-view-wht-forthcoming {
+	margin-top: 5px !important;
+}
+.tbl-info .col1 {
+    list-style: none outside none !important;
+    margin-right: 1px !important;
+    /*width: 200px !important;*/
+}
+
+.tbl-info .col1 li {
+    width: auto !important;
+    background-color: #D9D9D9 !important;
+    margin: 1px 0px 0px 0px !important;
+    padding: 4px 2px !important;
+}
+
+.spxgreen1 {
+	margin-right:5px !important;
+	margin-top:-20px !important;
+}
+.spxgreen2 {
+	margin-right:5px !important;
+	margin-top:-20px !important;
+}
+
+.btn-wht {
+	padding-top: 6px !important;
+    border: none;
+	height: 24px !important;
+}
+
+.btn-wht span {
+	padding-top: 0px !important;
+}
+.btn-wht span span {
+    background-position: 100% -27px;
+    /*color: #666666;*/
+	padding-top: 6px !important;
+	/*padding-right: 0px;*/
+	padding-bottom: 5px;
+	padding-left: 0px;
+}
+
+#frgreen1 {
+	float:right;
+	margin-top:-17px !important;
+}
+#frgreen2 {
+	float:right;
+	margin-top:-17px !important;
+}
+
+.header .login-box .txt-username, .header .login-box .txt-password {
+    border: medium none !important;
+    height: 20px !important;
+    width: 108px !important;
+}
+#opstep7 {
+
+	margin-top:-17px !important;
+	 
+}
+.form-list li.control {
+  
+	padding-top:8px;
+}
+
+.form-list li {
+ 
+	padding-top:0px;
+}
+#ips {
+	margin-top:-22px;
+}
+.search-results .search-list .item .img .toolbar-img .img-num {
+    margin-right: 30px;
+	
+	
+}
+.ricq1 {
+	position:absolute;
+	margin-right:50px;
+}
+.ricq2 {
+	position:absolute;
+}
+.icons {
+    background: url('../images/icons.png') no-repeat scroll 0 0 transparent;
+
+}
+
+.btn-red span span {
+    background-position: 100% -27px !important; 
+    color: #FFFFFF !important;
+    padding: 5px 5px 5px 5px !important;
+}
+
+#btnclosex {
+    height: 20px !important;
+    left: -1px !important;
+  	margin-right:-10px !important;
+    top: 1px !important;
+    width: 22px !important;
+	margin-top:-25px !important;
+}
+.a-right {
+    text-align: right !important;
+}
+#bed_ic1 {
+	position:relative;
+}
+.pag-short .l {
+    background-position: -2px -153px !important;
+    float: left;
+    padding-left: 10px;
+}
+.pag-short .r {
+    background-position: 27px -188px !important;
+    float: right;
+    padding-right: 10px;
+}
+.btn-red span {
+    background: url("../images/btn-red.png") no-repeat scroll 0 0 transparent;
+	  padding-left:10px;
+   padding-right:0px;
+   padding-top:27px;
+   padding-top:-10px;
+   height:27px;
+   background-color: transparent;
+
+}
+#property-box-d .btn-bid-reg{margin-top: 0px;width: 108px;}
+#property-box-d .btn-countdown{margin-top: 0px;}
+.live-forthcomming-list .btn-make-an-ofer-fl{width:120px;height:28px;float:left;margin:0 0 0 0px !important;}
+.btn-make-an-ofer span {margin-top:-5px;}
+.btn-make-an-ofer span span {margin-top:-5px;}
+#postcode {
+	/*margin-bottom:-8px;*/
+}
+#input-box-contactable{}
+/* menu >8 */
+.menu #nav-more li {
+    margin: 0px 0px 0px 5px;
+}
+.menu #nav-more .item-menu-last .sub-nav {left: -48px !important;}
+/*end*/
+/* menu =9 */
+/*.menu #nav-equal9 .item-menu-last .sub-nav {left: -48px !important;}*/
+.menu #nav-equal9 .sub-nav li{margin: 0px !important;}
+.menu #nav-equal9 li {
+    margin: 0px 8px 0px 5px !important;
+}
+/*end*/
+/* menu <8 */
+.menu #nav-less li {
+    margin: 0px 40px 0px 9px;
+}
+/*end*/
+.menu .nav li {
+    display: inline;
+    padding: 10px 0;
+    position: relative;
+    margin: 0px 10px 0px 9px;
+}
+.menu .nav li span {
+    padding: 3px 0px 0px 8px !important;
+}
+.menu .nav li span span {
+	margin: -3px 0px 0px 0px !important;
+    padding: 3px 7px 3px 0px !important;
+}
+menu .nav li.active span, .menu .nav li:hover span {
+    padding: 3px 0px 0px 8px !important;
+}
+.menu .nav li.active span span, .menu .nav li:hover span span {
+    padding: 3px 7px 3px 0px !important;
+}
+element.style {
+    display: none;
+}
+.hero-slide-img{width:617px; height: 257px !important;}
+.labelqsearch1,
+.labelqsearch2,
+.labelqsearch3{
+	float: left !important;
+}
+
+.toolbar .paging .pg {
+	padding-top: 15px !important;
+}
+.toolbar .paging .pg li{
+	margin-right: 5px !important;
+}
+.toolbar .paging .pg li.first,
+.toolbar .paging .pg li.prev,
+.toolbar .paging .pg li.active,
+.toolbar .paging .pg li.next
+{
+	margin-right: 5px !important;
+}
+.input-box file-upload {
+	border:5px solid #990000;
+	margin-top: -100px;
+	margin-left:-200px;
+	
+}
+.message-box {
+	margin-top:-3px !important;
+    border: 1px solid #B70000;
+    color: #B70000;
+    display: block;
+    padding: 2px 2px 2px 5px;
+	position:absolute;
+}
+.tv-show .message-box{position:relative !important;}
+/* Search */
+.fixstprice {
+	position:relative !important;
+	margin-top: 4px !important;
+}
+.fixstrates1 {
+	position:relative !important;
+	/*margin-top:-65px !important;*/
+	margin-top:0px !important;
+	margin-left:5px !important;
+}
+.fixstrates2 {
+	position:relative !important;
+	/*margin-top:-50px !important;*/
+	margin-top:0px !important;
+	margin-left:5px !important;
+}
+#fixstopen {
+	/*margin-top:-23px !important;*/
+	margin-top:0px !important;
+}
+#fixbtnview {
+	/*position:relative !important;*/
+	margin-top:-5px;
+}
+#fixbtnadd {
+	height: 25px !important;
+	margin-left:-17px !important;
+	margin-top:-24px !important;
+}
+#fixsr-new {
+	margin-top:-10px !important;
+	/*position:relative;*/
+}
+#fixstid {
+	margin-top:-15px;
+}
+.auctions-box .auctions-list ul li#fixulfirst {
+    margin: 10px 1px 10px 0;
+}
+.auction-register .step-1-info .control-r-ie{padding-top: 0px !important;margin:0px !important;}
+.auction-register .step-4-info .form-list p{margin-top:-22px !important;}
+.auction-register .step-4-info .form-list li{padding-bottom:3px !important;}
+.auctions-box-live-fg .popup_container_ie{width:200px;}
+.auctions-box-live-fg .popup_container_ie .mycalen .title{width:180px !important;}
+.auctions-box-searchvg .popup_container_ie{width:200px;}
+.auctions-box-searchvg .popup_container_ie .mycalen .title{width:180px !important;}
+.auctions-box-searchvg .watermark-g{margin-top:5px !important;}
+.auctions-box-searchvg .watermark-wlist{margin-top:0px !important;}
+.auctions-box-viewsg .watermark{margin-top:25px !important;}
+/*---Lan Fix CSS----*/
+.step2-suburb-so{padding-left: 15px !important;}
+.detail-2col .col2 .detail-info-box .detail-info{min-height: 100px !important;}
+.detail-2col .col2 .detail-info-box .email-box {position: inherit !important;}
+/*---register----*/
+.user-register .buttons-set button.btn-black{height: 30px !important;padding-top:2px !important;padding-bottom:0px !important;}
+.user-register .buttons-set button.btn-black span {
+   padding: 0px 0px 0px 19px !important;
+   background: url("../images/btn-black.png") no-repeat scroll 0 0 transparent;
+ 
+}
+.user-register .buttons-set button.btn-black span span {
+    background-position: 100% -27px;
+    color: #FFFFFF;
+    padding: 2px 17px 9px 3px !important;
+}
+/*---End register----*/
+/*---login----*/
+.form-list-login{padding-top: 20px;}
+.myaccount2 .ma-info .message-box {
+    width: 419px !important;
+    padding:  2px 1px !important;
+}
+.myaccount2 .ma-info .btn-red {
+    height: 30px !important;
+	padding: 2px 0px 0px 0px;
+    margin: 0px -5px -4px -4px !important;
+}
+.myaccount2 .ma-info .btn-red span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.myaccount2 .ma-info .btn-red span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+/*----End login-----*/
+/*---My account------*/
+.content-box  .step-detail .buttons-set .dbt2 .btn-black {
+	margin: 4px -8px 0 0;
+	padding: 2px 0px 4px 0px  !important;
+}
+.content-box  .step-detail .buttons-set .dbt2 .btn-black span {
+	padding: 0px 0px 0px 19px;
+}
+.content-box  .step-detail .buttons-set .dbt2 .btn-black span span {
+	padding: 2px 0px 8px 0px   !important;
+}
+.content-box  .step-detail .buttons-set .dbt2 .btn-red {
+	margin: 4px -18px 0 0;
+	padding: 6px 0px 4px 0px  !important;
+}
+.content-box  .step-detail .buttons-set .dbt2 .btn-red span {
+	padding: 0px 0px 0px 14px  !important;
+}
+.content-box  .step-detail .buttons-set .dbt2 .btn-red span span {
+	padding: 3px 5px 5px 0px!important;
+}
+.property-box .property-detail .have-your-say-box .form-say .form-box .buttons-set-s .btn-red {
+    height: 30px !important;
+	padding: 2px 0px 0px 0px;
+    margin: 0px 0px 0px -13px !important;
+}
+.property-box .property-detail .have-your-say-box .form-say .form-box .buttons-set-s .btn-red span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.property-detail .btn-countdown{height: 28px !important;width: 82px !important; float: right !important;}
+.property-detail .btn-countdown span span{padding: 4px 5px 4px 1px !important;background-position: 100% -27px !important;color: #FFFFFF;}
+.property-detail .btn-countdown span{padding: 0px 2px 0px 5px !important; background: url('../images/btn-red.png') 0 0 no-repeat;}
+/*popup coutdown*/
+.property-detail .popup-countdown-child{margin-top: 52px;right: 326px;left: 310px;}
+.property-detail .popup-countdown-child .normal-el{float: none !important;}
+.property-detail .popup-countdown-child .content-po{padding-right: 9px !important;}
+.property-detail .popup-countdown-child .content-po .normal-ell .popup-count{width: 100%;padding: 0 !important;}
+.property-detail .popup-countdown-child  ul.tabs-popup{position: relative;}
+.property-detail .popup-countdown-child .normal-el .btn-red{padding-top: 0px !important;}
+.property-detail .popup-countdown-child .normal-el .btn-red span{}
+.property-detail .popup-countdown-child .normal-el .btn-red span span{padding-top: 4px !important;}
+.content-po .btnclose{float: none;}
+.property-box-detail .popup_container2 .messages-auto-bid .btn-red-auto-bid span span{padding-top: 3px !important;}
+.property-box-detail .property-detail-b .btn-countdown{width: 83px !important;}
+.tv-show-vm-b .popup-countdown-child .title #btnclosex{left:0px !important; width: 10px !important;margin-left: 305px;margin-right: 0px !important;float: left !important;}
+.tv-show-vm-b .popup-countdown-child .increment-sub .div-normal-el span{}
+.tv-show-vm-b .popup-countdown-child .increment-sub .div-normal-el .popup-count{float: none !important;}
+/*end popup coutdown*/
+
+.property-box .property-detail .have-your-say-box .form-say .form-box .buttons-set-s .btn-red span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+
+.myaccount .ma-info .buttons-set-a .btn-red-a {
+    height: 30px !important;
+	padding: 2px 0px 0px 0px;
+    margin: 0px -5px 0px 0px !important;
+}
+.myaccount .buttons-set-a .btn-red-a { height: 30px !important;	padding: 2px 0px 0px 0px;  margin: 0px !important;}
+.myaccount .buttons-set-a .btn-red-a{width: 58px;}
+.myaccount .ma-info .buttons-set-a .btn-red-a span,.myaccount .buttons-set-a .btn-red-a span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.myaccount .ma-info .buttons-set-a .btn-red-a span span,.myaccount .buttons-set-a .btn-red-a span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.myaccount .lawyer-main .lawyer-buttons-set .btn-red {
+    width: 58px;
+    height: 30px !important;
+	padding: 2px 0px 0px 0px;
+    margin: 0px 1px 0px 0px !important;
+}
+.myaccount .lawyer-main .lawyer-buttons-set .btn-red span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.myaccount .lawyer-main .lawyer-buttons-set .btn-red span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.myaccount .contact-main .contact-buttons-set .btn-red {
+    width: 58px;
+    height: 30px !important;
+	padding: 2px 0px 0px 0px;
+    margin: 0px 1px 0px 0px !important;
+}
+.myaccount .contact-main .contact-buttons-set .btn-red span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.myaccount .contact-main .contact-buttons-set .btn-red span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.content-box .step-1-info .bg-f7f7f7 .message-box-update{width:607px;}
+.content-box .step-1-info .bg-f7f7f7 .message-box-add{width:607px;}
+.user-register .step-1-info .bg-f7f7f7 .buttons-set .btn-red-register-step1 {
+    height: 28px !important;
+	width: 163px;
+	padding: 2px 0px 0px 0px;
+    margin: 0px 0px 0px 2px !important;
+}
+.user-register .step-1-info .bg-f7f7f7 .buttons-set .btn-red-register-step1 span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.user-register .step-1-info .bg-f7f7f7 .buttons-set .btn-red-register-step1 span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.user-register .step-1-info .bg-f7f7f7 .buttons-set .btn-register-step1{margin:5px 0px 0px 0px;}
+#contactform .btn-red {
+	width:70px;
+    height: 30px !important;
+	padding: 2px 0px 0px 0px;
+    margin: 0px 3px 0px 0px !important;
+}
+#contactform  .btn-red span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+#contactform .btn-red span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.myaccount .content-box .content-details .toolbar .btn-red-my-properties,.myaccount .agent-grid-box .auctions-list .toolbar .pager .btn-red-my-properties {
+    height: 28px !important;
+	width: 160px;
+	padding: 2px 0px 0px 0px;
+    margin: 0px !important;
+}
+.myaccount .content-box .content-details .toolbar .btn-red-my-properties span,.myaccount .agent-grid-box .auctions-list .toolbar .pager .btn-red-my-properties span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.myaccount .content-box .content-details .toolbar .btn-red-my-properties span span,.myaccount .agent-grid-box .auctions-list .toolbar .pager .btn-red-my-properties span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.btn-red-user-properties {
+    height: 28px !important;
+	width: 116px;
+	padding: 2px 0px 0px 0px;
+    margin: 0px !important;
+}
+.btn-red-user-properties span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.btn-red-user-properties span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.btn-red-my-banner {
+    height: 28px !important;
+	width: 160px;
+	padding: 2px 0px 0px 0px;
+    margin: 0px !important;
+}
+.btn-red-my-banner span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.btn-red-my-banner span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+
+.auction-register .step-info .bg-f7f7f7 .buttons-set .btn-red-personal-details{
+	width:60px;
+    height: 30px !important;
+	padding: 2px 0px 0px 0px;
+    margin: 0px 3px 0px 0px !important;
+}
+.auction-register .step-info .bg-f7f7f7 .buttons-set .btn-red-personal-details span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.auction-register .step-info .bg-f7f7f7 .buttons-set .btn-red-personal-details span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.myaccount .lawyer-main .form-list .input-box-lawyer{margin-top: 6px !important;}
+.myaccount .buttons-set .btn-red-change-pass {
+	width:60px;
+    height: 30px !important;
+	padding: 2px 0px 0px 0px;
+    margin: 0px 3px 0px 0px !important;
+}
+.myaccount .buttons-set .btn-red-change-pass span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.myaccount .buttons-set .btn-red-change-pass span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.myaccount .ma-info .btn-red-forgot {
+	width:70px;
+    height: 30px !important;
+	padding: 2px 0px 0px 0px;
+    margin: 0px 3px 0px 4px !important;
+}
+.myaccount .ma-info .btn-red-forgot span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.myaccount .ma-info .btn-red-forgot span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.myaccount .buttons-set-s .btn-red-mess-send {
+	width:60px;
+    height: 30px !important;
+	padding: 2px 0px 0px 0px;
+    margin: 0px 3px 0px 0px !important;
+}
+.myaccount .buttons-set-s .btn-red-mess-send span{
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.myaccount .buttons-set-s .btn-red-mess-send span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.myaccount .ma-info .buttons-set .btn-red-no-cre {
+	width:60px;
+    height: 30px !important;
+	padding: 2px 0px 0px 0px;
+    margin: 0px !important;
+}
+.myaccount .ma-info .buttons-set .btn-red-no-cre span{
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.myaccount .ma-info .buttons-set .btn-red-no-cre span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+/*refine-search-box*/
+.refine-search-box .quick_search_overlay{top: 252px !important;left: 675px !important;}
+.refine-search-box .form-list input{width: 97% !important;}
+.refine-search-box .form-list li.fields .field{width: 49.7%;}
+.refine-search-box .form .buttons-set .btn-red {
+	width:70px;
+    height: 30px !important;
+	padding: 2px 0px 0px 0px;
+    margin: 0px 3px 0px 0px !important;
+}
+.refine-search-box .form .buttons-set .btn-red span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.refine-search-box .form .buttons-set .btn-red span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+/*end*/
+/*agent list - agent detail*/
+#search-results-agent-list .normal-width .buttons-set .btn-red,.user-detail .buttons-set .btn-red{
+    width:74px;
+    height: 30px !important;
+	padding: 2px 0px 0px 0px;
+    margin: 0px 3px 0px 0px !important;
+}
+#search-results-agent-list .normal-width .buttons-set .btn-red span,.user-detail .buttons-set .btn-red span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+#search-results-agent-list .normal-width .buttons-set .btn-red span span,.user-detail .buttons-set .btn-red span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.auc-info-agency .detail-icons{margin: 0 !important; padding: 0 !important;}
+/*end*/
+.btn-back {
+	width:60px !important;
+    height: 30px !important;
+	padding: 2px 0px 0px 0px;
+    margin: 0px 3px 0px 0px !important;
+}
+.btn-back span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.btn-back span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+	/*---End My account------*/
+		/*--- All step -----*/
+.auction-register .step-info .step-detail .bg-f7f7f7 .buttons-set .btn-red {
+	width:60px;
+    height: 30px !important;
+	padding: 2px 0px 0px 0px;
+    margin: 0px 3px 0px 0px !important;
+}
+.auction-register .step-info .step-detail .bg-f7f7f7 .buttons-set .btn-red span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.auction-register .step-info .step-detail .bg-f7f7f7 .buttons-set .btn-red span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.auction-register .step-info .step-8-info .bg-f7f7f7 .buttons-set .btn-red{width:110px;margin-right:0px !important;}
+.pay-btn-red{width: 50px !important;height:40px;padding:10px 0px 0px 0px;}
+.back-btn-red{width: 60px !important;height:40px;padding:10px 0px 0px 0px;margin-right: 10px !important;}
+.pay-btn-red span,.back-btn-red span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.pay-btn-red span span,.back-btn-red span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.step-eight-btn-red2{height:40px;width:110px !important;padding:10px 0px 0px 0px;}
+.step-eight-btn-red2 span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.step-eight-btn-red3{height:40px;width:145px !important;padding:6px 0px 0px 0px;}
+.step-eight-btn-red3 span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.step-eight-btn-red3 span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.step-eight-btn-red2 span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.step-eight-btn-red{height:40px;;width:70px !important;padding:10px 0px 4px 0px;}
+.step-eight-btn-red span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:10px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.step-eight-btn-red span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:2px !important;
+    padding-right:10px !important;
+	padding-top:2px !important;
+	padding-bottom:8px !important;
+}
+.step-8-info #cc_container{display:none !important;}
+.span-star{margin-left:4px !important;}
+.clearthis-ie7{display:none;}
+.auction-register .step-info .bg-f7f7f7 .all-step-message-box{width:603px;margin-top:0px !important;position: relative;}
+.auction-register .step-info .bg-f7f7f7 #frmProperty{margin-top:20px !important;}
+.auction-register .step-info #step-6-info-info #frmProperty{margin-top:0px !important;}
+/*---End All step -----*/
+/*----popup------*/
+.popup_container .content .btn-red {
+	width:70px;
+    height: 30px !important;
+	padding: 2px 0px 0px 0px !important;
+    margin: 0px 3px 0px 0px !important;
+}
+.popup_container .content .btn-red span{
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.popup_container .content .btn-red span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.popup_container .title h2 span{/*margin-top:-25px !important;*/}
+.popup_container .title h2{height: 20px;}
+/*----End popup-----*/
+.user-register .step-info .step-detail .bg-f7f7f7 .buttons-set .btn-red-re-buyer {
+	width:60px;
+    height: 30px !important;
+	padding: 2px 0px 0px 0px;
+    margin: 0px 3px 0px 0px !important;
+}
+.user-register .step-info .step-detail .bg-f7f7f7 .buttons-set .btn-red-re-buyer span{
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.user-register .step-info .step-detail .bg-f7f7f7 .buttons-set .btn-red-re-buyer span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+
+.user-register .step-info .step-detail .bg-f7f7f7 .buttons-set .btn-gray {
+	width:60px;
+    height: 30px !important;
+	padding: 2px 0px 0px 0px;
+    margin: 0px 3px 0px 0px !important;
+}
+.user-register .step-info .step-detail .bg-f7f7f7 .buttons-set .btn-gray span{
+    background: url('../images/btn-gray.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.user-register .step-info .step-detail .bg-f7f7f7 .buttons-set .btn-gray span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.user-register .step-info .step-detail .bg-f7f7f7 .buttons-set .btn-red-re-buyer2 {
+	width:60px;
+    height: 30px !important;
+	padding: 2px 0px 0px 0px;
+    margin: 0px 3px 0px 0px !important;
+}
+.user-register .step-info .step-detail .bg-f7f7f7 .buttons-set .btn-red-re-buyer2 span{
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.user-register .step-info .step-detail .bg-f7f7f7 .buttons-set .btn-red-re-buyer2 span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.auction-register .step-info .step-detail .bg-f7f7f7 .btn-calendar {
+	width:160px;
+    height: 30px !important;
+	padding: 2px 0px 0px 0px;
+    margin: 0px 3px 0px 0px !important;
+}
+.auction-register .step-info .step-detail .bg-f7f7f7 .btn-calendar span{
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.auction-register .step-info .step-detail .bg-f7f7f7 .btn-calendar span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.quicksearch-box-partner .btn-red-search{margin-top: 0px  !important;}
+.btn-red-search {
+	width:70px;
+    height: 30px !important;
+	padding: 2px 0px 0px 0px;
+    margin: -8px 3px 0px 0px !important;
+}
+.btn-red-search span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.btn-red-search span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.quicksearch-box .form-list .btn-red-search {
+	width:70px;
+    height: 30px !important;
+	padding: 2px 0px 0px 0px;
+    margin: -3px 1px 0px 0px !important;
+}
+.quicksearch-box .form-list .btn-red-search span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.quicksearch-box .form-list .btn-red-search span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.property-box .make-an-offer-popup .btn-makeanoffer {
+	width:75px;
+    height: 30px !important;
+	padding: 2px 0px 0px 0px !important;
+    margin: -6px 1px 4px 2px !important;
+}
+.property-box .make-an-offer-popup .btn-makeanoffer span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.property-box .make-an-offer-popup .btn-makeanoffer span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.make-an-offer-popup .btn-makeanoffer {
+	width:75px;
+    height: 30px !important;
+	padding: 2px 0px 0px 0px !important;
+    margin: -6px 1px 4px 2px !important;
+}
+.make-an-offer-popup .btn-makeanoffer span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.make-an-offer-popup .btn-makeanoffer span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.myaccount .ma-info .myaccount .tbl-messages2{width:100%;}
+.content-box .form-list .input-select2{width:90% !important;margin:0px; padding:0px;}
+/*.popup_container .content{width:90% !important;}*/
+/*---button's image of search-results----*/
+.toolbar-img-ie{padding-top:1px !important;}
+.toolbar-img-ie .img-num-ie{margin-right:53px !important;}
+.toolbar-img .img-prev-ie{position:absolute !important;
+margin:0px !important;padding:0px !important;
+left:0px;padding: 2px 10px !important;left:590px;
+background-position: -2px -93px !important;
+cursor: pointer;
+margin-right: 3px !important;}
+.toolbar-img .img-next-ie{position:absolute !important;margin:0px !important;padding:0px !important;padding: 2px 10px !important;left:608px;
+background-position: 1px -114px !important;
+cursor: pointer;
+margin-right: 3px !important;}
+.toolbar-img-iee{padding-top:3px !important;}
+.toolbar-img-iee .img-num-iee{margin-right:53px !important;}
+.toolbar-img-iee .img-prev-iee{position:absolute !important;margin:0px !important;padding:0px !important;left:0px;padding: 2px 10px !important;top:2px;left:132px !important;
+background-position: -2px -93px !important;
+cursor: pointer;
+margin-right: 3px !important;}
+.toolbar-img-iee .img-next-iee{position:absolute !important;margin:0px !important;padding:0px !important;padding: 2px 10px !important;left:152px !important;top:2px !important;
+background-position: 1px -114px !important;
+cursor: pointer;
+margin-right: 3px !important;}
+.myaccount .content-details .search-results .img .toolbar-img-ie{padding-top:5px !important;}
+.myaccount .content-box-myacc .content-details .search-results .img .toolbar-img-ie .img-prev-ie{left:570px !important;}
+.myaccount .content-box-myacc .content-details .search-results .img .toolbar-img-ie .img-next-ie{left:590px !important;}
+.content-box .content-details .search-results .img .toolbar-img-ie .img-prev-ie{left:596px !important;}
+.content-box .content-details .search-results .img .toolbar-img-ie .img-next-ie{left:615px !important;}
+.content-box-search-results .toolbar-img-ie{padding-top:3px !important}
+.content-box-search-results .btn-wht-search-list{margin-left:0px !important;}
+.message-box-ie{width:606px;}
+.myaccount .frmcreditcard-all{margin-top:34px !important;}
+.myaccount .frmagent-ie{margin-top:34px !important;}
+.detail-info-span {
+margin-top:-15px;
+}
+.quick_search_overlay{left:670px !important;top: 300px!important;}
+.quick_search_overlay_b{left:674px !important;top: 516px!important;}
+
+.auctions-box .auctions-list .tbl-info .popup_container_ie{margin-left:0px;margin-top:0px;}
+.auctions-box .auctions-list .tbl-info .popup_container_ie .mycalen{width:auto;}
+.property-box .property-list .tbl-info .popup_container_ie{margin-left:0px;margin-top:0px;}
+.property-box .property-list .tbl-info .popup_container_ie .mycalen{width:auto;}
+.topselling-box .topselling-list .tbl-info .popup_container_ie{margin-left:0px;margin-top:0px;}
+.topselling-box .topselling-list .tbl-info .popup_container_ie .mycalen{width:auto;}
+.auctions-box .auctions-list .tbl-info .popup_container_ie .mycalen .title h2 #fridx{margin-top:-15px !important;}
+.auctions-box .auctions-list .tbl-info .popup_container_ie .mycalen #fridmess{margin-right:auto;}
+.auctions-box .locat-list .pro-list .popup_container_ie #fridmess{margin-right:0px;}
+.content-box .content-details .search-results .sr-new-info .popup_container_ie #fridmess{margin-right:0px;}
+.message-box-cc-ie{position: relative;}
+.message-box-v-ie{position: relative;}
+.field-e-ie{margin-top:1px;}
+.message-box-comment-ie{position:relative;}
+.message-box-dashbord{position:relative;}
+.message-box-properties-ie{position:relative;}
+.btn-red-pending{width:76px !important;}
+.view-more-forthcoming{margin-top:-25px;}
+/*----live forthcoming list---*/
+.sr-action-sale-list-lan{width:185px;left:20px !important;margin-top:5px;}
+.btn-action-sale-list-lan{margin-top:-24px !important;margin-right:68px !important;width:115px;}
+.live-forthcomming-list .btn-action-view-lan{margin-right:2px !important;margin-top:0px !important;}
+.btn-make-an-ofer-f {margin:0px 82px 0px 0px !important;height:28px !important;}
+.desc-list{min-height:106px !important;}
+.i-info-fl-lan{min-height:210px !important;}
+.offi-lan{margin-top:-16px;}
+.toolbar-img-lfl{margin-top:4px !important;padding-top:0px !important;}
+.img-num-ie{margin-right:54px;}
+#live .img-prev-ie-lfl, #forthcoming .img-prev-ie-lfl, #sale .img-prev-ie-lfl{left:569px !important;}
+#live .img-next-ie-lfl, #forthcoming .img-next-ie-lfl, #sale .img-next-ie-lfl{left:590px !important;}
+.img-prev-ie-lfl{left:596px !important;}
+.img-next-ie-lfl{left:615px !important;}
+/*---button make an ofer----*/
+#winner_popup_child .btn-make-an-ofer{width: 60px !important;height: 26px !important;}
+.btn-make-an-ofer-f span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding: 1px 0 5px 16px !important;
+}
+.btn-make-an-ofer-f span span {
+    background-position: 100% -23px;
+    padding: 8px 16px 10px 0 !important;
+    color: #fff;
+}
+/*---end button make an ofer----*/
+.wrapper span{text-decoration: none !important;}
+/*---end live forthcoming list---*/
+/*----home----*/
+.property-box .property-list .tbl-info .popup_container2 .title h2 #fridx{
+    margin-top:-15px;
+}
+.property-box .bar-title{margin-top:0px !important;margin-bottom:4px !important;position:relative !important;}
+.property-box .property-list ul li.first {
+   /* margin: 10px 1px 10px 0px !important;*/
+	float:left !important;
+	margin: 5px 8px 10px 0px !important;
+}
+.topselling-box .topselling-list ul li.first {
+    margin: 5px 8px 0px 0px !important;
+	float:left !important;
+}
+.topselling-box .bar-title{margin-bottom:4px !important;}
+.live-sale-list .note_time_popup_overlay2{bottom:52px !important;}
+.live-auction-list .note_time_popup_overlay2{margin-top:0px !important;}
+/*----end home----*/
+.pfi-aul{margin-top:-17px;}
+#msg{margin-top: 15px !important;}
+.btn-red-mess-po {
+    height: 30px !important;
+	padding: 2px 0px 0px 0px;
+    margin: 0px 4px 0px 0px !important;
+}
+.btn-red-mess-po span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.btn-red-mess-po span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.content-po-ie{margin-bottom:10px !important;}
+/*view-sale-list*/
+.i-info-sale-ie{height:200px !important;}
+.sr-new-action-sale-list{/*height:25px !important;left:14px !important;margin-top:5px !important;width:185px !important;*/}
+.btn-view-sale-list{margin-right:0px !important;margin-top:0px !important;}
+.btn-wht-sale-list-ie{
+	width:120px !important;
+	margin-right: 65px !important;
+	margin-top: -24px !important;
+}
+.f-right-salle-ie{margin-right:0px;}
+.img-next-sale-ie{left:615px !important;}
+.img-prev-sale-ie{left:596px !important;}
+.toolbar-img-sale-ie{margin-top:3px !important;}
+.auctions-box-viewsg .f-right-btn-sale{margin:0px 0px 0px 12px !important;}
+.auctions-box-viewsg .f-right-btn-sale .btn-wht-sale{width:108px;margin:0px !important;}
+.auctions-box-viewsg .f-right-btn-sale .btn-view-sale{margin:2px 0px 0px 0px !important;}
+/*end view-sale-list*/
+.btn-search-grid{bottom:12px !important;}
+.topselling-list{width:auto !important;margin-left:0px !important;}
+#sli3{width:634px;margin-left:-4px;}
+.header .login-box .username-field{margin-left:3px !important;}
+.header .login-box .password-field{margin-left:2px !important;}
+/*.acc-s-ie .acc-sp-ie{margin-top:3px; !important;}*/
+.ofi-ie{margin-top: -15px !important;}
+.detail-icons-ie{padding-bottom:4px;}
+.detail-icons-ie span.bed{padding-top:0px !important;}
+.detail-icons-ie span.bath{padding-top:0px !important;}
+.detail-icons-ie span.car{padding-top:0px !important;}
+.desc-auction-sr-ie{padding:0px 5px 5px 5px !important;}
+.detail-icons-a{
+margin-top: 0px !important;
+}
+.detail-icons-b{
+width: auto !important;
+margin-top: -3px !important;
+margin-right:13px !important;
+padding-top:4px;
+}
+/*---Auto Bid----*/
+.btn-red-auto-bid{
+	width:70px;
+    height: 30px !important;
+	padding: 5px 0px 7px 0px;
+}
+.btn-red-auto-bid span 
+{
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.btn-red-auto-bid span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:4px !important;
+	padding-bottom:7px !important;
+}
+.messages-auto-bid{width:100%;}
+.step-3-info .bg-f7f7f7 .photoupload-list div.selector{margin-top:0px !important;}
+/*--- End Auto Bid----*/
+/*----property.live-forthcomming.grid.tpl----*/
+.auctions-box-live-fg  .auctions-list .auction-item .auc-img img{padding: 5px 5px 0px 5px !important;}
+/*----end property.live-forthcomming.grid.tpl----*/
+/*---search.viewmode.list---*/
+.content-box-search-results .note_time_popup_overlay2{margin:0px !important;bottom:50px !important;}
+.content-box-search-results .search-list .desc{min-height:86px !important;}
+/*---end search.viewmode.list---*/
+/*---property.home.auction.live.tpl---*/
+.watermark-g{margin-top:26px  !important;}
+/*---end property.home.auction.live.tpl---*/
+/*----property.register.step2.tpl----*/
+.step2-suburb{position: absolute; left: 343px; margin-top: 24px;}
+.auction-register .step-1-info #btn_openforinspection{margin: 0px 3px 0px 4px !important;padding: 10px 0px 5px 0px !important;}
+.auction-register .step-1-info #btn_openforinspection span{padding: 0px 0px 0px 13px !important;}
+.auction-register .step-1-info #btn_openforinspection span span{padding: 4px 13px 7px 0px !important;}
+.search_overlay li {
+    margin: 0px 0px 0px -15px !important;
+}
+.step-info .step-1-info .form-list li.control{margin:8px 0px 18px 0px !important;padding:0px !important;}
+#note_time_popup_child{left: 818px !important;top: 626px !important;}
+/*----end property.register.step2.tpl----*/
+/*----property.make-an-offer.popup.tpl----*/
+.property-box-detail .make-an-offer-popup{margin-top: 26px !important;}
+.property-box-detail .make-an-offer-popup .make-an-offer-popup-a .make-an-offer-popup-b{margin-right:0px !important;}
+.property-box-detail .make-an-offer-popup .make-an-offer-popup-a .make-an-offer-popup-b .frm-make-an-offer-popup{width: 200px !important;}
+.auctions-box-mof-list .make-an-offer-popup{margin-top:-190px;}
+#sli .pfi-home,#sli2 .pfi-home,#sli3 .pfi-home{float: left !important; margin-left: 5px  !important;margin-right: 0px  !important;}
+.make-an-offer-popup .title{margin-top: 0px !important;}
+.make-an-offer-popup .frm-make-an-offer-popup{margin-top: 0px !important;}
+.watchlist-box-mof-gird .make-an-offer-popup .make-an-offer-popup-b .frm-make-an-offer-popup{width:184px !important;}
+.watchlist-box-mof-gird .make-an-offer-popup {
+    margin-top: -206px !important;
+}
+.content-box-mof-list .make-an-offer-popup {margin-left: 0px !important;}
+/*----end property.make-an-offer.popup.tpl----*/
+/*---agent.dashboard.tpl---*/
+.ofi-dashboard{float:right;margin-top:-15px;}
+.content-dashboard .img-prev-ie{left:570px;}
+.content-dashboard .img-next-ie{left:590px;}
+/*.highlight{margin-top:0px !important;}*/
+.botton-dashboard{margin-top:0px !important;}
+.ma-info-dashboard .note_time_popup_overlay2{margin-left:0px;}
+#toolbar-img-dashboard{margin-top:0px !important;}
+#toolbar-img-dashboard2{margin-top:0px !important;}
+/*.ma-info-dashboard .tbl-info .acc-sp-ie{margin-top:9px !important;}*/
+#tbl-info-dpartner .col1rx li{padding:4px 0px;}
+.img-dashboard-partner{float:right;}
+/*---end agent.dashboard.tpl---*/
+/*---agent.property_bids.list.tpl---*/
+.ofi-bids{margin-top:-15px;}
+/*---end agent.property_bids.list.tpl---*/
+.myaccount .tbl-messages tbody tr {height:auto;}
+/*----agent.information.partner.tpl----*/
+.btn-red-re-buyer {
+    height: 30px !important;
+	width:76px;
+	padding: 2px 0px 0px 0px;
+    margin: 0px -5px -4px -4px !important;
+}
+.btn-red-re-buyer span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.btn-red-re-buyer span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.btn-red-s-use {
+    height: 30px !important;
+	width:58px;
+	padding: 2px 0px 0px 0px;
+    margin: 0px 5px 0px 0px !important;
+}
+.btn-red-s-use span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.btn-red-s-use span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+
+.btn-red-a-user {
+    height: 30px !important;
+	width:114px;
+	padding: 2px 0px 0px 0px;
+    margin: 0px 5px 0px 0px !important;
+}
+.btn-red-a-user span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.btn-red-a-user span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+.step-name-ip-partner2{margin:0px 0px 10px 0px !important;}
+.frm-imfor-partner{margin-top:20px;}
+/*----end agent.information.partner.tpl----*/
+/*----banner.edit.tpl----*/
+.banner-col .form-list .input-box ul{list-style: none;}
+.banner-col .form-list .input-box ul .search_overlay{text-align: left;}
+.banner-col .form-list .input-box ul .search_overlay li{text-align: left !important;display: inline-block;clear: both;
+}
+.step-1-uba-partner{background-color:#F7F7F7;}
+.step-1-uba-partner .bg-f7f7f7{background-color:none;}
+.form-list-edit-banner{margin-top:263px !important;}
+/*----end banner.edit.tpl----*/
+/*----agent.property.tpl---*/
+.ofi-my-prodetail{margin-top:-15px;}
+.lra-property{float:left;}
+/*----end agent.property.tpl---*/
+/*----search.view.list.tpl---*/
+.sr-view-list{width: 187px; float: right;}
+/*----end search.view.list.tpl---*/
+/*----agent.information.tpl---*/
+.add-info-main #frmAgent{padding-top:20px;}
+/*----end agent.information.tpl---*/
+/*----agent.watchlist.list.tpl----*/
+#wll-img-num{margin-right:50px;}
+#wll-img-prev{left:570px;}
+#wll-img-next{left:588px;}
+/*----end agent.watchlist.list.tpl----*/
+/*----note.js----*/
+.btn-red-note{width:65px;}
+/*----end note.js----*/
+/*----confirm.js-----*/
+.center-confirm-button{margin-top:-5px;}
+.center-confirm-button .btn-red{padding-right: 8px  !important;}
+.content-po{margin-bottom:0px;}
+/*----end confirm.js-----*/
+.property-box-detail .popup_container2 .btn-red-auto-bid{height:27px !important;}
+.property-box-detail .frm-make-an-offer-popup input{padding-left:0px;}
+.auctions-box-sale-list .make-an-offer-popup{left:-434px;}
+.property-box-detail .frm-mao #agent_email, .property-box-detail .frm-mao #subject_email, .property-box-detail .frm-mao #offer_price, .property-box-detail .frm-mao #offer_price_show{
+    width:90% !important;
+}
+.frm-mao #agent_email{padding-top: 1px;padding-bottom: 1px;border-top:1px inset !important;
+    border-left:1px inset !important;
+    border-right:1px inset #f5f5f5 !important;
+    border-bottom:1px inset #f5f5f5 !important;}
+ .property-box-detail .frm-mao #content{width:183px !important;height:100px;}
+ /*---agent.register.step3.tpl---*/
+.message-box-partner{padding-top:10px;}
+/*---end agent.register.step3.tpl---*/
+/*---partner.view.list.tpl---images align center ie7*/
+#f-search-partner-ie7{display: table;width:280px;height: 244px;position: relative;overflow: hidden;}
+#f-partner-ie7{display: table;width:210px;height: 176px;position: relative;overflow: hidden;}
+#img-partner-ie7{position: absolute;top: 50%;display: table-cell;left:50%;height: auto !important;}
+.chi-img-partner-ie7{position: relative; top: -50%;left:-50%;}
+#g-search-partner-ie7{display: table;width:185px;height: 154px;position: relative;overflow: hidden;}
+#g-img-partner-ie7{position: absolute;top: 50%;display: table-cell;left:50%;height: auto !important;width: auto !important;min-width: auto !important;}
+#img-banner-ie7{position: relative;top: 50%;display: table-cell;left:50%;height: auto !important;}
+.chi-img-banner-ie7{position: relative;left:-50%;top: -50%;}
+.f-right-banner-all-ie7{height: 117px;}
+/*---partner.view.grid.tpl----*/
+.spxgreen-partner-gird{margin-top:-14px;}
+/*.partner-gird-description{height:100px !important;}*/
+/*----end partner.view.grid.tpl----*/
+/*----agent.auction.tpl----
+.acc-s-ie{width:421px !important;}
+*/
+.content-box-aution-acc #img-prev-aution-acc{left:570px !important;}
+.content-box-aution-acc #img-next-aution-acc{left:590px !important;}
+/*----end agent.auction.tpl----*/
+/*---price bids----*/
+.price-all{padding-top: 1px !important;}
+.price-all2{padding-top: 2px !important;height: auto !important;}
+/*---end price bids----*/
+.auctions-box-mof-list .i-info-fl-lan .i-time p{width:200px;padding:4px 0px 0px 0px;margin-left:-3px;}
+.detail-2col .col2 .detail-info-box .auction-info-box .auc-actions .popup_container2{position:absolute !important;}
+img.watermark {
+height:118px !important;
+}
+.btn-red-comment {
+	width:70px;
+    height: 32px !important;
+	padding: 6px 0px 0px 0px;
+}
+.btn-red-comment span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.btn-red-comment span span{
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:12px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+/*---property.view.detail.tpl---*/
+#property-box-d img.watermark{padding:0px 0px 3px 0px;}
+/*---end property.view.detail.tpl---*/
+.auctions-box-bids-gird .btn-bid-ie7{margin-right: 2px !important;}
+.watchlist-box-mof-gird .auctions-list #toolbar-wl{padding-left: 0px !important;}
+#step-eight-btn {width:54px  !important;margin-left: 10px !important;margin-top: 0px !important;}
+.login-msg-all{margin-top: -6px !important;}
+.div-login-msg{/*height: 12px;*/clear: both;}
+.login-container #contact-wrapper .input-box{margin-top: 0em !important;}
+.content-po .form-list li{margin-top: 0px;}
+.content-po .form-list li.wide label{float: left;}
+.content-po .form-list li.wide .input-box{margin-top: 0px;}
+.add-info-main .step-2-info .step-detail .bg-f7f7f7 .form-list li strong{position: relative;}
+.myaccount #stie7{padding-top:0px;}
+/*---tv show---*/
+.tv-show-email-box{margin-top: 0px !important;}
+.tv-show-buttons-set{float: none;}
+.tv-show-auc-time{float: none;padding-right: 1px;}
+.tv-show-bid{margin-right: 0px;}
+.tv-show-block-b{margin-top: 0px;}
+.tv-show-view-visits{margin-top: 2px; }
+.tv-show .popup_container .btn-red{height: 30px !important;}
+.tv-show .popup_container .btn-red span span{padding-top: 3px !important;}
+.tv-show-right .tv-show-detail-icons{padding-top: 2px;}
+.tv-show-right .tw-face .fb-like{margin-top: -15px !important;}
+.tv-show .btn-countdown {height: 27px !important;}
+.tv-show .btn-make-an-ofer span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding: 2px 0 0px 11px !important;
+}
+.tv-show .btn-make-an-ofer span span {
+    background-position: 100% -24px;
+    padding: 8px 10px 3px 0 !important;
+    color: #fff;
+}
+.popup_container_tv_show{margin: 18px 53px 0px 0px;}
+#auc-time-bid-tv-show{margin-bottom: 1px;}
+.tv-show .auc-time-bid ul.forth-time li{width: 96.7% !important;}
+/*---end tv show---*/
+.popup_container_require .btn-makeanoffer{width: 60px !important;}
+#content-dashboard .popup_container_require{position: absolute !important; }
+#input-box-contact{margin-top:0em !important;}
+#contact-wrapper .input-box{/*margin-top: 2em !important;detail*/}
+#contact-wrapper #input-box-contact{margin-top: 0px !important;}
+#ul-payment-success .payment-success{padding: 4px 5px 4px 4px !important;}
+.div-btn-bid-history-all{margin-right: 2px !important;}
+.reserve-require{float: left;}
+.acc-sp-all-a{margin-top:-2px;}
+#start-price-chrome .bid-price-coll3{padding-top: 4px;}
+#content-dashboard #start-price-chrome .bid-price-coll3{padding-top: 12px;}
+.content-box-watvhlist-l .tbl-info-new{height: auto  !important; margin: 0px  !important;}
+.content-box-watvhlist-l .tbl-info-news{height: 22px  !important;}
+.content-box-watvhlist-l .tbl-info-new .col1 .col1-li{padding: 5px 0px  !important; height: 40px  !important;}
+.content-box-watvhlist-l .tbl-info-new .col2 .col2-li{padding: 5px 4px  !important; height: 40px  !important;}
+.content-box-watvhlist-l .tbl-info-news ul li{margin: 0px  !important;}
+.content-box-watvhlist-l .tbl-info-new .acc-sp-p{padding-left: 5px  !important;color: #980000;font-size: 16px  !important; font-weight: bold; text-align: left  !important;}
+.content-box-watvhlist-l .tbl-info-new .acc-s-p{background-color: #D9D9D9; width:420px  !important; margin-top:0px  !important;}
+.content-box-watvhlist-l .tbl-info-new .acc-sp-block{padding-left: 5px !important;color: #980000;font-size: 28px  !important; font-weight: bold  !important; text-align: center;}
+.content-box-bids-list .tbl-info-new{height: auto  !important; margin: 0px !important;}
+.content-box-bids-list .tbl-info-news{height: 22px !important;}
+.content-box-bids-list .tbl-info-new .col1 .col1-li{padding: 5px 0px  !important; height: 40px  !important;}
+.content-box-bids-list .tbl-info-new .col2 .col2-li{padding: 5px 4px !important; height: 40px !important;}
+.content-box-bids-list .tbl-info-news ul li{margin: 0px !important;}
+.content-box-bids-list .tbl-info-new .acc-sp-p{padding-left: 5px !important;color: #980000;font-size: 16px !important; font-weight: bold !important; text-align: left !important;}
+.content-box-bids-list .tbl-info-new .acc-s-p{background-color: #D9D9D9; width:420px !important; margin-top:0px !important;}
+.content-box-bids-list .tbl-info-new .acc-sp-block{padding-left: 5px !important;color: #980000;font-size: 28px !important; font-weight: bold; text-align: center;}
+.line-bottom{float:right; margin-top:5px !important;}
+.div-list-box{float:right !important;width:183px !important;margin-top:11px !important;}
+.div-list-boxx{float:right !important;width:180px !important;margin-top:11px !important;}
+.div-list-boxx .btn-make-an-ofer,.div-list-boxx .btn-bid{margin-top: 0px !important;}
+.div-list-boxx .btn-bid-reg{margin-top: 0px !important;margin-left: 0px !important;}
+.acc-sp-all-ie{color: #980000;font-size: 21px; font-weight: bold; text-align: center;padding: 7px 0px 0px 0px;}
+/*---banner.my-banner.tpl---*/
+#div-partner-all-div{min-height: 320px;}
+.banner-left{float: left;}
+.step-name-user-detail{margin-top: 20px;}
+.div-search-advance .buttons-set{padding-right: 0px;}
+.div-search-partner .buttons-set{padding-right: 2px;}
+.div-search-partner #form-list-search-partner li.fields .field #input-box-state{margin-right: 1px;}
+#pager-acc-proerty{padding-right:6px !important;}
+.pager-acc-property{padding-right: 12px;}
+.acc-sp-pass6{margin-top:3px !important;}
+.property-box-detail .detail-info-box .popup_container .mycalen .title #fridx{margin-top: -15px;}
+.form-company{margin-top: 15px;}
+.content-box-email-alert .step-1-info .form-list li.fields .field .input-select{width: 100%;}
+.content-box-email-alert .step-detail .buttons-set .dbt2 button.btn-black{margin-right: -4px;}
+.popup-countdown-child .content-po .popup-action-sub{width: 300px !important;}
+.popup-countdown-child .countdown-child-sub .normal-ell .div-normal-el #btn-set{width: 47px;}
+.popup-countdown-child .countdown-child-sub .normal-ell .div-normal-el #btn-cancel{width: 65px;margin-left: 5px;}
+.popup-countdown-child .content-po .popup-count-a{padding-right: 0px !important;}
+/*step 4-7*/
+.tooltip-step7-ie7{float:left;}
+.span-ll-step7{float: left !important;}
+.areg-item li.focus-tooltip-step7{padding-bottom: 10px !important;}
+#span-r-step7-ie7{float: none !important;padding-left: 92px;}
+#ul-payment-success .payment-successs{padding-bottom: 4px !important;}
+#title-ps-ie7{clear: both; float: left; width: 607px;}
+/*end step 4-7*/
+.div-search-advance .form-list li.fields .field{margin-bottom: 0px !important;}
+/*press*/
+.list-entry .normal-width{float:none;clear:both;}
+.press_tsb_categories{font-size: 14px;}
+/*end*/
+.li-open-inspection{padding-left: 5px !important; padding-right: 5px !important;}
+.tbl-info .col1 .li-open-inspection{padding-left: 5px !important; padding-right: 5px !important;}
+/*---End Lan Fix CSS----*/
+.pdf-documents-download .btn-pdf-download {
+    background: url("../images/btn-pdfdocument-fix.jpg") repeat scroll 0 0 transparent;
+    border: medium none;
+    cursor: pointer;
+    height: 30px;
+    padding-left: 5px;
+    text-align: left;
+    width: 205px;
+}
+#fridx {
+	margin-top:-25px;
+	float:right;
+}
+.tbl-messages {
+	width: auto;
+}
+
+.note_time_popup_overlay2 {
+	margin-top:24px;
+	bottom:20px !important;
+}
+
+.fixbtnadd {
+	height: 24px !important;
+	padding-top: 7px !important;
+}
+.fixbtnadd span span {
+	padding-top: 7px !important;
+	padding-right: 10px !important;
+}
+.auctions-box .auctions-list .auction-item .desc {
+	position: relative !important;
+	line-height: 14px !important;
+}
+.auctions-box .auctions-list .auction-item .desc-auction {
+	margin-left: 4px !important;
+	margin-right: 3px !important;
+}
+.tbl-info p {
+	/*margin-top: -2px !important;*/
+}
+/*Begin Home*/
+.btn-wht-home{
+	width:110px !important;
+	height: 26px !important;
+	/*margin-top: -26px !important;
+	margin-left: -17px !important;*/
+}
+.btn-view-home {
+	margin-top:0px !important;
+	margin-right: 4px !important;
+/*	margin-top: -8px !important;*/
+}
+.btn-wht-home span span {
+	padding-right: 12px !important;
+}
+.btn-view-wht {
+	margin-top: 14px !important;
+}
+.btn-wht-home-forthcoming{
+	width:108px;
+	height: 26px !important;
+	margin-top: -8px !important;
+	margin-left: 0px !important;
+}
+.btn-view-home-forthcoming{
+margin-left:0px !important;
+	margin-right: 0px !important;
+	margin-top: -6px !important;
+}
+.btn-wht-home-forthcoming span span {
+	padding-right: 10px !important;
+}
+.tbl-info-home-for-sale {
+	margin-top: 10px !important;
+}
+.tbl-info-home-for-sale li.livability {
+	margin-bottom: 0px !important;
+}
+.btn-view-wht-sale-home {
+	margin-top: 10px !important;
+}
+/*End Home*/
+.auctions-box .bar-title a.view-more {
+	/* margin-top: -23px;*/
+}
+/*.detail-icons span.bed {
+	background-position: 0 -243px;
+}*/
+.detail-icons span.bath {
+	background-position: 100% -262px !important;
+}
+.property-box .property-list .property-item .pro-info p.pro-icons {
+	position: relative !important;
+	bottom: -28px;
+}
+.auctions-box .toolbar {
+	padding-right: 10px !important;
+}
+.auctions-box .auctions-list .toolbar {
+	padding-top: 0px !important;
+	padding-left: 195px !important;
+}
+.myaccount .agent-grid-box .auctions-list .toolbar {
+	padding-top: 5px !important;
+	padding-left: 0 !important;
+}
+.f-right-btn-sale {
+	margin-left: -7px !important;
+	margin-right: 7px !important;
+}
+.btn-view-sale {
+	margin-right: 1px !important;
+}
+.btn-wht-sale {
+	height: 25px !important;
+	margin-top: -25px;
+	margin-right: 50px;
+	margin-left: -10px;
+}
+.btn-wht-sale span span {
+	padding-right: 12px !important;
+}
+.f-right-sale {
+	margin-right: 1px !important;
+}
+.sr-new-action-sale-list{
+	/*left: 120px !important;*/
+}
+.btn-view-sale-list {
+	/*margin-right: -130px !important;
+	margin-top: 145px !important;*/
+}
+.btn-wht-sale-list {
+	margin-right: -20px;
+	margin-top: 44px;
+}
+.btn-wht-sale-list span span {
+	padding-right: 5px !important;
+}
+.btn-wht-search-list {
+	margin-right: -22px !important;
+}
+.btn-wht-search-list span span {
+	padding-right: 5px !important;
+}
+/* Menu home */
+.menu {
+    padding: 23px 10px 0px 15px;
+    /*position: static !important;*/
+}
+.menu .nav .sub-nav {
+    list-style: none;
+	background: url("../images/sub-menu-bg-1.png") no-repeat scroll center bottom transparent;
+    left: 0;
+    width: auto;
+    padding: 0 5px 5px 5px !important;
+	margin-top: 3px !important;
+	top: 35px !important;
+	z-index: 10000 !important;
+}
+.menu .nav .sub-nav p {
+    min-height: 20px !important;
+    padding: 0px 10px 0px 0px !important;
+}
+.menu .nav .sub-nav p span{float:left;text-align:left;}
+/*.menu .nav .item-menu-last .sub-nav {left: -70px !important;}*/
+.menu .nav li {/*position: static !important;*/}
+.menu .nav li.active,
+.menu .nav li:hover a {
+    color: #fff;
+    cursor: pointer;
+}
+
+.local-list .pro-list li {
+	display:none !important;
+}
+.f-right .locat-pro {
+	display:none !important;
+}
+#fixau1 {
+	
+}
+/* menu =6 */
+.menu #nav-equal6 li{margin: 0px 76px 0px 9px !important;}
+.menu #nav-equal6 .sub-nav li {margin: 0px !important;}
+.menu #nav-equal6 li.item-menu-last{margin: 0px 0px 0px 9px !important;}
+/* end */
+/*My Account*/
+.myaccount .tbl-messages thead tr td {
+	background: url('../images/tbl-head.png') 0 5px repeat-x !important;
+	
+}
+
+/*Begin View auction list*/
+.details-info .description-auc-list {
+	float: none !important;
+}
+.btn-bid-auc-list {
+	/*margin-top: -20px !important;*/
+}
+.tbl-info2 .col1-auc-list li.livability-list {
+	padding-bottom: 0px !important;
+	margin-bottom: -2px;
+}
+.locat-list .pro-list .i-auction-list {
+	left: 9px !important;
+	width: 190px !important;
+	position: relative !important;
+}
+.tbl-info2 .col1-auc-list li.green-list {
+	margin-bottom: -7px !important;
+}
+/*End View auction list*/
+
+/*Begin Menu*/
+.auctions-box .bar-title-sale-list {
+    position: inherit !important ;
+}
+.auctions-box .bar-title h2.bar-title-h2-sale-list {
+	position: inherit !important;
+}
+/*End Menu*/
+
+/*Begin View auction grid*/
+.auctions-box .auctions-list .auction-item .auc-info p.time-auc-grid {
+	
+}
+.tbl-info-auc-grid {
+	margin-top: -10px !important;
+}
+.tbl-info-auc-grid ul li.livalibity {
+	margin-bottom: -8px !important;
+}
+.tbl-info-auc-grid ul li.livalibity span {
+	margin-right: 28px !important;
+}
+.btn-wht-auc-grid {
+	width:110px;
+	height: 25px !important;
+	margin-top: 0px !important;
+	margin-left: 8px !important;
+}
+.btn-wht-auc-grid span span {
+	padding-right: 12px !important;
+}
+.btn-bid-wht-grid {
+	margin-top: 5px !important;
+}
+/*End View auction grid*/
+
+/*Begin View auction grid*/
+.fixstrates1 li span {
+	margin-right: 26px !important;
+} 
+.fixstrates2 li span {
+	margin-right: 4px !important;
+}
+.btn-wht-search-grid {
+	height: 25px !important;
+}
+.btn-wht-search-grid span span {
+	padding-right: 9px !important;
+}
+/*End View auction grid*/
+
+/*Begin Search list*/
+.view-search-list {
+	
+}
+.pagging-search-list {
+
+}
+/*End Search list*/
+.li-price-ie7{
+    height:36px;
+}
+.btn-ie7{
+    width:180px;
+}
+.btn-mao-ie7{
+    padding-top: 6px !important;
+}
+.btn-bid-ie7{
+    /*margin-right:10px !important;*/
+}
+.btn-grid-ie7{
+    position: absolute;
+    bottom:90px !important;
+    width:200px;
+    right:3px;
+}
+.popup_container .btn-red span span{
+    padding-top:6px !important;
+    padding-left:0px !important;
+    padding-right:8px !important;
+}
+.popup_container .btn-red {
+	padding-top: 6px !important;
+    border: none;
+	height: 24px !important;
+}
+
+.popup_container .btn-red span {
+	padding-top: 0px !important;
+}
+.popup_container .btn-red span span {
+    background-position: 100% -27px;
+    /*color: #666666;*/
+	padding-top: 6px !important;
+	/*padding-right: 0px;*/
+	padding-bottom: 5px;
+	padding-left: 0px;
+}
+.myaccount{
+    position: relative;
+   
+}
+
+
+.icon-ie7{
+    margin-top:-16px !important;
+}
+#form-list-search li{margin: 0px;}
+#form-list-search-partner li{margin: 0px;}
+.live-price-watchlist .price-fc-a,.live-price-watchlist .price-fc-b{float: none !important;margin-left: 0px !important;text-align: center !important;}
+/* MAO WATCHLIST */
+.auction-item  .popup_container #contact_wrapper{
+    width:300px !important;
+}
+
+.auction-item  .popup_container .title{
+    width:280px;
+}
+.auction-item  .popup_container .frm-mao{
+    width:288px !important;
+}
+.toolbar-img-ie7 .img-num{
+    margin-right:54px !important;
+}
+
+.toolbar-img-ie7 .icons{
+    margin-left:-28px !important;
+}
+
+/*POPUP MAKE ANOFFER*/
+.agent-grid-box .frm-mao #agent_email, .agent-grid-box .frm-mao #subject_email,.agent-grid-box .frm-mao #offer_price,.agent-grid-box .frm-mao #offer_price_show{
+    width:93% !important;
+
+}
+.agent-grid-box .frm-mao #content{width: 95% !important;}
+.frm-mao #agent_email, .frm-mao #subject_email,.frm-mao #offer_price,.frm-mao #offer_price_show{
+    width:97% !important;
+
+}
+
+.frm-mao #content{
+    width:98% !important;
+	border-top:1px inset !important;
+    border-left:1px inset !important;
+    border-right:1px inset #f5f5f5 !important;
+    border-bottom:1px inset #f5f5f5 !important;
+	}
+.frm-mao input{padding-left:3px;}
+.frm-mao b{
+    padding-left:3px;
+}
+.popup_container .btn-makeanoffer{
+    margin-top:1px !important;
+    margin-bottom:4px !important;
+}
+.h2-ie7{
+    margin-top:-25px  !important;
+}
+/*----------Begin Fix CSS agent.property.tpl----------*/
+.search-results .search-list .item .info .desc-mycc-ie7 {
+   height: 60px ! important;
+}
+.search-results .search-list .item .info .desc {
+    margin-top: 0px !important;
+}
+.tbl-info .col2 .sp-ie7 {
+	margin-top: 3px !important;
+}
+.tbl-info .col2 .last-ie7 {
+	margin-top: 1px !important;
+    height: 37px !important;
+}
+.content-box-myacc .bar-title .bar-filter-fix
+{
+    width: 300px !important;
+    z-index: 999 !important;
+}
+.bar-title .title-top-bar{
+    float: left;
+    width: auto;
+}
+.myaccount .bar-title .bar-filter {
+    float: right;
+}
+.agent-top-bar{margin-right: 0px !important;}
+.myaccount .bar-filter .bar-title-view-top2{margin-right:3px !important;}
+.myaccount .bar-title .title-top-bar{padding-top: 0px;}
+/*---------END Fix CSS agent.property.tpl----------*/
+.detail-info-history .text
+{
+    margin-top: 2px !important;
+}
+.auc-img-watermark .watermark{/*margin:25px 0 0 5px !important;*/}
+.home-img-watermark .watermark{margin:46px 0px 0px 10px !important;}
+/* Email alert add/edit */
+.col22-set .col-22 {
+    float: right;
+   /* margin-top: 50px;*/
+    width: 48.55%;
+}
+.col-main .popup_container {
+    position: relative !important;
+    z-index: 0 !important;
+}
+#message-height-all{height: 17px;}
+.header .fb{right:137px}
+/*.fb{margin-top:-29px;margin-right:137px;}
+.block-twitter{margin-top: -27px !important;}*/
+.btn-red-bid-history-all {
+    height: 28px !important;
+	width: 160px !important;
+	padding: 2px 0px 0px 0px;
+    margin: 0px !important;
+}
+.btn-red-bid-history-all span {
+    background: url('../images/btn-red.png') 0 0 no-repeat;
+    padding-left:13px !important;
+    padding-right:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+}
+.btn-red-bid-history-all span span {
+    background-position: 100% -27px;
+    color: #fff;
+	padding-left:0px !important;
+    padding-right:13px !important;
+	padding-top:2px !important;
+	padding-bottom:7px !important;
+}
+#ibbsdheight {
+	padding-bottom: 85px !important;
+}
+#ibbsdheight2 {
+	padding-bottom: 105px !important;
+}
+.property-detail .btn-no-more-bid{margin-top: 0px;}
+.property-detail-a{margin-bottom: 4px;}
+/*End */
+#topnav a.signin{display:inline-block;height:15px;padding:0 6px 10px 6px}
+#container{z-index:3000}
+.menu .nav .sub-nav-live-auctions, .menu .nav .sub-nav-passed-in, .menu .nav .sub-nav-forthcoming-auctions {
+    left: 153px !important;
+    top: -1px !important;
+}
+#term_popup_child .button-pop-newsletter-customize .btn-width{margin-top: 1px !important; width: 76px;}
+#term_popup_child .button-pop-newsletter-customize .btn-width span span{padding: 2px 13px 7px 0px !important;}
+.tv-show .text-box-uniform{width: 124px !important;}
+.auction-register .step-info .step-6-info .step-detail .form-list input {
+    width: 97.5% !important;
+}
+.bar-title-view-top{margin-left:0px !important;}
+#buttons-set-company2 .btn-red-a{margin-right: -2px !important;}
+#buttons-set-company3 .btn-red-a{margin-right: -3px !important;}
+.tv-show-view-more{/*same css margin-right:0px !important;*/}
+/*.detail-info-box #btn-viewmore {
+    height: 26px;
+    width: 106px;
+	margin:0;
+	padding: 6px 0px 4px 0px  !important;
+}
+.detail-info-box #btn-viewmore span {
+	padding: 0px 0px 0px 13px  !important;
+}
+.detail-info-box #btn-viewmore span span {
+	padding: 3px 13px 5px 0px!important;
+}*/
+/*step 4*/
+.step-info .step-4-info .step-detail .form-property{padding-top: 0px !important; padding-bottom: 0px !important;}
+.step-4-info .step-detail .form-list li.wide{padding-bottom: 10px !important;}
+.step-4-info .step-detail .form-list li.wide h3{font-size: 13px;}
+/*end step 4*/
+#coll3 ul li{padding-bottom: 5px  !important;margin-bottom: 0px  !important;}
+.div-cms-landing-top2{background-position: -6px 0;}
+#div-cms-landing-top-ie{background-position: -4px 0;margin-left: -4px !important;}
+
+
+.popup-countdown-child .content .number-li-9 {
+    display: none !important;
+}
+.popup-countdown-child .content .pad-li-12 {
+    display: none !important;
+}
+.popup-countdown-child .content .btn-bid-panel {
+   /* margin-bottom: -5px !important;*/
+}
+.popup-countdown-child .content .del-plus-btn {
+    margin: 0 !important;
+}
+.popup-countdown-child .content .fs-inc {
+    width: 325px !important;
+}
+.popup-countdown-child .content .btn-pad-content {
+    margin-top: 0 !important;
+}
+.popup-countdown-child .content .btn-bid-popup span {
+    float: left !important;
+}
+.popup-countdown-child .content .min_max_mes {
+    width: 206px !important;
+}
+.popup-countdown-child .content .fs-action-ie {
+    margin: 0 0 0 -5px !important;
+    padding-right: 5px !important;
+    padding-left: 0 !important;
+    width:330px !important;
+}
+.popup-countdown-child .content .fs-final-count {
+    padding-right: 15px !important; margin-right: 0 !important; margin-left: -5px !important;
+}
+.popup-countdown-child .content .action-panel-bidder {
+    padding: 6px 0 !important;
+}
+.popup-countdown-child .content .action-panel-agent {
+    padding: 4px 0 !important;
+}
+.popup-countdown-child .content .min_max_mes_bidder_content {
+    height: 115px !important;
+}
+.popup-countdown-child .content .inc-panel-ie {
+    padding-top: 0 !important;
+    margin-top: 8px !important;
+}
+.popup-countdown-child .content .btn-f, .popup-countdown-child .content .fn-content {
+    margin-top: 0 !important;
+    text-align: left !important;
+}
+.popup-countdown-child .content .btn-pad-content-li,
+.popup-countdown-child .content .del-plus-btn-ie {
+   /*padding-left: 5px !important;*/
+}
+.popup-countdown-child .content .btn-n-pad-zero-ie {
+   /* margin-left: -4px !important;*/
+}
+.popup-countdown-child .content .btn-number-pad-ie {
+  /* padding-right: 3px !important;*/
+}
+.popup-countdown-child .content .btn-bid-panel-ul {
+   margin-bottom: 1px !important;
+}
+.popup-countdown-child .content .f-left-ie {
+    float: left !important;
+}
+.popup-countdown-child .content .bid-button-bidder {
+   /* margin-left: -10px;*/
+}
+.popup-countdown-child .content .btn-bid-panel-ul-li {
+    /*padding-left: 5px;*/
+}
+.popup-countdown-child .content .btn-bid-vendor-popup {
+    /*width: 150px;*/
+}
+.popup-countdown-child .content .f-right-popup {
+    float: none !important;
+}
+.popup-countdown-child .content .btn-p-pad-ie {
+    margin-right: 5px;
+}
+.popup-countdown-child .content .btn-delete-pad {
+    margin-right: 4px;margin-bottom: 0;
+}
+.popup-countdown-child .content .bid-inc-content {
+    padding-top: 10px;padding-bottom: 10px;
+}
+.popup-countdown-child .content .f-right-fix {
+
+}
+.popup-countdown-child .content .f-left-fix {
+
+}
+.popup-countdown-child .content .inc-content {
+    width: 243px !important;
+}
+.popup-countdown-child .content .btn-action-panel-start {
+   float: left !important;
+   margin-left: 12px !important;
+}
+.popup-countdown-child .content fieldset .fs-inc {
+    padding-bottom: 10px !important;
+}
+.popup-countdown-child .content fieldset .fs-inc {
+    padding-bottom: 10px !important;
+}
+.auctions-box .bar-title h2{
+    font-size:16px
+}

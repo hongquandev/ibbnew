@@ -1,0 +1,438 @@
+<?php
+//ini_set('display_errors', 1);
+if (!@ini_set('allow_call_time_pass_reference', 1)) {
+    @ini_set('allow_call_time_pass_reference', 'On');
+}
+include_once ROOTPATH . '/includes/checkingform.class.php';
+include_once ROOTPATH . '/modules/calendar/inc/calendar.php';
+include_once ROOTPATH . '/includes/pagging.class.php';
+include_once ROOTPATH . '/modules/general/inc/regions.php';
+include_once ROOTPATH . '/modules/comment/inc/comment.php';
+include_once ROOTPATH . '/modules/note/inc/note.php';
+include_once ROOTPATH . '/modules/general/inc/bids.php';
+include_once ROOTPATH . '/modules/agent/inc/agent.php';
+include_once ROOTPATH . '/modules/general/inc/bids_first.class.php';
+include_once ROOTPATH . '/modules/notification/notification.php';
+include_once ROOTPATH . '/modules/package/inc/package.php';
+include_once 'inc/property.php';
+if (!isset($pag_cls) or !($pag_cls instanceof Paginate)) {
+    $pag_cls = new Paginate();
+}
+if (!isset($bids_first_cls) or !($bids_first_cls instanceof Bids_first)) {
+    $bids_first_cls = new Bids_first();
+}
+if (!isset($comment_cls) or !($comment_cls instanceof Comments)) {
+    $comment_cls = new Comments();
+}
+$module = 'property';
+include 'lang/' . $module . '.en.lang.php';
+$id = restrictArgs((int)getParam('id', 0));
+$action = $act = restrictArgs(getParam('action'), '[^0-9a-zA-Z-_]');
+$mode = getQuery('mode') == 'grid' ? getQuery('mode') : 'list';
+$message = '';
+$form_action = '';
+function writeFile($content = '')
+{
+    $handle = fopen(ROOTPATH . '/test.txt', 'a+');
+    fputs($handle, $content . "\r\n");
+    fclose($handle);
+}
+
+switch ($action) {
+    case 'register':
+        /* Check Package*/
+        if ($id > 0) {
+            if (!PA_hasPackage($id)) {
+                redirect(ROOTURL . '?module=package&property_id=' . $id);
+            }
+        }
+        if (!isset($_SESSION['agent']['id']) || (isset($_SESSION['agent']['id']) && !($_SESSION['agent']['id'] > 0))) {
+            redirect(ROOTURL . '?module=agent&action=login');
+        }
+        include_once ROOTPATH . '/modules/general/youtube.php';
+        try {
+            //FOR USER HAD REGISTERED
+            if ($_SESSION['agent']['id'] == 0) {
+                redirect(ROOTURL);
+                exit();
+            }
+            //IS BASIC
+            if ($_SESSION['agent']['type'] != 'agent' && AI_isBasic($_SESSION['agent']['id'])) {
+                //msg_alert('This is the first time you register property on iBB. We need your full information before you can proceed. Please click OK to complete. Thank you !',ROOTURL.'/?module=agent&action=add-info');
+                $smarty->assign('is_basic', 1);
+            }
+            if (restrictArgs((int)getParam('step', 0)) == 0) {
+                $_SESSION['property'] = array('id' => 0, 'step' => 1, 'default_step' => 1);
+            }
+            if ($_SESSION['agent']['type'] == 'agent') {
+                $package = PA_getCurrentPackage($_SESSION['agent']['id']);
+                if ($package != null) {
+                    $package_id = $package['package_id'];
+                } else {
+                    $smarty->assign('redirect_dashboard', 1);
+                }
+            }
+            $step = (int)restrictArgs(getParam('step', 1));
+            $step = in_array($step, range(1, 6)) ? $step : 1;
+            $link_ar = array('module' => 'property', 'action' => 'register');
+            $_SESSION['property'] = !isset($_SESSION['property']) ? array('id' => 0, 'step' => 1, 'default_step' => 1) : $_SESSION['property'];
+            if ($id > 0) {
+                if (in_array($_SESSION['agent']['type'], array('theblock', 'agent'))) {
+                    $row = $property_cls->getRow('SELECT pay_status, step
+												  FROM ' . $property_cls->getTable() . '
+												  WHERE property_id = ' . $id . '
+                                                  AND (IF(ISNULL(agent_manager)
+                                                          OR agent_manager = 0
+                                                          OR (SELECT parent_id FROM ' . $agent_cls->getTable() . ' WHERE agent_id = ' . $_SESSION['agent']['id'] . ') = 0
+                                                          ,agent_id = ' . $_SESSION['agent']['id'] . '
+                                                          ,agent_manager = ' . $_SESSION['agent']['id'] . ')
+                                                       OR (SELECT parent_id FROM ' . $agent_cls->getTable() . ' AS a
+                                                        WHERE a.agent_id = ' . $property_cls->getTable() . '.agent_id ) = ' . $_SESSION['agent']['id'] .
+                        ')', true);
+                } else {
+                    $row = $property_cls->getRow('SELECT pay_status, step FROM ' . $property_cls->getTable() . ' WHERE property_id = ' . $id . ' AND agent_id = ' . $_SESSION['agent']['id'], true);
+                }
+                if (!is_array($row) || count($row) == 0) {
+                    redirect(ROOTURL . '/?module=agent&action=view-dashboard');
+                    exit();
+                }
+                $_SESSION['property']['id'] = $id;
+                $_SESSION['property']['step'] = 1;
+                //$default_step = $row['step'];
+                if ($row['pay_status'] == Property::PAY_PENDING) {//pay return step 8
+                    $_SESSION['property']['step'] = 6;
+                } else if (in_array($row['step'], range(1, 6))) {//not pay return step in database
+                    $_SESSION['property']['step'] = $row['step'];
+                    $_SESSION['property']['default_step'] = $row['step'];
+                }
+            }
+            $title = 'SELL YOUR PROPERTY';
+            if (PE_isAuction($_SESSION['property']['id'], 'ebiddar') || PE_isAuction($_SESSION['property']['id'], 'bid2stay')) {
+                $title = 'RENT YOUR PROPERTY';
+            }
+            //FOR SECURITY
+            if ($step > 2) {
+                if ($_SESSION['property']['id'] == 0) {
+                    redirect(ROOTURL . '/?module=' . $module . '&action=register&step=1');
+                    exit();
+                }
+                if (!PK_isBindProperty($_SESSION['property']['id']) && PE_isAuction($_SESSION['property']['id'])) {
+                    $session_cls->setMessage('Please select the package for this property.');
+                    redirect(ROOTURL . '/?module=' . $module . '&action=register&step=2');
+                    exit();
+                }
+                /*$row = $property_cls->getRow('SELECT pk.photo_num, pk.video_num
+                                          FROM '.$property_cls->getTable().' AS p, '.$package_cls->getTable().' AS pk
+                                          WHERE p.package_id = pk.package_id AND p.property_id = '.$_SESSION['property']['id'],true);*/
+                $row = PA_getPackageByPropertyId($_SESSION['property']['id']);
+                // RESTRICT FOR PHOTO
+                $photo_ar = PM_getPhoto($_SESSION['property']['id']);
+                if (count($row) == 0) {
+                    $session_cls->setMessage('Please update your property at this step.');
+                    redirect(ROOTURL . '?module=' . $module . '&action=register&step=2');
+                } else if ($row['photo_upload'] != 'all' && $row['photo_upload'] < count(@$photo_ar['photo'])) {
+                    $session_cls->setMessage('Please delete some your images.');
+                    if ($step > 3) {
+                        redirect(ROOTURL . '/?module=' . $module . '&action=register&step=3');
+                    }
+                }
+                // RESTRICT FOR VIDEO
+                $video_ar = $config_cls->getKey('youtube_enable') == 1 ? PM_getYT($_SESSION['property']['id']) : PM_getVideo($_SESSION['property']['id']);
+                if ($row['video_upload'] != 'all' && $row['video_upload'] < count(@$video_ar['video'])) {
+                    $session_cls->setMessage('Please delete some your videos.');
+                    if ($step > 3) {
+                        redirect(ROOTURL . '/?module=' . $module . '&action=register&step=3');
+                    }
+                }
+            }
+            if (PE_isAuction($_SESSION['property']['id'])) {//AUCTION
+                if (in_array($step, range(6, 7)) && (!$property_term_cls->isExist($_SESSION['property']['id']) || !$property_cls->hasTime($_SESSION['property']['id']))) {
+                    redirect(ROOTURL . '?module=' . $module . '&action=register&step=5');
+                    exit();
+                }
+                //hide step 5
+                /*if (in_array($step,array(5))) {
+					redirect(ROOTURL.'?module='.$module.'&action=register&step=6');
+					exit();
+				}*/
+                /*if (in_array($step,array(5)) && (PE_isAuction($_SESSION['property']['id'],'ebiddar') || PE_isAuction($_SESSION['property']['id'],'bid2stay'))) {
+					redirect(ROOTURL.'?module='.$module.'&action=register&step=6');
+					exit();
+				}*/
+            } else {//SALE
+                //$property_term_cls->delete('property_id = '.$_SESSION['property']['id']);
+                if ($step == 5) {
+                    if ($_SESSION['property']['step'] >= 4) {
+                        $_SESSION['property']['step'] = 4;
+                        //$step = 7;
+                    } else {
+                        $_SESSION['property']['step'] = 4;
+                        //$step = 5;
+                    }
+                    redirect(ROOTURL . '?module=' . $module . '&action=register&step=' . $_SESSION['property']['step']);
+                    //redirect(ROOTURL.'?module='.$module.'&action=register&step='.$step);
+                    exit();
+                }
+            }
+            $_SESSION['property']['default_step'] = ($step < $_SESSION['property']['default_step']) ? $_SESSION['property']['default_step'] : $step;
+            //BEGIN UPLOAD FOLDER
+            if ($_SESSION['property']['id'] > 0) {
+                $path = ROOTPATH . '/store/uploads/' . $_SESSION['agent']['id'] . '/' . $_SESSION['property']['id'];
+                //print_r($path);
+                createFolder($path, 2);
+                if (!is_dir($path)) {
+                    //throw new Exception('It can not create folder.');
+                }
+                $_SESSION['property']['path'] = $path . '/';
+            }
+            //END
+            if ($step == 1 && $_SESSION['property']['id'] == 0) {
+                Calendar_deleteTempRows(Calendar_createTemp());
+            }
+            if ($step >= 3) {
+                Calendar_update($_SESSION['property']['id'], Calendar_createTemp());
+            }
+            //print_r($step);
+            //print_r($_SESSION['property']['default_step']);
+            if (PE_getPayStatus($_SESSION['property']['id']) == 'complete') {
+                $_SESSION['property']['default_step'] = 6;
+            }
+            $form_action = '/?' . http_build_query($link_ar) . '&step=' . $step;
+            include_once 'inc/' . $module . '.step' . $step . '.php';
+            $smarty->assign(array('step' => $step,
+                'id' => $_SESSION['property']['id'],
+                'stepped' => $step,
+                'default_step' => $_SESSION['property']['default_step'],
+                'package' => $package,
+                'title' => $title));
+            $_SESSION['property']['step'] = $step;
+        } catch (Exception $e) {
+            $message = $e->getMessage();
+        }
+        break;
+    case 'search':
+    case 'search-auction':
+    case 'search-sale':
+    case 'search-ebiddar':
+    case 'search-agent-auction':
+    case 'search-bid2stay':
+        $action_arr = explode('-', $action);
+        $smarty->assign('pro_type_', $action_arr[1]);
+        $form_action = parseRedirectUrl(@$_SERVER['REDIRECT_URL']) . '&rs=1';
+        include_once 'inc/property.search.php';
+        break;
+    // DUC CODING
+    case 'search-partner':
+        $smarty->assign('pro_type_', 'partner');
+        $form_action = parseRedirectUrl(@$_SERVER['REDIRECT_URL']) . '&rs=1';
+        include_once 'inc/property.search.partner.php';
+        break;
+    // END DUC CODING
+    case 'search-agent':
+        $form_action = parseRedirectUrl(@$_SERVER['REDIRECT_URL']) . '&rs=1';
+        include_once 'inc/property.search.agent.php';
+        break;
+    case 'bid-history-full':
+        include_once 'inc/property.bid-history-full.php';
+        break;
+    case 'exportCSV':
+        include_once ROOTPATH . '/modules/general/inc/bids.php';
+        include_once ROOTPATH . '/modules/agent/inc/agent.php';
+        include_once ROOTPATH . '/modules/property/inc/property.php';
+        include_once ROOTPATH . '/modules/payment/inc/payment_store.class.php';
+        if (!$payment_store_cls || !($payment_store_cls instanceof Payment_store)) {
+            $payment_store_cls = new Payment_store();
+        }
+        __exportCSV();
+        //die(_response(__exportCSV()));
+        exit;
+        break;
+    case 'exportPropertyCSV':
+        include_once ROOTPATH . '/modules/agent/inc/agent.php';
+        include_once ROOTPATH . '/modules/property/inc/property.php';
+        include_once ROOTPATH . '/modules/package/inc/package.php';
+        __exportPropertyCSV();
+        exit;
+        break;
+    case 'view-search-advance':
+    case 'view-search-advance-auction':/*eBidda30*/
+    case 'view-search-advance-ebiddar':
+    case 'view-search-advance-bid2stay':
+    case 'view-search-advance-agent-auction':/*eBidda Agent*/
+    case 'view-search-advance-sale':
+        $link_ar = array('module' => 'property', 'action' => 'search');
+        if ($action == 'view-search-advance-auction') {
+            $link_ar['action'] = 'search-auction';
+        } else if ($action == 'view-search-advance-sale') {
+            $link_ar['action'] = 'search-sale';
+        }
+        $form_action = '/?' . http_build_query($link_ar);
+        //$form_action = parseRedirectUrl(@$_SERVER['REDIRECT_URL']).'&rs=1';
+        $form_data = array('country' => COUNTRY_DEFAULT);
+        //$smarty->assign('form_data',$form_data);
+        break;
+    // DUC CODING INCLUDE SOME ONE FILE PROCCESS PARTNER SEARCH
+    case 'view-search-partner':
+        $form_action = parseRedirectUrl(@$_SERVER['REDIRECT_URL']) . '&rs=1';
+        break;
+    case 'view-search-advance-agent':
+        $form_action = parseRedirectUrl(@$_SERVER['REDIRECT_URL']) . '&rs=1';
+        if ((int)$form_data['country'] == 0) {
+            $form_data['country'] = COUNTRY_DEFAULT;
+        }
+        $smarty->assign('options_state', R_getOptions(($form_data['country'] > 0 ? $form_data['country'] : -1)), array(0 => 'Select...'));
+        $smarty->assign('options_country', R_getOptions());
+        $smarty->assign('subState', subRegion());
+        $smarty->assign('form_data', formUnescapes($form_data));
+        break;
+    // END DUC CODING
+    case 'view-forthcoming-list':
+    case 'view-passedin-list':
+    case 'view-auction-list':
+    case 'view-sale-list':
+    case 'view-detail':
+    case 'view-auction-detail':
+    case 'view-sale-detail':
+    case 'view-forthcoming-detail':
+    case 'view-passedin-detail':
+    case 'view-auction-agent_detail':
+    case 'view-forthcoming-agent_detail':
+    case 'view-sale-agent_detail':
+    case 'view-live_agent-list':
+    case 'view-forthcoming_agent-list':
+    case 'view-live_vendor-list':
+    case 'view-forthcoming_vendor-list':
+        $actions = explode('-', $action);
+        include_once 'inc/' . $module . '.view.php';
+        $smarty->assign('actions', $actions);
+        $smarty->assign('ROOTURL', ROOTURL);
+        break;
+    case 'print-detail':
+        //ini_set('display_errors', 1);
+        $property_id = getParam('id');
+        $actions = explode('-', $action);
+        include_once 'inc/' . $module . '.view.php';
+        $smarty->assign('actions', $actions);
+        $smarty->assign('ROOTURL', ROOTURL);
+        if (detectBrowserMobile()) {
+            $smarty->compile_dir = ROOTPATH . '/m.templates_c/';
+        } else {
+            $smarty->compile_dir = ROOTPATH . '/templates_c/';
+        }
+        $content = $smarty->fetch(ROOTPATH . '/modules/property/templates/property.view.detail.print.tpl');
+        //echo emailTemplatesSend($content);
+        /*echo $content;
+        die();*/
+        // save PDF
+        require_once(ROOTPATH . "/includes/mpdf/mpdf.php");
+        $filename = 'Online_brochure_' . $property_id . '.pdf';
+        $mpdf = new mPDF('utf-8', 'A4',
+            8,       // font size - default 0
+            'arial',    // default font family
+            5,    // margin_left
+            5,    // margin right
+            10,     // margin top
+            10,    // margin bottom
+            15,     // margin header
+            15     // margin footer
+        );
+        $pdf_style = file_get_contents(ROOTPATH . '/modules/general/templates/style/detail-print.css');
+        $mpdf->WriteHTML($pdf_style, 1);
+        $mpdf->WriteHTML($content);
+        $directory = '/store/uploads/';
+        $mpdf->Output(ROOTPATH . $directory . $filename, 'F');
+        //die(ROOTURL.$directory.$filename);
+        //header("Location: ".ROOTURL.'/store/uploads/'.$filename);
+        header("Content-Type: application/octet-stream");
+        $file = ROOTURL . '/store/uploads/' . $filename;
+        header("Content-Disposition: attachment; filename=" . $filename);
+        header("Content-Type: application/octet-stream");
+        header("Content-Type: application/download");
+        header("Content-Description: File Transfer");
+        header("Content-Length: " . filesize($file));
+        flush(); // this doesn't really matter.
+        $fp = fopen($file, "r");
+        while (!feof($fp)) {
+            echo fread($fp, 65536);
+            flush(); // this is essential for large downloads
+        }
+        fclose($fp);
+        exit();
+        break;
+    case 'delete':
+        $redirect = getQuery('redirect');
+        $page = getQuery('page');
+        if ($id > 0 && $_SESSION['agent']['id'] > 0) {
+            $row = $property_cls->getRow('SELECT property_id FROM ' . $property_cls->getTable() . ' WHERE property_id = ' . $id . ' AND agent_id = ' . $_SESSION['agent']['id'], true);
+            if (is_array($row) && count($row) > 0) {
+                // UPDATE NOTIFICATION TO ANDROID
+                push(0, array('type_msg' => 'update-property'));
+                Property_deleteFull($id, $_SESSION['agent']['id']);
+                $session_cls->setMessage('Deleted #' . $id);
+            }
+        }
+        $link_ar = array('module' => 'agent', 'action' => $redirect, 'mode' => $mode, 'p' => $page);
+        redirect(ROOTURL . '/?' . http_build_query($link_ar));
+        break;
+    case 'cancel_bidding':
+        $id = restrictArgs((int)getParam('id', 0));
+        $redirect = getQuery('redirect');
+        $page = getQuery('page');
+        if ($id > 0 && $_SESSION['agent']['id'] > 0) {
+            if (Property_isVendor($_SESSION['agent']['id'], $id)) {
+                // UPDATE NOTIFICATION TO ANDROID
+                push(0, array('type_msg' => 'update-property'));
+                //stop bidding
+                $property_cls->update(array('stop_bid' => 1,'confirm_sold'=> 1,'sold_time'=>date('Y-m-d H:i:s')),'property_id = '.$id);
+                //$property_cls->update(array('stop_bid' => 1), 'property_id = ' . $id);
+            }
+        }
+        $link_ar = array('module' => 'agent', 'action' => 'view-dashboard', 'mode' => $mode, 'p' => $page);
+        if (isset($redirect) or $redirect != '') {
+            $link_ar['action'] = $redirect;
+        }
+        if ($redirect == 'agent_property') {
+            $link_ar['action'] = 'view-property';
+        }
+        redirect(ROOTURL . '/?' . http_build_query($link_ar));
+        break;
+    case 'view-tv-show':
+        // Update Page The Block Count View
+        include_once ROOTPATH . '/modules/cms/inc/cms.php';
+        $data2['views'] = array('fnc' => 'views+1');
+        $wh_cms = 'page_id = 315 AND is_active = 1';
+        $cms_cls->update($data2, $wh_cms);
+        include_once 'inc/' . $module . '.view.tv.show.php';
+        break;
+    case 'buynow-cancel':
+        $property_id = (int)restrictArgs(getParam('property_id', 0));
+        $smarty->assign('property_id', $property_id);
+        break;
+    case 'buynow-accept':
+        $property_id = (int)restrictArgs(getParam('property_id', 0));
+        $smarty->assign('property_id', $property_id);
+        break;
+    case 'xml':
+        include_once 'inc/' . $module . '.xml.php';
+        break;
+    default:
+        //redirect(ROOTURL.'/?module=property&action=view-auction-list');
+        Report_pageRemove(Report_parseUrl());
+        //redirect(ROOTURL.'/notfound.html');
+        //redirect('/notfound.html');
+        break;
+}
+if (strlen($message) == 0) {
+    $message = $session_cls->getMessage();
+}
+$smarty->assign(array('state_code' => $state_code,
+    'ROOTPATH' => ROOTPATH,
+    'ROOTURL' => ROOTURL,
+    'action' => $action,
+    'module' => $module,
+    'message' => $message,
+    'form_action' => is_array($form_action) ? shortUrl($form_action) : $form_action,
+    'countries' => R_getOptionsStep2(),
+    'agent_type' => $_SESSION['agent']['type']));
+//Report_propertyAdd(Report_parseUrl4Property());
+?>

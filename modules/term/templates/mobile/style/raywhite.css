@@ -1,0 +1,58 @@
+.header-term{border-bottom: 2px solid #000000;padding-bottom:5px;position:relative}
+.header-term .center{text-align: center;width: auto;padding: 0 30px;font-size: 14px;}
+.header-term .right{font-size: 14px;float:none !important;}
+.header-term img{width:200px;}
+.header-term img,
+.header-term .center,
+.header-term .contact{display: inline-block;vertical-align: bottom}
+.col-2set{margin-top:10px}
+.col-2set .col-1,
+.col-2set .col-2{width:47%;float:left}
+.col-2set .col-1{padding-right:20px;border-right: 2px solid black;}
+.col-2set .col-2{padding-left:20px}
+.block{margin: 10px 0}
+.block h3{color: white;display: block;background: black;padding: 2px;margin-bottom:8px}
+ul.alpha-upper{list-style-type: upper-alpha;padding-left: 20px;}
+.content p{margin-bottom:10px}
+span.double{border-bottom: 3px double}
+.block .content{text-align: justify;}
+.block .contact{font-size: 16px;font-weight: bold;}
+.block .contact input{margin-left:25px}
+.block .contact label{margin-left:10px}
+.container ul li{margin-bottom:10px}
+.div-center{text-align: center;font-style: italic;font-weight: bold;font-size: 15px;padding: 10px;padding-top:5px}
+.content .normal-line p{margin-bottom:0}
+.large-checkbox{padding: 10px 0;}
+.large-checkbox label{font-size: 14px;font-weight: bold;margin-left: 10px;}
+.block table.detail{margin-left:30px;font-size:14px;font-weight:bold}
+.block table{font-size:14px}
+.block h5{text-align: center;font-size: 16px;font-style: italic;margin-bottom: 10px;}
+.content .row{border-bottom: 1px solid black;margin-bottom:15px}
+.content .row input{border: 0}
+.content .row label,
+.content .row .input-box{display:inline-block;font-size:14px}
+.content .row .input-box{/*width:85%*/}
+.italic{font-style: italic}
+.content span.single-line{font-size: 14px;margin-bottom: 5px;display: block;}
+.underline{text-decoration: underline}
+.text-center{text-align: center}
+.container .title{font-size:14px;margin-bottom:15px}
+.button-set{background: #f1f1f1;display: block;height: 30px;border-bottom: 1px dotted rgb(235, 230, 230);padding: 10px;}
+.row-checkbox label{display: inline-block;font-size: 14px;margin-right: 10px;}
+.row-checkbox input{margin-right:20px}
+.row-checkbox{margin-bottom:15px}
+.mgr-12{margin-bottom:15px}
+.mgr-12 input{margin-right:12px}
+.row input[type=checkbox]{margin-right:15px}
+.footer-term .line-1{background: #FFF100;padding: 8px;text-align: right;margin-top: 10px;}
+.footer-term .line-1 span{font-weight: bold;font-size: 15px;}
+.footer-term .line-2{border-top: 1px solid black;margin-top: 2px;padding-top: 2px;}
+.footer-term .line-2 span{display: inline-block;width: 305px;color: black;}
+.footer-term .line-2 span.acenter{text-align: center;}
+.footer-term .line-2 span.aright{text-align: right;width: 299px;}
+.content .bold{border-bottom: 2px solid black;margin-bottom:20px}
+.content .bold label{font-weight:bold}
+.col2{margin-bottom:10px}
+.col2 .col-1{width: 136px;border: 0;padding: 0;}
+.col2 .col-2{width: 280px;padding-left: 0;margin-left: 10px;}
+.col2 .col-2 p{margin-bottom:0;font-weight: bold}

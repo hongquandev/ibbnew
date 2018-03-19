@@ -1,0 +1,37 @@
+/*@font-face {
+    font-family: 'HelveticaNeueCondensed';
+    src: url('font/helveticaneue-condensed.eot');
+    src: url('font/helveticaneue-condensed.eot') format('embedded-opentype'),
+         url('font/helveticaneue-condensed.woff') format('woff'),
+         url('font/helveticaneue-condensed.ttf') format('truetype'),
+         url('font/helveticaneue-condensed.svg#HelveticaNeueRegular') format('svg');
+}*/
+@font-face {
+    font-family: 'HelveticaNeueCondensed';
+    /*src: url('font/helveticaneue-condensed-webfont.eot');
+    src: url('font/helveticaneue-condensed-webfont.eot?#iefix') format('embedded-opentype'),
+    url('font/helveticaneue-condensed-webfont.woff') format('woff'),
+    url('font/helveticaneue-condensed-webfont.ttf') format('truetype'),
+    url('font/helveticaneue-condensed-webfont.svg#helveticaneueregularregular') format('svg');*/
+    src: url('font/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),  url('font/ProximaNova-Regular.otf')  format('opentype'),
+    url('font/ProximaNova-Regular.woff') format('woff'), url('font/ProximaNova-Regular.ttf')  format('truetype'), url('font/ProximaNova-Regular.svg#ProximaNova-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ProximaNova-SemiBold';
+    src: url('font/proximanova-semibold-webfont.eot');
+    src: url('font/proximanova-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('font/proximanova-semibold-webfont.woff2') format('woff2'),
+    url('font/proximanova-semibold-webfont.woff') format('woff'),
+    url('font/proximanova-semibold-webfont.ttf') format('truetype'),
+    url('font/proximanova-semibold-webfont.svg#proxima_novasemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+body {
+    font-family: HelveticaNeueCondensed, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #a1a1a1;
+}

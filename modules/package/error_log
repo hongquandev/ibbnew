@@ -1,0 +1,2 @@
+[21-May-2012 09:56:19 UTC] PHP Fatal error:  Cannot redeclare PA_getPackageByPropertyId() (previously declared in /home/inspectb/public_html/modules/package/inc/package.php:23) in /home/inspectb/public_html/modules/package/inc/package.php on line 35
+[21-May-2012 10:00:35 UTC] PHP Fatal error:  Cannot redeclare PA_getPackageByPropertyId_() (previously declared in /home/inspectb/public_html/modules/package/inc/package.php:23) in /home/inspectb/public_html/modules/package/inc/package.php on line 35

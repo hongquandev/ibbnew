@@ -1,0 +1,21 @@
+.howtosell-intro {margin: 20px 0; border-top: solid 1px #e0e1dc; border-bottom: solid 1px #e0e1dc;color: #2E3440;font-weight: bold;font-size: 15px;line-height: 24px;}
+.howtosell-steps {float: left;width: 720px;}
+.howtosell-steps-container {float: left;width: 220px;}
+.howtosell-step-content {border: solid 1px #e0e1dc;}
+.howtosell-step-content-content {padding: 10px;}
+.howtosell-steps-content-header {background-color: #2e3640;color: #ffffff !important;font-weight: bold;text-transform: uppercase;padding: 4px 10px;}
+.howtosell-step {float: left;width: 220px;height: 133px;cursor: pointer;margin-right: 10px;margin-bottom: 40px;}
+.howtosell-step-link {display: inline-block;width: 220px;height: 133px;}
+.howtosell-step-link.step1 {background: url(../images/how_to_sell_1.jpg) bottom left no-repeat;}
+.howtosell-step-link.step2 {background: url(../images/how_to_sell_2.jpg) bottom left no-repeat;}
+.howtosell-step-link.step3 {background: url(../images/how_to_sell_3.jpg) bottom left no-repeat;}
+.howtosell-step-link.step4 {background: url(../images/how_to_sell_4.jpg) 0 0 no-repeat;}
+.howtosell-step-link.step5 {background: url(../images/how_to_sell_5.jpg) 0 0 no-repeat;}
+.howtosell-step-link.step6 {background: url(../images/how_to_sell_6.jpg) 0 0 no-repeat;}
+.howtosell-step-link.step1.onhover,.howtosell-step-link.step1.active {background: url(../images/how_to_sell_1_active.jpg) bottom left no-repeat;}
+.howtosell-step-link.step2.onhover,.howtosell-step-link.step2.active {background: url(../images/how_to_sell_2_active.jpg) bottom left no-repeat;}
+.howtosell-step-link.step3.onhover,.howtosell-step-link.step3.active {background: url(../images/how_to_sell_3_active.jpg) bottom left no-repeat;}
+.howtosell-step-link.step4.onhover,.howtosell-step-link.step4.active {background: url(../images/how_to_sell_4_active.jpg) 0 0 no-repeat;}
+.howtosell-step-link.step5.onhover,.howtosell-step-link.step5.active {background: url(../images/how_to_sell_5_active.jpg) 0 0 no-repeat;}
+.howtosell-step-link.step6.onhover,.howtosell-step-link.step6.active {background: url(../images/how_to_sell_6_active.jpg) 0 0 no-repeat;}
+.howtosell-wrapper {margin-bottom: 20px;}

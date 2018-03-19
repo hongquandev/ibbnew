@@ -1,0 +1,4 @@
+[12-Sep-2011 02:12:13] PHP Fatal error:  Call to a member function getRow() on a non-object in /home/inspectb/public_html/dev/modules/user/action.admin.php on line 75
+[12-Sep-2011 02:15:01] PHP Fatal error:  Call to a member function insert() on a non-object in /home/inspectb/public_html/dev/modules/user/action.admin.php on line 64
+[12-Sep-2011 02:15:03] PHP Fatal error:  Call to a member function getRow() on a non-object in /home/inspectb/public_html/dev/modules/user/action.admin.php on line 74
+[12-Sep-2011 02:16:00] PHP Fatal error:  Call to a member function insert() on a non-object in /home/inspectb/public_html/dev/modules/user/action.admin.php on line 78

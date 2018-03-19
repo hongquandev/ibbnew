@@ -1,0 +1,19 @@
+.scroll-pane {
+	width: 863px;
+	height: 200px;
+	overflow: auto;
+}
+
+.jspTrack {
+	background:#FAF9F9;
+    position: relative;
+}
+
+.jspDrag {
+	background: none repeat scroll 0 0 #E5E4E4;
+}
+
+.jspPane li {
+	list-style-type:none;
+}
+

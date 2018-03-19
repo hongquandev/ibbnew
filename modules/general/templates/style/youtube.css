@@ -1,0 +1,36 @@
+.yt-button {
+	border:1px solid #B2B2B2;
+	padding:2px 4px 2px 4px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	
+}
+:root .yt-button {border:2px solid #B2B2B2\0/IE9 !important;}
+.yt-container{
+}
+.yt-loading{
+	width:25px;
+	height:25px;
+}
+.yt-container div{
+    width: 180px;
+    height: 115px;
+	margin:5px 5px 14px 5px;
+    float: left;
+}
+.yt-container div img{
+    width: 180px;
+    height: 115px !important;
+	float:left;
+}
+.yt-container div a{
+	float:right;
+    color: #980000;
+    margin-top: 3px;
+}
+.yt-container div a:hover{
+	text-decoration:underline;
+}
+.yt-container-button{clear: both;padding-top: 20px;}
+.yt-container-button #yt_form{float:left;display:inline-table;margin-left: 20px;}
